@@ -30,7 +30,7 @@ export default function Home() {
             <div className={styles['hero-content']}>
                 <div className={styles['profile-image']}>
                     <Image
-                        src="/personal-website/images/profile.jpg"
+                        src="/personal-website/images/profile.jpg?v=2"
                         alt="Georgina Wang"
                         className={styles['profile-photo']}
                         width={200}
