@@ -2,9 +2,9 @@
   "course": "MATH 138",
   "professor": "Katy Howell Escobar",
   "units": [
-    { "title": "1. Integration", "file": "1. Integration" },
-    { "title": "2. Differential Equations", "file": "2. Differential Equations" },
-    { "title": "3. Numerical Series", "file": "3. Numerical Series" },
-    { "title": "4. Power Series", "file": "4. Power Series" }
+    { "title": "1. Integration", "file": "MATH 138 19d115b71c118004b9ebe44db7374457" },
+    { "title": "2. Differential Equations", "file": "MATH 138 19d115b71c118004b9ebe44db7374457" },
+    { "title": "3. Numerical Series", "file": "MATH 138 19d115b71c118004b9ebe44db7374457" },
+    { "title": "4. Power Series", "file": "MATH 138 19d115b71c118004b9ebe44db7374457" }
   ]
 } 
