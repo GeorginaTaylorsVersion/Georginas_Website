@@ -2,12 +2,12 @@
   "course": "MATH 136",
   "professor": "Bruno Barbosa",
   "units": [
-    { "title": "1. Vectors in Euclidean Space", "file": "1. Vectors in Euclidean Space" },
-    { "title": "2. Systems of Linear Equations", "file": "2. Systems of Linear Equations" },
-    { "title": "3. Matrices and Linear Mappings", "file": "3. Matrices and Linear Mappings" },
-    { "title": "4. Inverses and Determinants", "file": "4. Inverses and Determinants" },
-    { "title": "5. Dimension and Coordinates", "file": "5. Dimension and Coordinates" },
-    { "title": "6. Eigenvectors and Diagonalization", "file": "6. Eigenvectors and Diagonalization" },
-    { "title": "7. Vector Spaces", "file": "7. Vector Spaces" }
+    { "title": "1. Vectors in Euclidean Space", "file": "1. Vectors in Euclidean Space/1 Vectors in Euclidean Space 1bf115b71c11809e8169f0930b1e8cc5" },
+    { "title": "2. Systems of Linear Equations", "file": "2. Systems of Linear Equations/2 Systems of Linear Equations 1bf115b71c1180109334fa2fb144f28e" },
+    { "title": "3. Matrices and Linear Mappings", "file": "3. Matrices and Linear Mappings/3 Matrices and Linear Mappings 1bf115b71c1180cbac60cff3f52f5590" },
+    { "title": "4. Inverses and Determinants", "file": "4. Inverses and Determinants/4 Inverses and Determinants 1bf115b71c1180b0942bd198361402a5" },
+    { "title": "5. Dimension and Coordinates", "file": "5. Dimension and Coordinates/5 Dimension and Coordinates 1bf115b71c118035f56896c6e06d3c7a" },
+    { "title": "6. Eigenvectors and Diagonalization", "file": "6. Eigenvectors and Diagonalization/6 Eigenvectors and Diagonalization 1bf115b71c1180f663097b620ca400e5" },
+    { "title": "7. Vector Spaces", "file": "7. Vector Spaces/7 Vector Spaces 1bf115b71c11801d40f0c0680c965182" }
   ]
 } 
