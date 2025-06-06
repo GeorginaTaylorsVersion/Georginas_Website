@@ -22,7 +22,7 @@ export default function Home({ termsWithCourses }) {
               {courses.map((course) => (
                 <span key={course} className="course-bubble">
                   <Link href={`/${term}/${course}`} legacyBehavior>
-                    <a className="course-link">course</a>
+                    <a className="course-link">{course}</a>
                   </Link>
                 </span>
               ))}
