@@ -25,6 +25,21 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <main>
+        <header className="hero">
+            <div className="hero-content">
+                <div className="profile-image">
+                    <Image src="/personal-website/images/profile.jpg" alt="Georgina Wang" className="profile-photo" width={200} height={200} />
+                </div>
+                <h1>Georgina Wang</h1>
+                <h2>Mathematics Co-op Student</h2>
+                <p>University of Waterloo</p>
+                <div className="social-links">
+                    <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+                    <a href="mailto:georgina.wang@uwaterloo.ca"><i className="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </header>
+
         <section id="about">
           <h2>About Me</h2>
           <p>Highly organized and detail-oriented mathematics co-op student with proven experience in software development, campaign coordination, and leadership roles. Over 2 years of professional experience in software engineering and cross-functional collaboration, improving operational efficiency by 20%.</p>
