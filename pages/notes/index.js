@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getTerms, getCourses } from '../lib/notes';
+import { getTerms, getCourses } from '../../lib/notes';
 
 const heartEmojis = [
   '❤️', // red
