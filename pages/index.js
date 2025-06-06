@@ -28,7 +28,19 @@ export default function Home() {
         <header className="hero">
             <div className="hero-content">
                 <div className="profile-image">
-                    <Image src="/personal-website/images/profile.jpg" alt="Georgina Wang" className="profile-photo" width={200} height={200} />
+                    <Image
+                        src="/personal-website/images/profile.jpg"
+                        alt="Georgina Wang"
+                        className="profile-photo"
+                        width={200}
+                        height={200}
+                        style={{
+                            borderRadius: '50%',
+                            objectFit: 'cover',
+                            border: '4px solid white',
+                            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
+                        }}
+                    />
                 </div>
                 <h1>Georgina Wang</h1>
                 <h2>Mathematics Co-op Student</h2>
