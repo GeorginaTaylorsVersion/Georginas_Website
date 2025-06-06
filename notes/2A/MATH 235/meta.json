@@ -1,0 +1,8 @@
+{
+  "course": "MATH 235",
+  "professor": "",
+  "units": [
+    { "title": "Unit 1 Title", "file": "1-unit1.md" },
+    { "title": "Unit 2 Title", "file": "2-unit2.md" }
+  ]
+} 
