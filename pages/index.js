@@ -29,6 +29,9 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <main>
+        {/* Temporary marker to check content positioning */}
+        <h2>---CONTENT STARTS HERE---</h2>
+
         <header className={styles.hero}>
             <div className={styles['hero-content']}>
                 <div className={styles['profile-image']}>
