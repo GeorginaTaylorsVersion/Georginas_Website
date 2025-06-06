@@ -10,26 +10,6 @@ export default function About() {
         {/* You might want to add other meta tags from your old index.html here */}
       </Head>
 
-      {/* Hero Section - Keeping the hero content for now */}
-      <header className="hero">
-        <div className="hero-content">
-            {/* Assuming images directory will be moved or handled */} {/* Need to fix the image source path */} {/* Need to add Image component if not already using */} {/* Need to add styles for profile-image and profile-photo */}
-            <div className="profile-image">
-                {/* Placeholder for Image component */}
-                {/* <Image src="/personal-website/images/profile.jpg" alt="Georgina Wang" width={200} height={200} className="profile-photo" /> */}
-                {/* Using a regular img tag for now - will need to ensure image is accessible in public directory */}
-                 <img src="/personal-website/images/profile.jpg" alt="Georgina Wang" className="profile-photo" />
-            </div>
-            <h1>Georgina Wang</h1>
-            <h2>Mathematics Co-op Student</h2>
-            <p>University of Waterloo</p>
-            <div className="social-links">
-                <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
-                <a href="mailto:georgina.wang@uwaterloo.ca"><i className="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </header>
-
       {/* Main Content Sections */}
       <main>
         <section id="about">
