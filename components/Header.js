@@ -9,10 +9,10 @@ export default function Header() {
           Georgina's Website <span style={{ marginLeft: '0.5rem' }} role="img" aria-label="heart">❤️</span>
         </div>
         <nav className={styles['menu-links']}>
-          <a href="/personal-website/" className={styles['menu-link']}>
+          <a href="/" className={styles['menu-link']}>
             AUTHOR
           </a>
-          <a href="/" className={styles['menu-link']}>
+          <a href="/notes" className={styles['menu-link']}>
             NOTES
           </a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
