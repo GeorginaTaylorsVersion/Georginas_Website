@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { getTerms, getCourses } from '../lib/notes';
 import Head from 'next/head';
 import Image from 'next/image';
+import styles from './index.module.css'; // Import CSS module
 // We will add styling later
 
 const heartEmojis = [
@@ -25,21 +26,15 @@ export default function Home() {
 
       {/* Main Content Sections */}
       <main>
-        <header className="hero">
-            <div className="hero-content">
-                <div className="profile-image">
+        <header className={styles.hero}>
+            <div className={styles['hero-content']}>
+                <div className={styles['profile-image']}>
                     <Image
                         src="/personal-website/images/profile.jpg"
                         alt="Georgina Wang"
-                        className="profile-photo"
+                        className={styles['profile-photo']}
                         width={200}
                         height={200}
-                        style={{
-                            borderRadius: '50%',
-                            objectFit: 'cover',
-                            border: '4px solid white',
-                            boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
-                        }}
                     />
                 </div>
                 <h1>Georgina Wang</h1>
