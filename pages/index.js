@@ -19,6 +19,7 @@ export default function Home() {
     <>
       <Head>
         <title>Georgina Wang - Mathematics Student</title>
+        <link rel="stylesheet" href="/personal-website/styles.css" />
         {/* You might want to add other meta tags from your old index.html here */}
       </Head>
 
