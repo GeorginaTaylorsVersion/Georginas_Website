@@ -1,0 +1,20 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: radial-gradient(circle at 50% 60%, #fff7e6 0%, #f8d8e4 60%, #e6e6fa 100%);
+  color: #222;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-content-padding {
+  padding-top: 80px; /* Adjust as needed to clear the fixed header */
+} 
