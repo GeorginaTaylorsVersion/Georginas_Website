@@ -1,0 +1,10 @@
+{
+  "course": "MATH 138",
+  "professor": "Katy Howell Escobar",
+  "units": [
+    { "title": "1. Integration", "file": "1. Integration" },
+    { "title": "2. Differential Equations", "file": "2. Differential Equations" },
+    { "title": "3. Numerical Series", "file": "3. Numerical Series" },
+    { "title": "4. Power Series", "file": "4. Power Series" }
+  ]
+} 

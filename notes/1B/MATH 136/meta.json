@@ -1,0 +1,13 @@
+{
+  "course": "MATH 136",
+  "professor": "Bruno Barbosa",
+  "units": [
+    { "title": "1. Vectors in Euclidean Space", "file": "1. Vectors in Euclidean Space" },
+    { "title": "2. Systems of Linear Equations", "file": "2. Systems of Linear Equations" },
+    { "title": "3. Matrices and Linear Mappings", "file": "3. Matrices and Linear Mappings" },
+    { "title": "4. Inverses and Determinants", "file": "4. Inverses and Determinants" },
+    { "title": "5. Dimension and Coordinates", "file": "5. Dimension and Coordinates" },
+    { "title": "6. Eigenvectors and Diagonalization", "file": "6. Eigenvectors and Diagonalization" },
+    { "title": "7. Vector Spaces", "file": "7. Vector Spaces" }
+  ]
+} 
