@@ -24,6 +24,9 @@ export default function Home() {
         {/* You might want to add other meta tags from your old index.html here */}
       </Head>
 
+      {/* Spacing element to clear the fixed header on the home page */}
+      <div style={{ height: '80px' }}></div>
+
       {/* Main Content Sections */}
       <main>
         <header className={styles.hero}>
