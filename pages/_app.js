@@ -1,15 +1,13 @@
 import '../styles/globals.css';
-import Footer from '../components/Footer';
-import NewHeader from '../components/NewHeader';
+import Header from '../components/Header';
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <NewHeader />
+      <Header />
       <div className="main-content-padding">
         <Component {...pageProps} />
       </div>
-      <Footer />
     </>
   );
 }
