@@ -27,6 +27,28 @@ export default function Home() {
       {/* Spacing element to clear the fixed header on the home page */}
       <div style={{ height: '80px' }}></div>
 
+      {/* Personal website hero section */}
+      <header className={styles.hero}>
+          <div className={styles['hero-content']}>
+              <div className={styles['profile-image']}>
+                  <Image
+                      src="/personal-website/images/profile.jpg?v=2"
+                      alt="Georgina Wang"
+                      className={styles['profile-photo']}
+                      width={200}
+                      height={200}
+                  />
+              </div>
+              <h1>Georgina Wang</h1>
+              <h2>Mathematics Co-op Student</h2>
+              <p>University of Waterloo</p>
+              <div className="social-links">
+                  <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i></a>
+                  <a href="mailto:georgina.wang@uwaterloo.ca"><i className="fas fa-envelope"></i></a>
+              </div>
+          </div>
+      </header>
+
       {/* Main Content Sections */}
       <main>
         <section id="about">
