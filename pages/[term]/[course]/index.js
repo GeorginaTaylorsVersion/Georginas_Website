@@ -9,7 +9,7 @@ export default function CoursePage({ term, course, units }) {
       <ul>
         {units.map(unit => (
           <li key={unit}>
-            <Link href={`/${term}/${course}/${unit}`}>{unit}</Link>
+            <Link href={`/${term}/${course}/units/${unit}`}>{unit}</Link>
           </li>
         ))}
       </ul>

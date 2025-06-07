@@ -1,4 +1,4 @@
-import { getTerms, getCourses, getUnits, getNotes, getNoteContent } from '../../../../../lib/notes';
+import { getTerms, getCourses, getUnits, getNotes, getNoteContent } from '../../../../../../lib/notes'; // Updated import path
 import Head from 'next/head';
 import remark from 'remark';
 import html from 'remark-html';
@@ -24,6 +24,7 @@ export async function getStaticPaths() {
       const units = getUnits(term, course);
       return units.flatMap(unit => {
         const notes = getNotes(term, course, unit);
+        // Generate paths for the note detail page
         return notes.map(note => ({ params: { term, course, unit, note } }));
       });
     });

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getTerms, getCourses, getUnits, getNotes } from '../../../../lib/notes';
+import { getTerms, getCourses, getUnits, getNotes } from '../../../../../lib/notes'; // Updated import path
 
 export default function UnitPage({ term, course, unit, notes }) {
   return (
@@ -9,7 +9,7 @@ export default function UnitPage({ term, course, unit, notes }) {
       <ul>
         {notes.map(note => (
           <li key={note}>
-            <Link href={`/${term}/${course}/${unit}/${note}`}>{note}</Link>
+            <Link href={`/${term}/${course}/units/${unit}/notes/${note}`}>{note}</Link> {/* Updated link path */}
           </li>
         ))}
       </ul>
@@ -23,7 +23,7 @@ export async function getStaticPaths() {
     const courses = getCourses(term);
     return courses.flatMap(course => {
       const units = getUnits(term, course);
-      // Generate paths for the unit listing page ([unit].js)
+      // Generate paths for the new unit listing page ([unit]/index.js under units/)
       return units.map(unit => ({ params: { term, course, unit } }));
     });
   });
