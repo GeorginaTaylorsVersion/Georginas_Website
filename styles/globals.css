@@ -17,4 +17,13 @@ ul {
 
 .main-content-padding {
   padding-top: 80px; /* Adjust as needed to clear the fixed header */
+}
+
+/* Added footer styles from original personal website */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 4rem;
 } 

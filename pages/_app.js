@@ -8,6 +8,9 @@ function MyApp({ Component, pageProps }) {
       <div className="main-content-padding">
         <Component {...pageProps} />
       </div>
+      <footer>
+        <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
+      </footer>
     </>
   );
 }

@@ -1,6 +1,6 @@
 /* Styles from personal-website/styles.css navigation */
 .header-bar {
-  background: linear-gradient(to right, #ffd6e0, #ffecf2); /* Using gradient from personal website */
+  background: radial-gradient(circle at 50% 60%, #fff7e6 0%, #f8d8e4 60%, #e6e6fa 100%); /* Using radial gradient from body background */
   position: fixed; /* Keeping it fixed as in personal website */
   width: 100%;
   top: 0;
