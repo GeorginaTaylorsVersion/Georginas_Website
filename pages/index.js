@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
 
       {/* Spacing element to clear the fixed header on the home page */}
-      <div style={{ height: '80px' }}></div>
+      <div style={{ height: '80px', background: 'linear-gradient(to right, #ffd6e0, #ffecf2)' }}></div>
 
       {/* Personal website hero section */}
       <header className={styles.hero}>
