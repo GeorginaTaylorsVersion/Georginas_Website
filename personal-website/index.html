@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Georgina Wang - Mathematics Student</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <header class="header-bar">
-        <div class="nav-content">
-        <div class="name">
-          <a href="/" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-            Georgina's Website <span style="margin-left: 0.5rem;" role="img" aria-label="heart">❤️</span>
-          </a>
-        </div>
-        <nav class="menu-links">
-          <a href="/about" class="menu-link"> AUTHOR </a>
-          <a href="/" class="menu-link"> NOTES </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="menu-link"> GITHUB </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="menu-link"> INSTAGRAM </a>
-          <a href="/podcast" class="menu-link"> PODCAST </a>
-    </nav>
-        </div>
-    </header>
+    import Link from 'next/link';
+    import styles from './Header.module.css';
+    
+    export default function Header() {
+      return (
+        <header className={styles['header-bar']}>
+          <div className={styles['nav-content']}>
+            <div className={styles.name}>
+              Georgina's Website <span style={{ marginLeft: '0.5rem' }} role="img" aria-label="heart">❤️</span>
+            </div>
+            <nav className={styles['menu-links']}>
+              <a href="/" className={styles['menu-link']}>
+                AUTHOR
+              </a>
+              <a href="/notes" className={styles['menu-link']}>
+                NOTES
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
+                GITHUB
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
+                INSTAGRAM
+              </a>
+              <a href="/podcast" className={styles['menu-link']}>
+                PODCAST
+              </a>
+            </nav>
+          </div>
+        </header>
+      );
+    } 
 
     <main>
         <section id="about">
