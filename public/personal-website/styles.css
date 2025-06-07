@@ -39,12 +39,14 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .name {
     color: var(--primary-color);
     font-size: 1.8rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .nav-links {
