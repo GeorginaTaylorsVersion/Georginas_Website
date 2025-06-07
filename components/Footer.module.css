@@ -1,0 +1,13 @@
+.footer {
+  background-color: #f8f8f8; /* Light grey background */
+  color: #333; /* Dark grey text */
+  padding: 20px 0; /* Vertical padding */
+  text-align: center; /* Center text */
+  margin-top: 40px; /* Add some space above the footer */
+}
+
+.footer-content {
+  max-width: 1200px; /* Limit content width */
+  margin: 0 auto; /* Center content block */
+  padding: 0 20px; /* Horizontal padding */
+} 
