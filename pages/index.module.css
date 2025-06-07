@@ -1,5 +1,4 @@
 .hero {
-    background: radial-gradient(circle at center, #ffecf2 0%, #ffd6e0 50%, #ffc2d1 100%);
     background-size: cover;
     background-position: center;
     display: flex;
