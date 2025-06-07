@@ -18,7 +18,7 @@ export default function Header() {
           <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
             GITHUB
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
+          <a href="/instagram" className={styles['menu-link']}>
             INSTAGRAM
           </a>
           <a href="/podcast" className={styles['menu-link']}>
