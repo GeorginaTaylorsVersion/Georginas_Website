@@ -35,7 +35,7 @@ nav {
 .nav-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,14 +43,14 @@ nav {
 
 .name {
     color: var(--primary-color);
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .nav-links li {
