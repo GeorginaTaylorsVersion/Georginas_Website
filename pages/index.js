@@ -27,15 +27,7 @@ export default function Home() {
       {/* Personal website hero section */}
       <header className={styles.hero}>
           <div className={styles['hero-content']}>
-              <div className={styles['profile-image']}>
-                  <Image
-                      src="/personal-website/images/profile.jpg?v=2"
-                      alt="Georgina Wang"
-                      className={styles['profile-photo']}
-                      width={200}
-                      height={200}
-                  />
-              </div>
+              {/* Profile image removed */}
               <h1>Georgina Wang</h1>
               <h2>Mathematics Co-op Student</h2>
               <p>University of Waterloo</p>
