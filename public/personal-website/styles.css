@@ -67,7 +67,7 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: radial-gradient(circle at center, #ffecf2 0%, #ffd6e0 50%, #ffc2d1 100%);
+    background: linear-gradient(45deg, #fff5f7 0%, #ffd6e0 50%, #fff5f7 100%);
     background-size: cover;
     background-position: center;
     height: 100vh;
