@@ -1,3 +1,7 @@
+hello
+
+
+
 # Notes Website
 
 A Next.js website to showcase your notes.
