@@ -30,7 +30,6 @@ export default function CoursePage({ term, course, unitsWithFirstNotes, mustKnow
       </div>
       {mustKnowContent && (
         <div className="must-know-section content-rectangle">
-          <h2 className="must-know-title">Must Know</h2>
           <div className="markdown-content" dangerouslySetInnerHTML={{ __html: mustKnowContent }} />
         </div>
       )}
@@ -58,7 +57,7 @@ export async function getStaticProps({ params }) {
   let mustKnowContent = null;
 
   if (params.course === 'MATH 138') {
-    const mustKnowFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'Must Know', 'must-know.md');
+    const mustKnowFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'must-know-section.md');
     if (fs.existsSync(mustKnowFilePath)) {
       const fileContents = fs.readFileSync(mustKnowFilePath, 'utf8');
       

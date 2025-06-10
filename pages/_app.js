@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Header />
       {isNotesPage ? (
-        <div className="main-content-padding">
+      <div className="main-content-padding">
           <div className="content-rectangle">
             <Component {...pageProps} />
           </div>
