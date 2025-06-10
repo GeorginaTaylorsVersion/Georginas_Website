@@ -8,6 +8,7 @@ Two vectors $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}\in\mathb
 
 **Example 1:** For $n=2$, we have the set $\mathbb{R}^{2}$, for which a few elements are
 $\begin{bmatrix}1\\ 2\end{bmatrix},\begin{bmatrix}\pi\\ 1.2\end{bmatrix} \text{ and } \begin{bmatrix}0\\ -10\end{bmatrix}$ 
++$$\begin{bmatrix}1\\ 2\end{bmatrix},\begin{bmatrix}\pi\\ 1.2\end{bmatrix} \text{ and } \begin{bmatrix}0\\ -10\end{bmatrix}$$
 
 The set $\mathbb{R}^{n}$ just defined is also known as the n-dimensional Euclidean space, which you may have already learned as the set of points $(x_{1},...,x_{n})$.
 Geometrically, we will often represent the vector $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}$ as an arrow with its tail at the origin and its head at its corresponding point, $(x_{1},...,x_{n})$.
@@ -41,15 +42,25 @@ e.g. Compute the resulting vector from the linear combination $2\vec{x}+3\vec{y}
 **Theorem 1.1.7**
 If $\vec{x}, \vec{y}, \vec{w}\in\mathbb{R}^{n}$ and c, $d\in\mathbb{R}$, then
 V1 $\vec{x}+\vec{y}\in\mathbb{R}^{n}$
++V1 $$\vec{x}+\vec{y}\in\mathbb{R}^{n}$$
 V2 $(\vec{x}+\vec{y})+\vec{w}=\vec{x}+(\vec{y}+\vec{w})$.
++V2 $$(\vec{x}+\vec{y})+\vec{w}=\vec{x}+(\vec{y}+\vec{w}).$$
 V3 $\vec{x}+\vec{y}=\vec{y}+\vec{x}$
++V3 $$\vec{x}+\vec{y}=\vec{y}+\vec{x}$$
 V4 There exists a vector $\vec{0}\in\mathbb{R}^{n}$ such that $\vec{x}+\vec{0}=\vec{x}$ for all $\vec{x}\in\mathbb{R}^{n}$.
++V4 $$There exists a vector $\vec{0}\in\mathbb{R}^{n}$ such that $\vec{x}+\vec{0}=\vec{x}$ for all $\vec{x}\in\mathbb{R}^{n}.$$
 V5 For $\vec{x}\in R^{n}$ there exists $(-\vec{x})\in\mathbb{R}^{n}$ such that $\vec{x}+(-\vec{x})=\vec{0}$.
++V5 $$For $\vec{x}\in R^{n}$ there exists $(-\vec{x})\in\mathbb{R}^{n}$ such that $\vec{x}+(-\vec{x})=\vec{0}.$$
 V6 $c\vec{x}\in\mathbb{R}^{n}$.
++V6 $$c\vec{x}\in\mathbb{R}^{n}.$$
 V7 $c(d\vec{x})=(cd)\vec{x}$
++V7 $$c(d\vec{x})=(cd)\vec{x}$$
 V8 $(c+d)\vec{x}=c\vec{x}+d\vec{x}.$
++V8 $$(c+d)\vec{x}=c\vec{x}+d\vec{x}.$$
 V9 $c(\vec{x}+\vec{y})=c\vec{x}+c\vec{y}.$
++V9 $$c(\vec{x}+\vec{y})=c\vec{x}+c\vec{y}.$$
 V10 $1\vec{x}=\vec{x}$
++V10 $$1\vec{x}=\vec{x}$$
 
 ## 1.2 Bases
 
