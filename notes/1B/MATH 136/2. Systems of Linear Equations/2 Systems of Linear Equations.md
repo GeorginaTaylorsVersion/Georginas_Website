@@ -8,12 +8,12 @@ The constants $a_{1},...,a_{n},b$ are called the coefficients of the equation an
 
 **e.g.** These are linear equations:
 $x_{1}+x_{2}+\cdot\cdot\cdot+x_{n}=n$
-$7x_{1}-3x_{3}=x_{2}$ 
+$7x_{1}-3x_{3}=x_{2}$ 
 $x_{2}+10x_{8}=4$
 These are not linear equations:
- $x_{1}x_{2}=9$ 
+ $x_{1}x_{2}=9$ 
 $x_{1}^{2}+\sqrt{2}x_{2}=0$
- $x_{1}+2x_{2}+\cos(x_{3})=-6$
+ $x_{1}+2x_{2}+\cos(x_{3})=-6$
 
 A set of m linear equations in the same variables $x_{1},...,x_{n}$ is called a system of m linear equations in n variables.
 A general system of m linear equations in n variables has the form
@@ -23,7 +23,7 @@ Observe that the coefficient $a_{ij}$ represents the coefficient of $x_{j}$ in t
 A vector $\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix}$ is called a solution of a system of m linear equations in n variables if all m equations are satisfied when we set $x_{i}=s_{i}$ for $1\le i\le n$. The set of all solutions of a system of linear equations is called the solution set of the system.
 
 **Example 2:** The vector $\begin{bmatrix}1\\ -2\\ 1\end{bmatrix}$ is a solution to the system of 2 equations in 3 variables
-$x_{1}+x_{2}+x_{3}=0$ 
+$x_{1}+x_{2}+x_{3}=0$ 
 $4x_{1}+2x_{2}+x_{3}=1$
 
 If a system of linear equations has at least one solution, then it is said to be consistent.
@@ -40,12 +40,12 @@ $x_{1}+2x_{2}+3x_{3}=1$
 If the system of linear equations
 $$ \begin{matrix} a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}=b_{1}\\ a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}=b_{2}\\ \vdots\\ a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{mn}x_{n}=b_{m} \end{matrix} $$
 has two distinct solutions
- $\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix} \quad \text{and} \quad \vec{t}=\begin{bmatrix}t_{1}\\ \vdots\\ t_{n}\end{bmatrix}$
+ $\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix} \quad \text{and} \quad \vec{t}=\begin{bmatrix}t_{1}\\ \vdots\\ t_{n}\end{bmatrix}$
 then for every $c\in\mathbb{R}$, $\vec{s}+c(\vec{s}-\vec{t})$ is a solution, and furthermore these solutions are all distinct.
 
 **Activity 1:** Given a system of 3 equations in two variables, what are the possible number of solutions?
 
-![Screenshot 2025-06-05 at 5.41.34 pm.png](/notes/1B/MATH%20136/2-systems-of-linear-equations/2-systems-of-linear-equations-1bf115b71c1180109334fa2fb144f28e/screenshot-2025-06-05-5-41-34-pm.png)
+![Screenshot 2025-06-05 at 5.41.34 pm.png](/notes/1B/MATH%20136/2-systems-of-linear-equations/2-systems-of-linear-equations-1bf115b71c1180109334fa2fb144f28e/Screenshot_2025-06-05_at_5.41.34_pm.png)
 
 ## 2.2 Solving Systems of Linear Equations
 
