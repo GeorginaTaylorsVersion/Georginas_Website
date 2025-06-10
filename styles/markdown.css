@@ -30,31 +30,16 @@
 
 /* Creative Python Code Box Styling */
 .markdown-content .python-code-box {
-  background: linear-gradient(135deg, #e0f7fa 0%, #bbdefb 100%); /* Blueish gradient */
-  border: 1px solid #90caf9; /* Light blue border */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  padding: 1.2rem;
-  border-radius: 0.75rem;
-  margin: 2rem 0;
-  position: relative;
+  background-color: #e6f7ff; /* A simple light blue highlight */
+  padding: 1rem; /* Adjust padding as needed */
+  border-radius: 0.5rem; /* Keep rounded corners */
+  margin: 1.5rem 0; /* Keep consistent margin with other code blocks */
   overflow-x: auto; /* Ensure horizontal scroll for long lines */
 }
 
-.markdown-content .python-code-box::before {
-  content: 'Python Code';
-  position: absolute;
-  top: -0.75rem;
-  left: 1rem;
-  background-color: #64b5f6; /* Darker blue for the label */
-  color: white;
-  padding: 0.2rem 0.6rem;
-  border-radius: 0.4rem;
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
 .markdown-content .python-code-box code {
-  color: #1a237e; /* Darker blue for code text */
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace; /* Keep consistent font stack */
+  color: #004d40; /* Dark green/teal for code text against light blue background */
   background-color: transparent; /* Ensure background doesn't interfere */
 }
 
