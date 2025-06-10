@@ -232,8 +232,7 @@ Since $g_{\lambda}=1 < a_{\lambda}=2$, A is not diagonalizable.
 Show that $A=\begin{bmatrix}0&-1\\ 1&0\end{bmatrix}$ is not diagonalizable over $\mathbb{R}$.
 $C_{A}(\lambda)=\begin{vmatrix}-\lambda&-1\\ 1&-\lambda\end{vmatrix}=\lambda^{2}+1=0$.
 $\lambda^{2}=-1 \Rightarrow \lambda=\pm i$.
-Since eigenvalues are not real numbers, A is not diagonalizable over $\mathbb{R}$.
- $P^{-1}AP=\begin{bmatrix}i&0\\0&-i\end{bmatrix}$ complex diagonalization.
+Since eigenvalues are not real numbers, A is not diagonalizable over $\mathbb{R}$.  $P^{-1}AP=\begin{bmatrix}i&0\\0&-i\end{bmatrix}$ complex diagonalization.
 
 **Theorem 6.3.13**
 If $\lambda_{1},...,\lambda_{n}$ are all the n eigenvalues of an $n\times n$ matrix A (repeated according to algebraic multiplicity), then

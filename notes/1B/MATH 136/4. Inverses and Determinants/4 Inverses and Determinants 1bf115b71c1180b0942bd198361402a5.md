@@ -166,13 +166,13 @@ Compute the determinant for the $5\times5$ identity matrix.
 det $I_5 = a_{11}C_{11} + a_{21}C_{21} + \dots + a_{51}C_{51}$
 $= 1 \cdot C_{11} + 0 \cdot C_{21} + \dots + 0 \cdot C_{51}$
 $= C_{11} = (-1)^{1+1} \text{det } I_4 = \text{det } I_4$. Repeating this, det $I_5 = \text{det } I_1 = 1$.)
-$(1)(-1)^{1+1} \begin{vmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{vmatrix}$.
+$$ (1)(-1)^{1+1} \begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{bmatrix} $$
 
 Compute the determinant for $A=\begin{bmatrix}0&1&0&1\\ 1&0&1&0\\ 0&1&0&2\\ 1&0&2&0\end{bmatrix}$.
 Using first column expansion:
 det A = $0 \cdot C_{11} + 1 \cdot C_{21} + 0 \cdot C_{31} + 1 \cdot C_{41}$
-$C_{21} = (-1)^{2+1} \begin{vmatrix}1&0&1\\1&0&2\\0&2&0\end{vmatrix} = -1 [1(0-4) - 0(...) + 1(2-0)] = -1[-4+2] = -1[-2]=2$.
-$C_{41} = (-1)^{4+1} \begin{vmatrix}1&0&1\\0&1&0\\1&0&2\end{vmatrix} = -1 [1(2-0) - 0(...) + 1(0-1)] = -1[2-1] = -1[1]=-1$.
+$C_{21} = (-1)^{2+1} \begin{bmatrix}1&0&1\\1&0&2\\0&2&0\end{bmatrix} = -1 [1(0-4) - 0(...) + 1(2-0)] = -1[-4+2] = -1[-2]=2$.
+$C_{41} = (-1)^{4+1} \begin{bmatrix}1&0&1\\0&1&0\\1&0&2\end{bmatrix} = -1 [1(2-0) - 0(...) + 1(0-1)] = -1[2-1] = -1[1]=-1$.
 det A = $1(2) + 1(-1) = 2-1=1$.
 
 **Theorem 4.3.11**
@@ -184,9 +184,9 @@ called the cofactor expansion across the j-th column.
 
 An $m\times n$ matrix U is said to be upper triangular if $u_{ij}=0$ whenever $i>j$.
 An $m\times n$ matrix L is said to be lower triangular if $l_{ij}=0$ whenever $i<j$. .
-$\begin{bmatrix}1&2\\ 0&3\end{bmatrix}$ is upper triangular.
-$\begin{bmatrix}1&0&0\\ 2&3&0\\ 4&5&6\end{bmatrix}$ is lower triangular.
-$O_{m\times n}$ and $I_{n}$ are both lower and upper triangular.
+$$ \begin{bmatrix}1&2\\ 0&3\end{bmatrix} $$ is upper triangular.
+$$ \begin{bmatrix}1&0&0\\ 2&3&0\\ 4&5&6\end{bmatrix} $$ is lower triangular.
+$$ O_{m\times n} $$ and $$ I_{n} $$ are both lower and upper triangular.
 
 **Theorem 4.3.16** If an $n\times n$ matrix A is upper triangular or lower triangular, then
 $$ \text{det } A=a_{11}a_{22}\cdot\cdot\cdot a_{nn}. $$
@@ -213,7 +213,7 @@ What is det B?
 Answer: 3. (This matches my step-by-step assuming Theorem 4.3.19 had a typo and is indeed det B = -det A for swap.)
 
 Compute the determinant of $A=\begin{bmatrix}1&2&-1&3\\ 0&7&5&4\\ 2&-3&-7&2\\ 0&9&3&6\end{bmatrix}$.
-$R_3 \rightarrow R_3 - 2R_1$: $\begin{vmatrix}1&2&-1&3\\ 0&7&5&4\\ 0&-7&-5&-4\\ 0&9&3&6\end{vmatrix}$.
+$R_3 \rightarrow R_3 - 2R_1$: $$ \begin{bmatrix}1&2&-1&3\\ 0&7&5&4\\ 0&-7&-5&-4\\ 0&9&3&6\end{bmatrix} $$
 Since Row 2 = -1 * Row 3, the rows are linearly dependent (or Row 2 + Row 3 = Row of zeros if expanded that way after an operation).
 $R_2 = -R_3 \rightarrow \text{two identical rows}$. This implies det A = 0.
 
@@ -258,8 +258,8 @@ $C_{23}=(-1)(0-(-4))=-4$
 $C_{31}=(1)(2-3)=-1$
 $C_{32}=(-1)(-1-0)=1$
 $C_{33}=(1)(1-0)=1$
-cof(A) = $\begin{bmatrix}1&-2&-2\\ 2&-5&-4\\ -1&1&1\end{bmatrix}$.
-adj A = $(cof A)^T = \begin{bmatrix}1&2&-1\\ -2&-5&1\\ -2&-4&1\end{bmatrix}$.
+cof(A) = $$ \begin{bmatrix}1&-2&-2\\ 2&-5&-4\\ -1&1&1\end{bmatrix} $$
+adj A = $(cof A)^T = $$ \begin{bmatrix}1&2&-1\\ -2&-5&1\\ -2&-4&1\end{bmatrix} $$
 det A (expanding along first column): $1 C_{11} + 0 C_{21} + 2 C_{31} = 1(1) + 2(-1) = 1-2 = -1$.
 (calculation: det $A=1(-1)^2(1) + 2(-1)^4(2-3) = 1+2(-1)=-1$. This expansion is unusual, seems like value substitution).
 $A^{-1}=\frac{1}{-1}\begin{bmatrix}1&2&-1\\ -2&-5&1\\ -2&-4&1\end{bmatrix} = \begin{bmatrix}-1&-2&1\\ 2&5&-1\\ 2&4&-1\end{bmatrix}$.
@@ -286,7 +286,7 @@ det A (from previous similar matrix, which was $A=\begin{bmatrix}1&-2&3\\ 0&1&-1
 $A_{2}=\begin{bmatrix}1&0&3\\ 0&3&-1\\ 2&1&1\end{bmatrix}$.
 det($A_{2}$): Expand by first column: $1 \begin{vmatrix}3&-1\\1&1\end{vmatrix} - 0 \begin{vmatrix}0&3\\1&1\end{vmatrix} + 2 \begin{vmatrix}0&3\\3&-1\end{vmatrix}$
 $= 1(3 - (-1)) + 2(0 - 9) = 1(4) + 2(-9) = 4 - 18 = -14$.
-(calculation: det($A_{2}$)=$(1)(-1)^{2}(3+1)+2(-1)^{4}(-9) = 4-18=-14$. This is $1 C_{11}(A_2) + 2 C_{31}(A_2)$ an expansion along 1st column for $A_2$ where $b_2$ is in col 2, not $b_1$. det $A_2$ for $x_2$ is $\begin{vmatrix}1&0&3 \\ 0&3&-1 \\ 2&1&1 \end{vmatrix}$.
+(calculation: det($A_{2}$)=$(1)(-1)^{2}(3+1)+2(-1)^{4}(-9) = 4-18=-14$. This is $1 C_{11}(A_2) + 2 C_{31}(A_2)$ an expansion along 1st column for $A_2$ where $b_2$ is in col 2, not $b_1$. det $A_2$ for $x_2$ is $$ \begin{vmatrix}1&0&3 \\ 0&3&-1 \\ 2&1&1 \end{vmatrix} $$.
 $x_{2}=\frac{\text{det }A_{2}}{\text{det }A}=\frac{-14}{-1}=14$.
 
 If $\vec{u}$ and $\vec{v}$ are two non-zero vectors in $\mathbb{R}^{2}$, the parallelogram formed by these vectors has area given by

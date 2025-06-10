@@ -1,17 +1,17 @@
 # Module 9: Additional Options for Organizing Data
 
-**Keys** describe something basic and unique about an object
+**Keys** describe something basic and unique about an object
 
-**Values** describe a property of a key
+**Values** describe a property of a key
 
-**Dictionaries** are collections of these key-value pairs
+**Dictionaries** are collections of these key-value pairs
 
-In Python, we store these in dictionaries which we document by writing **`(dictof key_type value_type)`**. As examples:
+In Python, we store these in dictionaries which we document by writing **`(dictof key_type value_type)`**. As examples:
 
-- `student_id:major` and `social_insurance_number:name` pairs could be stored in a `(dictof Nat Str)`.
-- `dna_signature:organism_type` and `word:definition` pairs could be stored in a `(dictof Str Str)`.
+- `student_id:major` and `social_insurance_number:name` pairs could be stored in a `(dictof Nat Str)`.
+- `dna_signature:organism_type` and `word:definition` pairs could be stored in a `(dictof Str Str)`.
 
-To initialize a dictionary, we can use either `d = {}` or we can initialize some pairs in `d` using the syntax `d = {key1:value1, ... , keyn:valuen}`
+To initialize a dictionary, we can use either `d = {}` or we can initialize some pairs in `d` using the syntax `d = {key1:value1, ... , keyn:valuen}`
 
 ```python
 design recipe: (dictof key_type value_type)

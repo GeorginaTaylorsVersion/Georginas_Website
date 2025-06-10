@@ -4,7 +4,7 @@ Accumulative Approach to Recursion (structural recursion with an accumulator)
 
 - A helper function is required
     - helper function requires at least two parameters
-    - One to keep track of what has been done on previous recursive calls (the “accumulator”)
+    - One to keep track of what has been done on previous recursive calls (the "accumulator")
     - One to keep track of what remaining to be processed (used to identify the base or stopping cases)
 - The main function is a wrapper function that sets the initial value of the accumulator(s).
 - The main function may also handle special cases.
@@ -82,7 +82,7 @@ def gcd(m, n):
 
  e.g. 
 
-Write the body of a function `mult_table(n)` that consumes a natural number `n` and returns the `n+1` by `n+1` multiplication table (where each entry in the inner list is equal to the product of which list it is and the inner list position number, or in other words, the product of the row and column numbers). Do not use abstract list functions (you solved this problem with abstract list functions in a previous module). Use accumulative recursion.
+Write the body of a function `mult_table(n)` that consumes a natural number `n` and returns the `n+1` by `n+1` multiplication table (where each entry in the inner list is equal to the product of which list it is and the inner list position number, or in other words, the product of the row and column numbers). Do not use abstract list functions (you solved this problem with abstract list functions in a previous module). Use accumulative recursion.
 
 ```python
 def build_row_acc(row_num, col_so_far, n, acc):
@@ -125,16 +125,16 @@ def mult_table(n):
 
 ### **Reversing a List: Sample Trace**
 
-If you coded the above problem correctly, the following gives a trace of how your code likely worked assuming your accumulative helper function is called `build_reverse`:
+If you coded the above problem correctly, the following gives a trace of how your code likely worked assuming your accumulative helper function is called `build_reverse`:
 
 ```
 reverse([1,2,3,4])
-=> build_reverse([1, 2, 3, 4], [])
-=> build_reverse([2, 3, 4], [1])
-=> build_reverse([3, 4], [2, 1])
-=> build_reverse([4], [3, 2, 1])
-=> build_reverse([], [4, 3, 2, 1])
-=> [4, 3, 2, 1]
+=> build_reverse([1, 2, 3, 4], [])
+=> build_reverse([2, 3, 4], [1])
+=> build_reverse([3, 4], [2, 1])
+=> build_reverse([4], [3, 2, 1])
+=> build_reverse([], [4, 3, 2, 1])
+=> [4, 3, 2, 1]
 ```
 
 ```python

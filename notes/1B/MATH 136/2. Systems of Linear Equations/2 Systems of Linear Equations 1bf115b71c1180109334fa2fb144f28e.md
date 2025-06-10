@@ -3,28 +3,27 @@
 ## 2.1 Basic Terminology
 
 An equation in n variables (unknowns) $x_{1},...,x_{n}$ that can be written in the form
-$a_{1}x_{1}+\cdot\cdot\cdot+a_{n}x_{n}=b$ 
-where $a_{1},...,a_{n},b$ are constants is called a linear equation.
+$a_{1}x_{1}+\cdot\cdot\cdot+a_{n}x_{n}=b$ where $a_{1},...,a_{n},b$ are constants is called a linear equation.
 The constants $a_{1},...,a_{n},b$ are called the coefficients of the equation and b is called the constant term.
 
 **e.g.** These are linear equations:
 $x_{1}+x_{2}+\cdot\cdot\cdot+x_{n}=n$
-$7x_{1}-3x_{3}=x_{2}$ 
+$7x_{1}-3x_{3}=x_{2}$
 $x_{2}+10x_{8}=4$
 These are not linear equations:
- $x_{1}x_{2}=9$ 
+$x_{1}x_{2}=9$
 $x_{1}^{2}+\sqrt{2}x_{2}=0$
- $x_{1}+2x_{2}+\cos(x_{3})=-6$
+$x_{1}+2x_{2}+\cos(x_{3})=-6$
 
 A set of m linear equations in the same variables $x_{1},...,x_{n}$ is called a system of m linear equations in n variables.
 A general system of m linear equations in n variables has the form
-$\begin{matrix} a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}=b_{1}\\ a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}=b_{2}\\ \vdots\\ a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{mn}x_{n}=b_{m} \end{matrix}$
+$$ \begin{matrix} a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}=b_{1}\\ a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}=b_{2}\\ \vdots\\ a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{mn}x_{n}=b_{m} \end{matrix} $$
 Observe that the coefficient $a_{ij}$ represents the coefficient of $x_{j}$ in the i-th equation.
 
 A vector $\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix}$ is called a solution of a system of m linear equations in n variables if all m equations are satisfied when we set $x_{i}=s_{i}$ for $1\le i\le n$. The set of all solutions of a system of linear equations is called the solution set of the system.
 
 **Example 2:** The vector $\begin{bmatrix}1\\ -2\\ 1\end{bmatrix}$ is a solution to the system of 2 equations in 3 variables
-$x_{1}+x_{2}+x_{3}=0$ 
+$x_{1}+x_{2}+x_{3}=0$
 $4x_{1}+2x_{2}+x_{3}=1$
 
 If a system of linear equations has at least one solution, then it is said to be consistent.
@@ -39,14 +38,14 @@ $x_{1}+2x_{2}+3x_{3}=1$
 
 **Theorem 2.1.11**
 If the system of linear equations
-$\begin{matrix} a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}=b_{1}\\ a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}=b_{2}\\ \vdots\\ a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{mn}x_{n}=b_{m} \end{matrix}$
+$$ \begin{matrix} a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}=b_{1}\\ a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}=b_{2}\\ \vdots\\ a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{mn}x_{n}=b_{m} \end{matrix} $$
 has two distinct solutions
- $\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix} \quad \text{and} \quad \vec{t}=\begin{bmatrix}t_{1}\\ \vdots\\ t_{n}\end{bmatrix}$
+$\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix} \quad \text{and} \quad \vec{t}=\begin{bmatrix}t_{1}\\ \vdots\\ t_{n}\end{bmatrix}$
 then for every $c\in\mathbb{R}$, $\vec{s}+c(\vec{s}-\vec{t})$ is a solution, and furthermore these solutions are all distinct.
 
 **Activity 1:** Given a system of 3 equations in two variables, what are the possible number of solutions?
 
-![Screenshot 2025-06-05 at 5.41.34 pm.png](2%20Systems%20of%20Linear%20Equations%201bf115b71c1180109334fa2fb144f28e/Screenshot_2025-06-05_at_5.41.34_pm.png)
+![Screenshot 2025-06-05 at 5.41.34 pm.png](2%20Systems%20of%20Linear%20Equations%201bf115b71c1180109334fa2fb144f28e/Screenshot_2025-06-05_at_5.41.34_pm.png)
 
 ## 2.2 Solving Systems of Linear Equations
 
@@ -145,14 +144,14 @@ To row reduce a non-zero matrix into RREF, we
 $$ 2x_{1}+x_{2}-x_{3}=3 $$
 $$ -x_{1}+2x_{2}+x_{3}=-5 $$
 $$ x_{1}-x_{2}+2x_{3}=-2 $$
- $\left[\begin{smallmatrix}2&1&-1&3\\ -1&2&1&-5\\ 1&-1&2&-2\end{smallmatrix}\right]$
+$$ \left[\begin{array}{@{}ccc|c@{}} 2&1&-1&3\\ -1&2&1&-5\\ 1&-1&2&-2 \end{array}\right] $$
 **Answer:**
-$$ \left[\begin{array}{@{}ccc|c@{}} 1&0&0&1\\ 0&1&0&-1\\ 0&0&1&-2 \end{array}\right] $$
+$$ \left[\begin{array}{@{}ccc|c@{}} 1&0&0&2\\ 0&1&0&-1\\ 0&0&1&-2 \end{array}\right] $$
 
 **Activity 2:** Apply the Gauss-Jordan Elimination algorithm to the augmented matrix below to achieve RREF.
-$$ \left[\begin{array}{@{}ccc|c@{}} 1&-1&2&4\\ 2&1&-3&1\\ 4&5&-13&-5 \end{array}\right] $$
+$$ \left[\begin{array}{@{}ccc|c@{}} 1&-1&2&4\\ 2&1&-3&-2\\ 1&-2&4&-5 \end{array}\right] $$
 **Answer:**
-$$ \left[\begin{array}{@{}ccc|c@{}} 1&0&-1/3&5/3\\ 0&1&-7/3&-7/3\\ 0&0&0&0 \end{array}\right] $$
+$$ \left[\begin{array}{@{}ccc|c@{}} 1&0&-1&0\\ 0&1&-2&0\\ 0&0&0&0 \end{array}\right] $$
 
 Let R be the RREF of a coefficient matrix of a consistent system of linear equations.
 If the j-th column of R does not contain a leading one, then we call $x_{j}$ a free variable of the system of linear equations.

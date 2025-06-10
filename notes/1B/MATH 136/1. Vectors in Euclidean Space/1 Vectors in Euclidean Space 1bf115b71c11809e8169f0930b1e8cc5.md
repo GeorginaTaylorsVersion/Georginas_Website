@@ -4,16 +4,16 @@
 
 The set $\mathbb{R}^{n}$ is defined by $\mathbb{R}^{n}=\{\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}:x_{1},...,x_{n}\in\mathbb{R}\}$ An element $\vec{x}\in\mathbb{R}^{n}$ is called a vector.
 
-Two vectors $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}\in\mathbb{R}^{n}$ and $\vec{y}=\begin{bmatrix}y_{1}\\ \vdots\\ y_{m}\end{bmatrix}\in\mathbb{R}^{m}$ are said to be equal if $n=m$ and $x_{i}=y_{i}$ for $1\le i\le n$.
+Two vectors $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}\in\mathbb{R}^{n}$ and $\vec{y}=\begin{bmatrix}y_{1}\\ \vdots\\ y_{m}\end{bmatrix}\in\mathbb{R}^{m}$ are said to be equal if $n=m$ and $x_{i}=y_{i}$ for $1\le i\le n$.
 
 **Example 1:** For $n=2$, we have the set $\mathbb{R}^{2}$, for which a few elements are
-$\begin{bmatrix}1\\ 2\end{bmatrix},\begin{bmatrix}\pi\\ 1.2\end{bmatrix} \text{ and } \begin{bmatrix}0\\ -10\end{bmatrix}$ 
+$\begin{bmatrix}1\\ 2\end{bmatrix},\begin{bmatrix}\pi\\ 1.2\end{bmatrix} \text{ and } \begin{bmatrix}0\\ -10\end{bmatrix}$ 
 
 The set $\mathbb{R}^{n}$ just defined is also known as the n-dimensional Euclidean space, which you may have already learned as the set of points $(x_{1},...,x_{n})$.
 Geometrically, we will often represent the vector $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}$ as an arrow with its tail at the origin and its head at its corresponding point, $(x_{1},...,x_{n})$.
 
-Let $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}, \quad \vec{y}=\begin{bmatrix}y_{1}\\ \vdots\\ y_{n}\end{bmatrix}\in\mathbb{R}^{n}$ and let $c\in\mathbb{R}$ (called a scalar).
-We define addition, $\vec{x}+\vec{y}$, and scalar multiplication, $c\vec{x}$, by  $\vec{x}+\vec{y}=\begin{bmatrix}x_{1}+y_{1}\\ \vdots\\ x_{n}+y_{n}\end{bmatrix} \quad \text{and} \quad c\vec{x}=\begin{bmatrix}cx_{1}\\ \vdots\\ cx_{n}\end{bmatrix}$.
+Let $\vec{x}=\begin{bmatrix}x_{1}\\ \vdots\\ x_{n}\end{bmatrix}, \quad \vec{y}=\begin{bmatrix}y_{1}\\ \vdots\\ y_{n}\end{bmatrix}\in\mathbb{R}^{n}$ and let $c\in\mathbb{R}$ (called a scalar).
+We define addition, $\vec{x}+\vec{y}$, and scalar multiplication, $c\vec{x}$, by  $\vec{x}+\vec{y}=\begin{bmatrix}x_{1}+y_{1}\\ \vdots\\ x_{n}+y_{n}\end{bmatrix} \quad \text{and} \quad c\vec{x}=\begin{bmatrix}cx_{1}\\ \vdots\\ cx_{n}\end{bmatrix}$.
 
 Subtraction of vectors works as expected, but it is a consequence of addition and scalar multiplication.
 That is, $\vec{x}-\vec{y}=\vec{x}+(-1)\vec{y}$.
@@ -32,11 +32,11 @@ That is, $\vec{x}-\vec{y}=\vec{x}+(-1)\vec{y}$.
 
 For $\vec{v}{1},...,\vec{v}{k}\in\mathbb{R}^{n}$ and $c_{1},...,c_{k}\in\mathbb{R}$ we call the expression $c_{1}\vec{v}_{1}+\cdot\cdot\cdot+c_{k}\vec{v}_{k}$ a linear combination of $\vec{v}_{1},...,\vec{v}_{k}$.
 
-e.g. Compute the resulting vector from the linear combination $2\vec{x}+3\vec{y}$, where  $\vec{x}=\begin{bmatrix}2\\ 1\end{bmatrix} \quad \text{and} \quad \vec{y}=\begin{bmatrix}0\\ 1\end{bmatrix}$ Show the result geometrically.
+e.g. Compute the resulting vector from the linear combination $2\vec{x}+3\vec{y}$, where  $\vec{x}=\begin{bmatrix}2\\ 1\end{bmatrix} \quad \text{and} \quad \vec{y}=\begin{bmatrix}0\\ 1\end{bmatrix}$ Show the result geometrically.
 
 **Answer:** The resulting vector is $2\vec{x}+3\vec{y}=\begin{bmatrix}4\\ 5\end{bmatrix}$. Together, the origin and the corresponding points for $\vec{x}$, $\vec{y}$ and $2\vec{x}+3\vec{y}$ form a parallelogram, where $2\vec{x}+3\vec{y}$ is the diagonal.
 
-![Screenshot 2025-06-05 at 5.21.51 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.21.51_pm.png)
+![Screenshot 2025-06-05 at 5.21.51 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.21.51_pm.png)
 
 **Theorem 1.1.7**
 If $\vec{x}, \vec{y}, \vec{w}\in\mathbb{R}^{n}$ and c, $d\in\mathbb{R}$, then
@@ -111,7 +111,7 @@ Equivalently, the vector equation above represents the set $ \{\vec{x}\in\mathbb
 
 **Example 1:** The vector equation $\vec{x}=c_{1}\vec{v}+\vec{b}$ with $c_{1}\in\mathbb{R}$, $\vec{v}=\begin{bmatrix}1\\ 1\end{bmatrix}$ and $\vec{b}=\begin{bmatrix}1\\ -2\end{bmatrix}$ describes the line:
 
-![Screenshot 2025-06-05 at 5.29.25 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.29.25_pm.png)
+![Screenshot 2025-06-05 at 5.29.25 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.29.25_pm.png)
 
 Let $\vec{v}*{1}, \vec{v}*{2}, \vec{b}\in\mathbb{R}^{n}$ with $\{\vec{v}*{1},\vec{v}*{2}\}$ being a linearly independent set.
 We call the set with vector equation $ \vec{x}=c_{1}\vec{v}*{1}+c*{2}\vec{v}*{2}+\vec{b}, \quad c*{1},c_{2}\in\mathbb{R} $ a plane in $\mathbb{R}^{n}$ through $\vec{b}$, with directional vectors $\vec{v}*{1}$ and $\vec{v}*{2}$.
@@ -121,7 +121,7 @@ The set with vector equation $ \vec{x}=c_{1}\vec{v}*{1}+\cdot\cdot\cdot+c*{n-1}\
 
 **e.g.** The plane $\vec{x}=c_{1}\begin{bmatrix}0\\ 2\\ -1\end{bmatrix}+c_{2}\begin{bmatrix}2\\ 0\\ -1\end{bmatrix}+\begin{bmatrix}1\\ 1\\ 1\end{bmatrix}$, $c_{1}, c_{2}\in\mathbb{R}$, in $\mathbb{R}^{3}$, is represented by:
 
-![Screenshot 2025-06-05 at 5.30.55 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.30.55_pm.png)
+![Screenshot 2025-06-05 at 5.30.55 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.30.55_pm.png)
 
 ## 1.3 Subspaces
 
@@ -214,7 +214,7 @@ We do not define an angle between the zero vector and any other vector.
 
 **Representation in 2D**
 
-![Screenshot 2025-06-05 at 5.35.16 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.35.16_pm.png)
+![Screenshot 2025-06-05 at 5.35.16 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.35.16_pm.png)
 
 **Example 2:** Determine the angle between the vectors $\vec{v}=\begin{bmatrix}0\\ 1\\ 1\end{bmatrix}$ and $\vec{w}=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}.$
 **Answer:** The definition of angle states that
@@ -291,12 +291,12 @@ $4(2) - 14(3) - 2(3) = 8 - 42 - 6 = 8 - 48 = -40$. So, $4x_1-14x_2-2x_3=-40$. Co
 Let $\vec{u}, \vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}.$ The projection of $\vec{u}$ onto $\vec{v}$ is defined by
 $$ proj_{\vec{v}}(\vec{u})=\frac{\vec{u}\cdot\vec{v}}{||\vec{v}||^{2}}\vec{v}. $$
 
-![Screenshot 2025-06-05 at 5.38.17 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.17_pm.png)
+![Screenshot 2025-06-05 at 5.38.17 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.17_pm.png)
 
 Let $\vec{u},\vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}.$ The perpendicular of $\vec{u}$ onto $\vec{v}$ is defined by
 $$ perp_{\vec{v}}(\vec{u})=\vec{u}-proj_{\vec{v}}(\vec{u}) $$
 
-![Screenshot 2025-06-05 at 5.38.35 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.35_pm.png)
+![Screenshot 2025-06-05 at 5.38.35 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.35_pm.png)
 
 **Example 1:** Let $\vec{u}=\begin{bmatrix}-1\\ -3\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}1\\ 1\end{bmatrix}$. Find $proj_{\vec{v}}(\vec{u})$ and $perp_{\vec{v}}(\vec{u})$.
 **Answer:**

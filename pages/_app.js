@@ -1,13 +1,24 @@
 import '../styles/globals.css';
 import Header from '../components/Header';
+import { useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  // Match notes pages: /[term]/[course]/units/[unit]/notes/[note]
+  const isNotesPage = /^\/[\w%\-.]+\/[\w%\-.]+\/units\/[\w%\-.]+\/notes\/[\w%\-.]+$/.test(router.asPath);
+
   return (
     <>
       <Header />
-      <div className="main-content-padding">
+      {isNotesPage ? (
+        <div className="main-content-padding">
+          <div className="content-rectangle">
+            <Component {...pageProps} />
+          </div>
+        </div>
+      ) : (
         <Component {...pageProps} />
-      </div>
+      )}
       <footer>
         <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
       </footer>

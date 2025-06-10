@@ -1,18 +1,49 @@
 import Link from 'next/link';
-import { getTerms, getCourses, getUnits } from '../../lib/notes';
+import { getTerms, getCourses, getUnits, getNotes } from '../../../lib/notes';
 
-export default function CoursePage({ term, course, units }) {
+function pickIconForUnit(unit) {
+  // Simple icon picker based on keywords or index
+  const icons = [
+    '📚', '🧮', '📐', '📊', '🔢', '📝', '💡', '🔬', '💻', '📈', '🧑‍🏫', '🔎'
+  ];
+  // Try to pick based on unit name keywords
+  if (/vector/i.test(unit)) return '🧭';
+  if (/matrix|matrices/i.test(unit)) return '🧮';
+  if (/determinant/i.test(unit)) return '📐';
+  if (/dimension/i.test(unit)) return '📏';
+  if (/eigen/i.test(unit)) return '🔬';
+  if (/system/i.test(unit)) return '🔗';
+  if (/integration|integral/i.test(unit)) return '∫';
+  if (/series/i.test(unit)) return '🔢';
+  if (/equation/i.test(unit)) return '📝';
+  if (/file/i.test(unit)) return '📁';
+  if (/recursion/i.test(unit)) return '🔁';
+  if (/list/i.test(unit)) return '📋';
+  if (/string/i.test(unit)) return '🔤';
+  if (/sort|search/i.test(unit)) return '🔎';
+  // Fallback: pick by index
+  return icons[unit.length % icons.length];
+}
+
+export default function CoursePage({ term, course, unitsWithFirstNotes }) {
   return (
-    <div>
+    <div className="course-contents">
       <h1>{term} - {course}</h1>
-      <h2>Units</h2>
-      <ul>
-        {units.map(unit => (
-          <li key={unit}>
-            <Link href={`/${term}/${course}/units/${unit}`}>{unit}</Link>
-          </li>
+      <div className="unit-grid">
+        {unitsWithFirstNotes.map(({ unit, firstNote }) => (
+          <Link
+            key={unit}
+            href={firstNote
+              ? `/${term}/${course}/units/${unit}/notes/${firstNote}`
+              : `/${term}/${course}/units/${unit}`
+            }
+            className="unit-card"
+          >
+            <div className="unit-icon">{pickIconForUnit(unit)}</div>
+            <div className="unit-title">{unit}</div>
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
@@ -21,7 +52,6 @@ export async function getStaticPaths() {
   const terms = getTerms();
   const paths = terms.flatMap(term => {
     const courses = getCourses(term);
-    // We don't need to generate paths for units here, just for the course pages themselves
     return courses.map(course => ({ params: { term, course } }));
   });
 
@@ -30,5 +60,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const units = getUnits(params.term, params.course);
-  return { props: { term: params.term, course: params.course, units } };
+  const unitsWithFirstNotes = units.map(unit => {
+    const notes = getNotes(params.term, params.course, unit);
+    return { unit, firstNote: notes[0] || null };
+  });
+  return { props: { term: params.term, course: params.course, unitsWithFirstNotes } };
 } 

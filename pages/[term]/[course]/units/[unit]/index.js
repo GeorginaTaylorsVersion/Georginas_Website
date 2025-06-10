@@ -1,20 +1,18 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { getTerms, getCourses, getUnits, getNotes } from '../../../../../lib/notes'; // Updated import path
 
 export default function UnitPage({ term, course, unit, notes }) {
-  return (
-    <div>
-      <h1>{term} - {course} - {unit}</h1>
-      <h2>Notes</h2>
-      <ul>
-        {notes.map(note => (
-          <li key={note}>
-            <Link href={`/${term}/${course}/units/${unit}/notes/${note}`}>{note}</Link> {/* Updated link path */}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    if (notes && notes.length > 0) {
+      router.replace(`/${term}/${course}/units/${unit}/notes/${notes[0]}`);
+    }
+  }, [notes, term, course, unit, router]);
+
+  return <div>Loading note...</div>;
 }
 
 export async function getStaticPaths() {
