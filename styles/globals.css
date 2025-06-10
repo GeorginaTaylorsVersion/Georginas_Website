@@ -1,6 +1,9 @@
 :root {
-  /* Existing variables */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #333;
   --light-bg: #fff5f7;
+  --white: #ffffff;
   --pink-aura: #ffd6e0;
 }
 
@@ -24,6 +27,10 @@ ul {
 .main-content-padding {
   padding-top: 120px;
   margin-top: 0;
+}
+
+.homepage-content-padding {
+  padding-top: 120px; /* Adjust this value as needed based on your header's height */
 }
 
 .content-rectangle {
