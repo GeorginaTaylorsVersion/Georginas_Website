@@ -9,6 +9,7 @@ import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import rehypePrependImageBasePath from '../../../../../../lib/rehype-prepend-image-base-path.mjs';
+import remarkPythonCodeBox from '../../../../../../lib/remark-python-code-box.mjs';
 
 export default function NotePage({ term, course, unit, note, noteContent, noteData, unitTitle }) {
   useEffect(() => {
@@ -70,6 +71,7 @@ export async function getStaticProps({ params }) {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkMath)
+    .use(remarkPythonCodeBox)
     .use(remarkRehype)
     .use(rehypeKatex)
     .use(rehypePrependImageBasePath, { term, course, unit })
