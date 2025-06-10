@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedTermsData } from '../lib/terms';
-import Layout from '../components/layout';
-import Date from '../components/date';
 
 export async function getStaticProps() {
   const allTermsData = getSortedTermsData();
@@ -15,7 +13,7 @@ export async function getStaticProps() {
 
 export default function Home({ allTermsData }) {
   return (
-    <Layout home>
+    <>
       <Head>
         <title>Georgina&apos;s Notes</title>
       </Head>
@@ -34,7 +32,7 @@ export default function Home({ allTermsData }) {
               </Link>
               <br />
               <small className="text-gray-500">
-                <Date dateString={date} />
+                {date}
                 <br />
                 {courses.map((course, index) => (
                   <span key={course} className="mr-2">
@@ -47,6 +45,6 @@ export default function Home({ allTermsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </>
   );
 } 
