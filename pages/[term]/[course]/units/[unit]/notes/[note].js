@@ -77,7 +77,6 @@ export async function getStaticProps({ params }) {
   const noteContent = String(file);
 
   console.log('DEBUG: Markdown processed to HTML. Length:', noteContent.length);
-  console.log('DEBUG: Generated HTML:', noteContent);
 
   return { props: { term, course, unit, note, noteContent, noteData: data, unitTitle } };
 } 

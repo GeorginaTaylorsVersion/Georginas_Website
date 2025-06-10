@@ -1,14 +1,8 @@
-:root {
-  /* Existing variables */
-  --light-bg: #fff5f7;
-  --pink-aura: #ffd6e0;
-}
-
 body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Times New Roman', Times, serif;
-  background: linear-gradient(45deg, var(--light-bg) 0%, var(--pink-aura) 50%, var(--light-bg) 100%);
+  background: linear-gradient(45deg, #fff5f7 0%, #ffd6e0 50%, #fff5f7 100%);
   color: #222;
 }
 
