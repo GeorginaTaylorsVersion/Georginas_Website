@@ -294,4 +294,4 @@ $$ \text{Area}(\vec{u},\vec{v})=|\text{det}[\begin{matrix}\vec{u}&\vec{v}\end{ma
 If $\vec{u}, \vec{v}$ and $\vec{w}$ are three non-zero vectors in $\mathbb{R}^{3}$, the parallelepiped formed by these vectors has volume given by
 $$ \text{Volume}(\vec{u},\vec{v},\vec{w})=|\text{det}[\begin{matrix}\vec{u}&\vec{v}&\vec{w}\end{matrix}]|. $$
 
-![Screenshot 2025-06-05 at 6.03.36 pm.png](4%20Inverses%20and%20Determinants%201bf115b71c1180b0942bd198361402a5/Screenshot_2025-06-05_at_6.03.36_pm.png)
+![Screenshot 2025-06-05 at 6.03.36 pm.png](/notes/1B/MATH 136/4. Inverses and Determinants/Screenshot_2025-06-05_at_6.03.36_pm.png)

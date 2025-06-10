@@ -137,7 +137,7 @@ $$ [L]=\begin{bmatrix}0&1&2\\ 2&0&-1\\ -1&3&0\end{bmatrix} $$
 
 **Rotations in $\mathbb{R}^{2}$**
 
-![Screenshot 2025-06-05 at 5.54.22 pm.png](3%20Matrices%20and%20Linear%20Mappings%201bf115b71c1180cbac60cff3f52f5590/Screenshot_2025-06-05_at_5.54.22_pm.png)
+![Screenshot 2025-06-05 at 5.54.22 pm.png](/notes/1B/MATH 136/3. Matrices and Linear Mappings/Screenshot_2025-06-05_at_5.54.22_pm.png)
 
 Let $R_{\theta}:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}$ denote the function that rotates a vector $\vec{x}\in\mathbb{R}^{2}$ about the origin through an angle $\theta$.
 Using basic trigonometric identities, we can show that $R_{\theta}$ is linear, and that the standard matrix of $R_{\theta}$ is
@@ -153,7 +153,7 @@ $\cos(3\pi/2)=0$, $\sin(3\pi/2)=-1$. So $[R_{3\pi/2}] = \begin{bmatrix}0&-(-1)\\
 
 **Reflections**
 
-![Screenshot 2025-06-05 at 5.54.49 pm.png](3%20Matrices%20and%20Linear%20Mappings%201bf115b71c1180cbac60cff3f52f5590/Screenshot_2025-06-05_at_5.54.49_pm.png)
+![Screenshot 2025-06-05 at 5.54.49 pm.png](/notes/1B/MATH 136/3. Matrices and Linear Mappings/Screenshot_2025-06-05_at_5.54.49_pm.png)
 
 Let $refl_{P}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$ denote the mapping that sends a vector $\vec{x}$ to its mirror image in the hyperplane P with normal vector $\vec{n}$. The figure shows a reflection over a line in $\mathbb{R}^{2}$ with normal vector $\vec{n}$.
 From the figure, we see that the reflection of $\vec{x}$ over the line with normal vector $\vec{n}$ is given by
