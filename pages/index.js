@@ -23,15 +23,12 @@ export default function Home({ allTermsData }) {
             Hi! This is the home for all of my notes on my courses.
           </p>
         </section>
-        <section className="text-xl leading-8 pt-1 md:text-xl">
+        <section className="text-xl leading-8 pt-1 md:text-xl content-rectangle">
           <h2 className="text-2xl my-4">Terms</h2>
-          <ul className="list-none p-0 m-0">
+          <div className="unit-grid">
             {allTermsData.map(({ id, date, title, courses }) => (
-              <li className="mb-5" key={id}>
-                <Link href={`/terms/${id}`}>
-                  <a className="text-blue-500 hover:underline">{title}</a>
-                </Link>
-                <br />
+              <Link href={`/terms/${id}`} key={id} className="unit-card">
+                <div className="unit-title">{title}</div>
                 <small className="text-gray-500">
                   {date}
                   <br />
@@ -42,9 +39,9 @@ export default function Home({ allTermsData }) {
                     </span>
                   ))}
                 </small>
-              </li>
+              </Link>
             ))}
-          </ul>
+          </div>
         </section>
       </div>
     </>
