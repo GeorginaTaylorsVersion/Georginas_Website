@@ -28,29 +28,6 @@
   color: #333;
 }
 
-/* Creative Python Code Box Styling */
-.markdown-content .python-code-box {
-  background-color: #e6f7ff; /* A simple light blue highlight */
-  padding: 1rem; /* Increase padding slightly for more buffer */
-  border-radius: 0; /* No rounded corners */
-  margin: 1.5rem 0;
-  overflow-x: auto; /* Ensure horizontal scroll for very long lines that don't wrap */
-  box-sizing: border-box; /* Include padding in element's total width/height */
-}
-
-.markdown-content .python-code-box code {
-  font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace; /* Simplified font stack */
-  color: #333; /* A standard dark grey for code text */
-  background-color: transparent;
-  display: block; /* Ensures code takes full width and new lines behave as blocks */
-  line-height: 1.4;
-  white-space: pre-wrap; /* Allows lines to wrap while preserving whitespace */
-  overflow-wrap: break-word; /* Breaks words to prevent overflow if they are too long */
-  font-size: 0.9em; /* Set a consistent font size */
-  box-sizing: border-box; /* Include padding in element's total width/height */
-  width: 100%; /* Ensure it takes full width of its parent */
-}
-
 .markdown-content table {
   width: 100%;
   border-collapse: collapse;
