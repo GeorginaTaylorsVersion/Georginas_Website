@@ -36,7 +36,7 @@ e.g. Compute the resulting vector from the linear combination $2\vec{x}+3\vec{y}
 
 **Answer:** The resulting vector is $2\vec{x}+3\vec{y}=\begin{bmatrix}4\\ 5\end{bmatrix}$. Together, the origin and the corresponding points for $\vec{x}$, $\vec{y}$ and $2\vec{x}+3\vec{y}$ form a parallelogram, where $2\vec{x}+3\vec{y}$ is the diagonal.
 
-![Screenshot 2025-06-05 at 5.21.51 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/screenshot-2025-06-05-5-21-51-pm.png)
+![Screenshot 2025-06-05 at 5.21.51 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/Screenshot_2025-06-05_at_5.21.51_pm.png)
 
 **Theorem 1.1.7**
 If $\vec{x}, \vec{y}, \vec{w}\in\mathbb{R}^{n}$ and c, $d\in\mathbb{R}$, then
@@ -111,7 +111,7 @@ Equivalently, the vector equation above represents the set $ \{\vec{x}\in\mathbb
 
 **Example 1:** The vector equation $\vec{x}=c_{1}\vec{v}+\vec{b}$ with $c_{1}\in\mathbb{R}$, $\vec{v}=\begin{bmatrix}1\\ 1\end{bmatrix}$ and $\vec{b}=\begin{bmatrix}1\\ -2\end{bmatrix}$ describes the line:
 
-![Screenshot 2025-06-05 at 5.29.25 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/screenshot-2025-06-05-5-29-25-pm.png)
+![Screenshot 2025-06-05 at 5.29.25 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/Screenshot_2025-06-05_at_5.29.25_pm.png)
 
 Let $\vec{v}*{1}, \vec{v}*{2}, \vec{b}\in\mathbb{R}^{n}$ with $\{\vec{v}*{1},\vec{v}*{2}\}$ being a linearly independent set.
 We call the set with vector equation $ \vec{x}=c_{1}\vec{v}*{1}+c*{2}\vec{v}*{2}+\vec{b}, \quad c*{1},c_{2}\in\mathbb{R} $ a plane in $\mathbb{R}^{n}$ through $\vec{b}$, with directional vectors $\vec{v}*{1}$ and $\vec{v}*{2}$.
@@ -121,7 +121,7 @@ The set with vector equation $ \vec{x}=c_{1}\vec{v}*{1}+\cdot\cdot\cdot+c*{n-1}\
 
 **e.g.** The plane $\vec{x}=c_{1}\begin{bmatrix}0\\ 2\\ -1\end{bmatrix}+c_{2}\begin{bmatrix}2\\ 0\\ -1\end{bmatrix}+\begin{bmatrix}1\\ 1\\ 1\end{bmatrix}$, $c_{1}, c_{2}\in\mathbb{R}$, in $\mathbb{R}^{3}$, is represented by:
 
-![Screenshot 2025-06-05 at 5.30.55 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/screenshot-2025-06-05-5-30-55-pm.png)
+![Screenshot 2025-06-05 at 5.30.55 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/Screenshot_2025-06-05_at_5.30.55_pm.png)
 
 ## 1.3 Subspaces
 
@@ -214,7 +214,7 @@ We do not define an angle between the zero vector and any other vector.
 
 **Representation in 2D**
 
-![Screenshot 2025-06-05 at 5.35.16 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/screenshot-2025-06-05-5-35-16-pm.png)
+![Screenshot 2025-06-05 at 5.35.16 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/Screenshot_2025-06-05_at_5.35.16_pm.png)
 
 **Example 2:** Determine the angle between the vectors $\vec{v}=\begin{bmatrix}0\\ 1\\ 1\end{bmatrix}$ and $\vec{w}=\begin{bmatrix}0\\ 0\\ 1\end{bmatrix}.$
 **Answer:** The definition of angle states that
@@ -291,12 +291,12 @@ $4(2) - 14(3) - 2(3) = 8 - 42 - 6 = 8 - 48 = -40$. So, $4x_1-14x_2-2x_3=-40$. Co
 Let $\vec{u}, \vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}.$ The projection of $\vec{u}$ onto $\vec{v}$ is defined by
 $$ proj_{\vec{v}}(\vec{u})=\frac{\vec{u}\cdot\vec{v}}{||\vec{v}||^{2}}\vec{v}. $$
 
-![Screenshot 2025-06-05 at 5.38.17 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/screenshot-2025-06-05-5-38-17-pm.png)
+![Screenshot 2025-06-05 at 5.38.17 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/Screenshot_2025-06-05_at_5.38.17_pm.png)
 
 Let $\vec{u},\vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}.$ The perpendicular of $\vec{u}$ onto $\vec{v}$ is defined by
 $$ perp_{\vec{v}}(\vec{u})=\vec{u}-proj_{\vec{v}}(\vec{u}) $$
 
-![Screenshot 2025-06-05 at 5.38.35 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/screenshot-2025-06-05-5-38-35-pm.png)
+![Screenshot 2025-06-05 at 5.38.35 pm](/notes/1B/MATH 136/1. Vectors in Euclidean Space/Screenshot_2025-06-05_at_5.38.35_pm.png)
 
 **Example 1:** Let $\vec{u}=\begin{bmatrix}-1\\ -3\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}1\\ 1\end{bmatrix}$. Find $proj_{\vec{v}}(\vec{u})$ and $perp_{\vec{v}}(\vec{u})$.
 **Answer:**
