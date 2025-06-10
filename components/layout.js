@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 
 const name = 'Georgina';
-export const siteTitle = 'Georgina's Notes';
+export const siteTitle = `Georgina's Notes`;
 
 export default function Layout({ children, home }) {
   return (
