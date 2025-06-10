@@ -54,12 +54,16 @@ export async function getStaticProps({ params }) {
     return { unit, firstNote: notes[0] || null };
   });
 
+  console.log('DEBUG: unitsWithFirstNotes:', unitsWithFirstNotes);
+
   let mustKnowContent = null;
 
   if (params.course === 'MATH 138') {
     const mustKnowFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'must-know-section.md');
     if (fs.existsSync(mustKnowFilePath)) {
       const fileContents = fs.readFileSync(mustKnowFilePath, 'utf8');
+      console.log('DEBUG: Raw must-know-section.md content length:', fileContents.length);
+      console.log('DEBUG: First 200 chars of raw must-know-section.md:', fileContents.substring(0, 200));
       
       const processor = unified()
         .use(remarkParse)
@@ -71,6 +75,8 @@ export async function getStaticProps({ params }) {
 
       const file = await processor.process(fileContents);
       mustKnowContent = String(file);
+      console.log('DEBUG: Processed mustKnowContent length:', mustKnowContent.length);
+      console.log('DEBUG: First 200 chars of processed mustKnowContent:', mustKnowContent.substring(0, 200));
     }
   }
 
