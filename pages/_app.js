@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import '../styles/markdown.css';
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 

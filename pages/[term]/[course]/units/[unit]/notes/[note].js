@@ -26,7 +26,10 @@ export default function NotePage({ term, course, unit, note, noteContent, noteDa
       </Head>
       <h1>{unitTitle}</h1>
       {noteData.date && <p>{noteData.date}</p>}
-      <div dangerouslySetInnerHTML={{ __html: noteContent }} />
+      <div 
+        className="markdown-content"
+        dangerouslySetInnerHTML={{ __html: noteContent }} 
+      />
     </div>
   );
 }
@@ -61,11 +64,12 @@ export async function getStaticProps({ params }) {
   }
 
   // Create a remark processor and chain plugins for math and HTML conversion
-  const processor = remark()
-    .use(remarkMath) // Add math support
-    .use(remarkRehype) // Convert markdown AST to HTML AST
-    .use(rehypeKatex) // Render math with KaTeX
-    .use(rehypeStringify); // Stringify HTML AST to HTML content
+  const processor = unified()
+    .use(remark)
+    .use(remarkMath)
+    .use(remarkRehype)
+    .use(rehypeKatex)
+    .use(rehypeStringify);
 
   // Process markdown to HTML
   const file = await processor.process(content);
