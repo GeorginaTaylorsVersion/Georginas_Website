@@ -33,4 +33,4 @@ A Next.js website to showcase your notes.
 1. Write your notes in Notion.
 2. Export as Markdown.
 3. Place the Markdown files in the correct folder in your repo (e.g., `notes/1B/MATH138/`).
-4. Push to GitHub — Vercel will auto-deploy and your new notes will appear! 
+4. Push to GitHub — Vercel will auto-deploy and your new notes will appear!

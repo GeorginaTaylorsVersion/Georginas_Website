@@ -1,31 +1,16 @@
 import Link from 'next/link';
 import { getTerms, getCourses, getUnits, getNotes } from '../../../lib/notes';
+import fs from 'fs';
+import path from 'path';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
+import rehypeKatex from 'rehype-katex';
+import rehypeStringify from 'rehype-stringify';
+import remarkGfm from 'remark-gfm';
 
-function pickIconForUnit(unit) {
-  // Simple icon picker based on keywords or index
-  const icons = [
-    '📚', '🧮', '📐', '📊', '🔢', '📝', '💡', '🔬', '💻', '📈', '🧑‍🏫', '🔎'
-  ];
-  // Try to pick based on unit name keywords
-  if (/vector/i.test(unit)) return '🧭';
-  if (/matrix|matrices/i.test(unit)) return '🧮';
-  if (/determinant/i.test(unit)) return '📐';
-  if (/dimension/i.test(unit)) return '📏';
-  if (/eigen/i.test(unit)) return '🔬';
-  if (/system/i.test(unit)) return '🔗';
-  if (/integration|integral/i.test(unit)) return '∫';
-  if (/series/i.test(unit)) return '🔢';
-  if (/equation/i.test(unit)) return '📝';
-  if (/file/i.test(unit)) return '📁';
-  if (/recursion/i.test(unit)) return '🔁';
-  if (/list/i.test(unit)) return '📋';
-  if (/string/i.test(unit)) return '🔤';
-  if (/sort|search/i.test(unit)) return '🔎';
-  // Fallback: pick by index
-  return icons[unit.length % icons.length];
-}
-
-export default function CoursePage({ term, course, unitsWithFirstNotes }) {
+export default function CoursePage({ term, course, unitsWithFirstNotes, mustKnowContent }) {
   return (
     <div className="course-contents">
       <h1>{term} - {course}</h1>
@@ -39,11 +24,16 @@ export default function CoursePage({ term, course, unitsWithFirstNotes }) {
             }
             className="unit-card"
           >
-            <div className="unit-icon">{pickIconForUnit(unit)}</div>
             <div className="unit-title">{unit}</div>
           </Link>
         ))}
       </div>
+      {mustKnowContent && (
+        <div className="must-know-section content-rectangle">
+          <h2 className="must-know-title">Must Know</h2>
+          <div className="markdown-content" dangerouslySetInnerHTML={{ __html: mustKnowContent }} />
+        </div>
+      )}
     </div>
   );
 }
@@ -64,5 +54,26 @@ export async function getStaticProps({ params }) {
     const notes = getNotes(params.term, params.course, unit);
     return { unit, firstNote: notes[0] || null };
   });
-  return { props: { term: params.term, course: params.course, unitsWithFirstNotes } };
+
+  let mustKnowContent = null;
+
+  if (params.course === 'MATH 138') {
+    const mustKnowFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'Must Know', 'must-know.md');
+    if (fs.existsSync(mustKnowFilePath)) {
+      const fileContents = fs.readFileSync(mustKnowFilePath, 'utf8');
+      
+      const processor = unified()
+        .use(remarkParse)
+        .use(remarkMath)
+        .use(remarkRehype)
+        .use(rehypeKatex)
+        .use(rehypeStringify)
+        .use(remarkGfm);
+
+      const file = await processor.process(fileContents);
+      mustKnowContent = String(file);
+    }
+  }
+
+  return { props: { term: params.term, course: params.course, unitsWithFirstNotes, mustKnowContent } };
 } 

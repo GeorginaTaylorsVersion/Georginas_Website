@@ -1,4 +1,3 @@
-
 - VERY IMPORTANT FORMULAS
     
     ## Integration 📐
@@ -62,42 +61,15 @@
     Definite integral form:
     $\int_a^b f(x)g'(x) dx = [f(x)g(x)]_a^b - \int_a^b f'(x)g(x) dx$
     - **Trigonometric Substitution:** Substitutions based on the form of the integrand:
-        
-        
-        **Integral contain**
-        
-        **Substitution**
-        
-        **Domain**
-        
-        **Identity**
-        
-        $\sqrt{a^2 - x^2}$
-        
-        $x = a \sin \theta$
-        
-        $\theta \in \left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$
-        
-        $1 - \sin^2\theta = \cos^2\theta$
-        
-        $\sqrt{x^2 - a^2}$
-        
-        $x = a \sec \theta$
-        
-        $\theta \in \left[0, \tfrac{\pi}{2}\right) \cup \left[\pi, \tfrac{3\pi}{2}\right)$
-        
-        $\sec^2\theta - 1 = \tan^2\theta$
-        
-        $\sqrt{x^2 + a^2}$
-        
-        $x = a \tan \theta$
-        
-        $\theta \in \left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$
-        
-        $1 + \tan^2\theta = \sec^2\theta$
-        
+
+        | Integral contain | Substitution | Domain | Identity |
+        |---|---|---|---|
+        | $\sqrt{a^2 - x^2}$ | $x = a \sin \theta$ | $\theta \in \left[-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right]$ | $1 - \sin^2\theta = \cos^2\theta$ |
+        | $\sqrt{x^2 - a^2}$ | $x = a \sec \theta$ | $\theta \in \left[0, \tfrac{\pi}{2}\right) \cup \left[\pi, \tfrac{3\pi}{2}\right)$ | $\sec^2\theta - 1 = \tan^2\theta$ |
+        | $\sqrt{x^2 + a^2}$ | $x = a \tan \theta$ | $\theta \in \left(-\tfrac{\pi}{2}, \tfrac{\pi}{2}\right)$ | $1 + \tan^2\theta = \sec^2\theta$ |
+
     - **Partial Fraction Decomposition (PFD):** Method to decompose rational functions $\frac{P(x)}{Q(x)}$ into simpler fractions based on the factorization of the denominator Q(x). If $\deg P(x) \ge \deg Q(x)$, perform polynomial long division first.
-    Examples of forms: $\frac{A}{ax+b}$, $\frac{A}{(ax+b)^n}$, $\frac{Ax+B}{ax^2+bx+c}$ (for irreducible quadratic), $\frac{A_1x+B_1}{ax^2+bx+c} + \dots + \frac{A_nx+B_n}{(ax^2+bx+c)^n}$.
+      Examples of forms: $\frac{A}{ax+b}$, $\frac{A}{(ax+b)^n}$, $\frac{Ax+B}{ax^2+bx+c}$ (for irreducible quadratic), $\frac{A_1x+B_1}{ax^2+bx+c} + \dots + \frac{A_nx+B_n}{(ax^2+bx+c)^n}$.
     - **Improper Integrals:** Evaluated using limits.
         - **Type 1 (infinite limits):**
         $\int_a^\infty f(x) dx = \lim_{t\to\infty} \int_a^t f(x) dx$

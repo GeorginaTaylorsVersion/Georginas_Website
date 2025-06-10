@@ -1,18 +1,22 @@
 import { getTerms, getCourses, getUnits, getNotes, getNoteContent, getUnitTitle } from '../../../../../../lib/notes'; // Updated import path
 import { useEffect } from 'react';
 import Head from 'next/head';
-import { remark } from 'remark'; // Import remark directly as the base parser
-import remarkRehype from 'remark-rehype';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
 import remarkMath from 'remark-math';
+import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
-import { unified } from 'unified';
+import remarkGfm from 'remark-gfm';
 
 export default function NotePage({ term, course, unit, note, noteContent, noteData, unitTitle }) {
   useEffect(() => {
     // Ensure renderMathInElement is available and then run it
     if (window.renderMathInElement) {
+      console.log('DEBUG: window.renderMathInElement is defined. Running it.');
       window.renderMathInElement(document.body);
+    } else {
+      console.log('DEBUG: window.renderMathInElement is NOT defined.');
     }
   }, [noteContent]); // Re-run effect if noteContent changes
 
@@ -20,9 +24,6 @@ export default function NotePage({ term, course, unit, note, noteContent, noteDa
     <div>
       <Head>
         <title>{unitTitle}</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
       </Head>
       <h1>{unitTitle}</h1>
       {noteData.date && <p>{noteData.date}</p>}
@@ -63,17 +64,17 @@ export async function getStaticProps({ params }) {
     console.log('DEBUG: Content is empty.');
   }
 
-  // Create a remark processor and chain plugins for math and HTML conversion
+  // Correct unified markdown processor
   const processor = unified()
-    .use(remark)
+    .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkMath)
     .use(remarkRehype)
     .use(rehypeKatex)
     .use(rehypeStringify);
 
-  // Process markdown to HTML
   const file = await processor.process(content);
-  const noteContent = String(file); // Convert VFile to string
+  const noteContent = String(file);
 
   console.log('DEBUG: Markdown processed to HTML. Length:', noteContent.length);
 
