@@ -105,12 +105,14 @@ footer {
 .must-know-section .markdown-content p {
   margin: 0.8rem 0;
   line-height: 1.6;
+  padding-top: 0.5rem;
 }
 
 .must-know-section .markdown-content ul,
 .must-know-section .markdown-content ol {
   margin-left: 1.5rem;
   padding-left: 0;
+  padding-top: 0.5rem;
 }
 
 /* Basic Table Styling for Markdown Content */

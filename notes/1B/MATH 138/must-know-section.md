@@ -1,7 +1,7 @@
 
 - VERY IMPORTANT FORMULAS
     
-    ## Integration 📐
+    ## Integration
     
     **Definition of the Definite Integral (Riemann Sums):**
     The definite integral of f(x) from a to b is defined as:
@@ -96,7 +96,7 @@
     
     ---
     
-    ## Differential Equations 📈
+    ## Differential Equations
     
     **Separable DEs:** $\frac{dy}{dx} = g(x)h(y)$. Can be rewritten as $\frac{1}{h(y)} dy = g(x) dx$ and integrated: $\int \frac{1}{h(y)} dy = \int g(x) dx$. Remember to check for singular solutions h(y)=0.
     
@@ -114,7 +114,7 @@
     
     ---
     
-    ## Numerical Series 🔢
+    ## Numerical Series
     
     **Definition of a Series:** $\sum_{n=1}^\infty a_n = \lim_{m\to\infty} S_m$, where $S_m = \sum_{n=1}^m a_n$ is the m-th partial sum.
     
@@ -150,7 +150,7 @@
     
     ---
     
-    ## Power Series 💡
+    ## Power Series
     
     **General Form of a Power Series centered at a:** $\sum_{n=0}^\infty c_n (x-a)^n$.
     
