@@ -8,6 +8,7 @@ import remarkRehype from 'remark-rehype';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
+import rehypePrependImageBasePath from '../../../../../../lib/rehype-prepend-image-base-path.mjs';
 
 export default function NotePage({ term, course, unit, note, noteContent, noteData, unitTitle }) {
   useEffect(() => {
@@ -71,6 +72,7 @@ export async function getStaticProps({ params }) {
     .use(remarkMath)
     .use(remarkRehype)
     .use(rehypeKatex)
+    .use(rehypePrependImageBasePath, { term, course, unit })
     .use(rehypeStringify);
 
   const file = await processor.process(content);
