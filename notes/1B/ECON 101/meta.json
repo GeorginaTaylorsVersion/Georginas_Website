@@ -1,50 +1,62 @@
 [
     {
         "name": "1. The Economic Problem",
-        "path": "1-the-economic-problem"
+        "path": "1-the-economic-problem",
+        "file": "notes"
     },
     {
         "name": "2. Demand and Supply",
-        "path": "2-demand-and-supply"
+        "path": "2-demand-and-supply",
+        "file": "notes"
     },
     {
         "name": "3. Elasticity",
-        "path": "3-elasticity"
+        "path": "3-elasticity",
+        "file": "notes"
     },
     {
         "name": "4. Efficiency and Equity",
-        "path": "4-efficiency-and-equity"
+        "path": "4-efficiency-and-equity",
+        "file": "notes"
     },
     {
         "name": "5. Social Welfare",
-        "path": "5-social-welfare"
+        "path": "5-social-welfare",
+        "file": "notes"
     },
     {
         "name": "6. Utility and Demand",
-        "path": "6-utility-and-demand"
+        "path": "6-utility-and-demand",
+        "file": "notes"
     },
     {
         "name": "7. Possibilities, Preferences, and Choices",
-        "path": "7-possibilities-preferences-and-choices"
+        "path": "7-possibilities-preferences-and-choices",
+        "file": "notes"
     },
     {
         "name": "8. Organizing Production",
-        "path": "8-organizing-production"
+        "path": "8-organizing-production",
+        "file": "notes"
     },
     {
         "name": "9. Perfect Competition",
-        "path": "9-perfect-competition"
+        "path": "9-perfect-competition",
+        "file": "notes"
     },
     {
         "name": "10. Monopoly",
-        "path": "10-monopoly"
+        "path": "10-monopoly",
+        "file": "notes"
     },
     {
         "name": "11. Monopolistic Competition",
-        "path": "11-monopolistic-competition"
+        "path": "11-monopolistic-competition",
+        "file": "notes"
     },
     {
         "name": "12. Oligopoly",
-        "path": "12-oligopoly"
+        "path": "12-oligopoly",
+        "file": "notes"
     }
 ] 
