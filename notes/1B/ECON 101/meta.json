@@ -1,8 +1,50 @@
-{
-  "course": "ECON 101",
-  "professor": "",
-  "units": [
-    { "title": "Unit 1 Title", "file": "1-unit1.md" },
-    { "title": "Unit 2 Title", "file": "2-unit2.md" }
-  ]
-} 
+[
+    {
+        "name": "1. The Economic Problem",
+        "path": "1-the-economic-problem"
+    },
+    {
+        "name": "2. Demand and Supply",
+        "path": "2-demand-and-supply"
+    },
+    {
+        "name": "3. Elasticity",
+        "path": "3-elasticity"
+    },
+    {
+        "name": "4. Efficiency and Equity",
+        "path": "4-efficiency-and-equity"
+    },
+    {
+        "name": "5. Social Welfare",
+        "path": "5-social-welfare"
+    },
+    {
+        "name": "6. Utility and Demand",
+        "path": "6-utility-and-demand"
+    },
+    {
+        "name": "7. Possibilities, Preferences, and Choices",
+        "path": "7-possibilities-preferences-and-choices"
+    },
+    {
+        "name": "8. Organizing Production",
+        "path": "8-organizing-production"
+    },
+    {
+        "name": "9. Perfect Competition",
+        "path": "9-perfect-competition"
+    },
+    {
+        "name": "10. Monopoly",
+        "path": "10-monopoly"
+    },
+    {
+        "name": "11. Monopolistic Competition",
+        "path": "11-monopolistic-competition"
+    },
+    {
+        "name": "12. Oligopoly",
+        "path": "12-oligopoly"
+    }
+] 
