@@ -140,8 +140,6 @@ e.g. Determine the standard matrix of the linear mapping.
 
 **Rotations in $\mathbb{R}^{2}$**
 
-![Screenshot 2025-06-05 at 5.54.22 pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/3. Matrices and Linear Mappings/3 Matrices and Linear Mappings 1bf115b71c1180cbac60cff3f52f5590/Screenshot_2025-06-05_at_5.54.22_pm.png)
-
 Let $R_{\theta}:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}$ denote the function that rotates a vector $\vec{x}\in\mathbb{R}^{2}$ about the origin through an angle $\theta$.
 Using basic trigonometric identities, we can show that $R_{\theta}$ is linear, and that the standard matrix of $R_{\theta}$ is
  $[R_{\theta}]=\begin{bmatrix}\cos\theta&-\sin\theta\\ \sin\theta&\cos\theta\end{bmatrix}$ 
@@ -156,8 +154,6 @@ Yes, when $\theta=\frac{3}{2}\pi$.
 $\cos(3\pi/2)=0$, $\sin(3\pi/2)=-1$. So $[R_{3\pi/2}] = \begin{bmatrix}0&-(-1)\\ -1&0\end{bmatrix} = \begin{bmatrix}0&1\\ -1&0\end{bmatrix}$.
 
 **Reflections**
-
-![Screenshot 2025-06-05 at 5.54.49 pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/3. Matrices and Linear Mappings/3 Matrices and Linear Mappings 1bf115b71c1180cbac60cff3f52f5590/Screenshot_2025-06-05_at_5.54.49_pm.png)
 
 Let $refl_{P}:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$ denote the mapping that sends a vector $\vec{x}$ to its mirror image in the hyperplane P with normal vector $\vec{n}$. The figure shows a reflection over a line in $\mathbb{R}^{2}$ with normal vector $\vec{n}$.
 

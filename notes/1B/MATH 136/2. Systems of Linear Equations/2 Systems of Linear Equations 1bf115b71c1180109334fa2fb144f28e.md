@@ -43,10 +43,6 @@ has two distinct solutions
  $\vec{s}=\begin{bmatrix}s_{1}\\ \vdots\\ s_{n}\end{bmatrix} \quad \text{and} \quad \vec{t}=\begin{bmatrix}t_{1}\\ \vdots\\ t_{n}\end{bmatrix}$
 then for every $c\in\mathbb{R}$, $\vec{s}+c(\vec{s}-\vec{t})$ is a solution, and furthermore these solutions are all distinct.
 
-e.g. Given a system of 3 equations in two variables, what are the possible number of solutions?
-
-![Screenshot 2025-06-05 at 5.41.34 pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/2. Systems of Linear Equations/2 Systems of Linear Equations 1bf115b71c1180109334fa2fb144f28e/Screenshot_2025-06-05_at_5.41.34_pm.png)
-
 ## 2.2 Solving Systems of Linear Equations
 
 Two systems of equations which have the same solution set are said to be equivalent.

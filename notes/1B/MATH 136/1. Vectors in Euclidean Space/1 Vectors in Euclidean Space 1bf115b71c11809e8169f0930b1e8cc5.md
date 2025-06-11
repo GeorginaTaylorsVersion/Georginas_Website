@@ -221,11 +221,7 @@ $1x_{1}+2x_{2}+3x_{3}=1(0)+2(-1)+3(1)=1$.
 
 Let $\vec{u}, \vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}$. The projection of $\vec{u}$ onto $\vec{v}$ is defined by $proj_{\vec{v}}(\vec{u})=\frac{\vec{u}\cdot\vec{v}}{||\vec{v}||^{2}}\vec{v}$. 
 
-![Screenshot_2025-06-05_at_5.38.17_pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/1. Vectors in Euclidean Space/1 Vectors in Euclidean Space 1bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.17_pm.png)
-
 Let $\vec{u},\vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}$. The perpendicular of $\vec{u}$ onto $\vec{v}$ is defined by $perp_{\vec{v}}(\vec{u})=\vec{u}-proj_{\vec{v}}(\vec{u})$ 
-
-![Screenshot_2025-06-05_at_5.38.35_pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/1. Vectors in Euclidean Space/1 Vectors in Euclidean Space 1bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.35_pm.png)
 
 e.g. Let $\vec{u}=\begin{bmatrix}-1\\ -3\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}1\\ 1\end{bmatrix}$. Find $proj_{\vec{v}}(\vec{u})$  and $perp_{\vec{v}}(\vec{u})$.
 Answer:
