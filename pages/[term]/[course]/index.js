@@ -92,14 +92,20 @@ export async function getStaticProps({ params }) {
     }
   } else if (unitsWithFirstNotes.length === 0 && params.term !== '1B') {
     const noContentFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'no-content.md');
+    console.log('DEBUG: Checking for no-content.md at:', noContentFilePath);
     if (fs.existsSync(noContentFilePath)) {
+      console.log('DEBUG: no-content.md exists.');
       const fileContents = fs.readFileSync(noContentFilePath, 'utf8');
+      console.log('DEBUG: Raw no-content.md content length:', fileContents.length);
+      console.log('DEBUG: First 100 chars of raw no-content.md:', fileContents.substring(0, 100));
       const processor = unified()
         .use(remarkParse)
         .use(remarkRehype)
         .use(rehypeStringify);
       const file = await processor.process(fileContents);
       mustKnowContent = String(file);
+      console.log('DEBUG: Processed no-content mustKnowContent length:', mustKnowContent.length);
+      console.log('DEBUG: First 100 chars of processed no-content mustKnowContent:', mustKnowContent.substring(0, 100));
     }
   }
 
