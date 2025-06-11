@@ -15,14 +15,14 @@ export default function CoursePage({ term, course, unitsWithFirstNotes, mustKnow
     <div className="unit-grid">
       {unitsWithFirstNotes.map(({ unit, firstNote }) => (
         <Link
-          key={unit}
+          key={unit.path}
           href={firstNote
-            ? `/${term}/${course}/units/${unit}/notes/${firstNote}`
-            : `/${term}/${course}/units/${unit}`
+            ? `/${term}/${course}/units/${unit.path}/notes/${firstNote}`
+            : `/${term}/${course}/units/${unit.path}`
           }
           className="unit-card"
         >
-          <div className="unit-title">{unit}</div>
+          <div className="unit-title">{unit.title}</div>
         </Link>
       ))}
     </div>
@@ -62,7 +62,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const units = getUnits(params.term, params.course);
   const unitsWithFirstNotes = units.map(unit => {
-    const notes = getNotes(params.term, params.course, unit);
+    const notes = getNotes(params.term, params.course, unit.path);
     return { unit, firstNote: notes[0] || null };
   });
 

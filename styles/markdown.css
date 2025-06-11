@@ -1,7 +1,7 @@
 .markdown-content {
   max-width: 100%;
   overflow-x: auto;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif !important;
 }
 
 .markdown-content img {
