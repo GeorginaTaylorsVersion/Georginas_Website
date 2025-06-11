@@ -13,6 +13,7 @@
 
 .markdown-content p {
   margin: 1rem 0;
+  font-family: 'Times New Roman', Times, serif !important;
 }
 
 .markdown-content pre {
@@ -33,4 +34,16 @@
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  list-style: disc; /* Re-enable bullet points for unordered lists */
+  padding-left: 20px; /* Add some left padding for the list items */
+  margin: 1rem 0;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.markdown-content ol {
+  list-style: decimal; /* Ensure ordered lists have numbers */
 } 
