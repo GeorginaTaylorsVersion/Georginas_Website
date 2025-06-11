@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import 'katex/dist/katex.min.css';
 import '../styles/markdown.css';
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
