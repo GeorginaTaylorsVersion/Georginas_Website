@@ -44,9 +44,9 @@ export async function getStaticPaths() {
     return courses.flatMap(course => {
       const units = getUnits(term, course);
       return units.flatMap(unit => {
-        const notes = getNotes(term, course, unit);
+        const notes = getNotes(term, course, unit.path);
         // Generate paths for the note detail page
-        return notes.map(note => ({ params: { term, course, unit, note } }));
+        return notes.map(note => ({ params: { term, course, unit: unit.path, note } }));
       });
     });
   });

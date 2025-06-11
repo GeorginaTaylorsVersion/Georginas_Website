@@ -22,7 +22,7 @@ export async function getStaticPaths() {
     return courses.flatMap(course => {
       const units = getUnits(term, course);
       // Generate paths for the new unit listing page ([unit]/index.js under units/)
-      return units.map(unit => ({ params: { term, course, unit } }));
+      return units.map(unit => ({ params: { term, course, unit: unit.path } }));
     });
   });
 
