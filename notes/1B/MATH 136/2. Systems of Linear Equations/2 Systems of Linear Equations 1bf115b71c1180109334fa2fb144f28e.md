@@ -45,7 +45,7 @@ then for every $c\in\mathbb{R}$, $\vec{s}+c(\vec{s}-\vec{t})$ is a solution, and
 
 e.g. Given a system of 3 equations in two variables, what are the possible number of solutions?
 
-![Screenshot 2025-06-05 at 5.41.34 pm.png](2%20Systems%20of%20Linear%20Equations%201bf115b71c1180109334fa2fb144f28e/Screenshot_2025-06-05_at_5.41.34_pm.png)
+![Screenshot 2025-06-05 at 5.41.34 pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/2. Systems of Linear Equations/2 Systems of Linear Equations 1bf115b71c1180109334fa2fb144f28e/Screenshot_2025-06-05_at_5.41.34_pm.png)
 
 ## 2.2 Solving Systems of Linear Equations
 

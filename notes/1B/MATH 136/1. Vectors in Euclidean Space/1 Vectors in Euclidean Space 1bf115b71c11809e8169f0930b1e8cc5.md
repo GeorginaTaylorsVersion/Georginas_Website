@@ -35,25 +35,16 @@ For $\vec{v}{1},...,\vec{v}{k}\in\mathbb{R}^{n}$ and $c_{1},...,c_{k}\in\mathbb{
 
 If $\vec{x}, \vec{y}, \vec{w}\in\mathbb{R}^{n}$ and c, $d\in\mathbb{R}$, then
 
-V1 $\vec{x}+\vec{y}\in\mathbb{R}^{n}$
-
-V2 $(\vec{x}+\vec{y})+\vec{w}=\vec{x}+(\vec{y}+\vec{w})$.
-
-V3 $\vec{x}+\vec{y}=\vec{y}+\vec{x}$
-
-V4 There exists a vector $\vec{0}\in\mathbb{R}^{n}$ such that $\vec{x}+\vec{0}=\vec{x}$ for all $\vec{x}\in\mathbb{R}^{n}$.
-
-V5 For $\vec{x}\in R^{n}$ there exists $(-\vec{x})\in\mathbb{R}^{n}$ such that $\vec{x}+(-\vec{x})=\vec{0}$.
-
-V6 $c\vec{x}\in\mathbb{R}^{n}$.
-
-V7 $c(d\vec{x})=(cd)\vec{x}$
-
-V8 $(c+d)\vec{x}=c\vec{x}+d\vec{x}$.
-
-V9 $c(\vec{x}+\vec{y})=c\vec{x}+c\vec{y}$.
-
-V10 $1\vec{x}=\vec{x}$
+1. $\vec{x}+\vec{y}\in\mathbb{R}^{n}$
+2. $(\vec{x}+\vec{y})+\vec{w}=\vec{x}+(\vec{y}+\vec{w})$.
+3. $\vec{x}+\vec{y}=\vec{y}+\vec{x}$
+4. There exists a vector $\vec{0}\in\mathbb{R}^{n}$ such that $\vec{x}+\vec{0}=\vec{x}$ for all $\vec{x}\in\mathbb{R}^{n}$.
+5. For $\vec{x}\in R^{n}$ there exists $(-\vec{x})\in\mathbb{R}^{n}$ such that $\vec{x}+(-\vec{x})=\vec{0}$.
+6. $c\vec{x}\in\mathbb{R}^{n}$.
+7. $c(d\vec{x})=(cd)\vec{x}$
+8. $(c+d)\vec{x}=c\vec{x}+d\vec{x}$.
+9. $c(\vec{x}+\vec{y})=c\vec{x}+c\vec{y}$.
+10. $1\vec{x}=\vec{x}$
 
 ## 1.2 Bases
 
@@ -104,16 +95,17 @@ Answer: No, consider the vector $\vec{e}_{1}=\begin{bmatrix}1\\ 0\\ 0\end{bmatri
 ## 1.3 Subspaces
 
 A subset $\mathbb{S}$ of $\mathbb{R}^{n}$ is called a subspace of $\mathbb{R}^{n}$ if for every $\vec{x}, \vec{y}, \vec{w}\in\mathbb{S}$ and c, $d\in\mathbb{R}$ we have
-S1 $\vec{x}+\vec{y}\in\mathbb{S}$.
-S2 $(\vec{x}+\vec{y})+\vec{w}=\vec{x}+(\vec{y}+\vec{w})$
-S3 $\vec{x}+\vec{y}=\vec{y}+\vec{x}$.
-S4 There exists a vector $\vec{0}\in\mathbb{S}$ such that $\vec{x}+\vec{0}=\vec{x}$ for all $\vec{x}\in\mathbb{S}$.
-S5 For every $\vec{x}\in\mathbb{S}$  there exists $(-\vec{x})\in\mathbb{S}$ such that $\vec{x}+(-\vec{x})=\vec{0}$.
-S6 $c\vec{x}\in\mathbb{S}$
-S7 $c(d\vec{x})=(cd)\vec{x}$
-S8 $(c+d)\vec{x}=c\vec{x}+d\vec{x}$
-S9 $c(\vec{x}+\vec{y})=c\vec{x}+c\vec{y}$.
-S10 $1\vec{x}=\vec{x}$
+
+1. $\vec{x}+\vec{y}\in\mathbb{S}$.
+2. $(\vec{x}+\vec{y})+\vec{w}=\vec{x}+(\vec{y}+\vec{w})$
+3. $\vec{x}+\vec{y}=\vec{y}+\vec{x}$.
+4. There exists a vector $\vec{0}\in\mathbb{S}$ such that $\vec{x}+\vec{0}=\vec{x}$ for all $\vec{x}\in\mathbb{S}$.
+5. For every $\vec{x}\in\mathbb{S}$  there exists $(-\vec{x})\in\mathbb{S}$ such that $\vec{x}+(-\vec{x})=\vec{0}$.
+6. $c\vec{x}\in\mathbb{S}$
+7. $c(d\vec{x})=(cd)\vec{x}$
+8. $(c+d)\vec{x}=c\vec{x}+d\vec{x}$
+9. $c(\vec{x}+\vec{y})=c\vec{x}+c\vec{y}$.
+10. $1\vec{x}=\vec{x}$
 
 **Subspace Test**
 Let S be a non-empty subset of $\mathbb{R}^{n}$. If $\vec{x}+\vec{y}\in\mathbb{S}$ and $c\vec{x}\in\mathbb{S}$ for all $\vec{x}, \vec{y}\in\mathbb{S}$ and $c\in\mathbb{R}$, then S is a subspace of $\mathbb{R}^{n}$.
@@ -229,11 +221,11 @@ $1x_{1}+2x_{2}+3x_{3}=1(0)+2(-1)+3(1)=1$.
 
 Let $\vec{u}, \vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}$. The projection of $\vec{u}$ onto $\vec{v}$ is defined by $proj_{\vec{v}}(\vec{u})=\frac{\vec{u}\cdot\vec{v}}{||\vec{v}||^{2}}\vec{v}$. 
 
-![Screenshot 2025-06-05 at 5.38.17 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.17_pm.png)
+![Screenshot 2025-06-05 at 5.38.17 pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/1. Vectors in Euclidean Space/1 Vectors in Euclidean Space 1bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.17_pm.png)
 
 Let $\vec{u},\vec{v}\in\mathbb{R}^{n}$ with $\vec{v}\ne\vec{0}$. The perpendicular of $\vec{u}$ onto $\vec{v}$ is defined by $perp_{\vec{v}}(\vec{u})=\vec{u}-proj_{\vec{v}}(\vec{u})$ 
 
-![Screenshot 2025-06-05 at 5.38.35 pm.png](1%20Vectors%20in%20Euclidean%20Space%201bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.35_pm.png)
+![Screenshot 2025-06-05 at 5.38.35 pm.png](/Users/ysabelwang/Documents/Georginas_Website/notes/1B/MATH 136/1. Vectors in Euclidean Space/1 Vectors in Euclidean Space 1bf115b71c11809e8169f0930b1e8cc5/Screenshot_2025-06-05_at_5.38.35_pm.png)
 
 e.g. Let $\vec{u}=\begin{bmatrix}-1\\ -3\end{bmatrix}$ and $\vec{v}=\begin{bmatrix}1\\ 1\end{bmatrix}$. Find $proj_{\vec{v}}(\vec{u})$  and $perp_{\vec{v}}(\vec{u})$.
 Answer:
