@@ -2,7 +2,6 @@
   max-width: 100%;
   overflow-x: auto;
   font-family: 'Times New Roman', Times, serif !important;
-  line-height: 1.6; /* Increased line spacing */
 }
 
 .markdown-content img {
@@ -47,4 +46,8 @@
 
 .markdown-content ol {
   list-style: decimal; /* Ensure ordered lists have numbers */
+}
+
+.econ-notes-spacing {
+  line-height: 1.6;
 } 

@@ -22,6 +22,8 @@ export default function NotePage({ term, course, unit, note, noteContent, noteDa
     }
   }, [noteContent]); // Re-run effect if noteContent changes
 
+  const markdownClass = `markdown-content ${course === 'ECON 101' ? 'econ-notes-spacing' : ''}`;
+
   return (
     <div>
       <Head>
@@ -29,7 +31,7 @@ export default function NotePage({ term, course, unit, note, noteContent, noteDa
       </Head>
       {noteData.date && <p>{noteData.date}</p>}
       <div 
-        className="markdown-content"
+        className={markdownClass}
         dangerouslySetInnerHTML={{ __html: noteContent }} 
       />
     </div>
