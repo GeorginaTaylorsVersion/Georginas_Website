@@ -11,24 +11,36 @@ import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 
 export default function CoursePage({ term, course, unitsWithFirstNotes, mustKnowContent }) {
+  const displayContent = unitsWithFirstNotes.length > 0 ? (
+    <div className="unit-grid">
+      {unitsWithFirstNotes.map(({ unit, firstNote }) => (
+        <Link
+          key={unit}
+          href={firstNote
+            ? `/${term}/${course}/units/${unit}/notes/${firstNote}`
+            : `/${term}/${course}/units/${unit}`
+          }
+          className="unit-card"
+        >
+          <div className="unit-title">{unit}</div>
+        </Link>
+      ))}
+    </div>
+  ) : (mustKnowContent && term !== '1B') ? (
+    <div className="no-notes-placeholder">
+      <div className="markdown-content" dangerouslySetInnerHTML={{ __html: mustKnowContent }} />
+    </div>
+  ) : (
+    <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '1.2em', color: '#555' }}>
+      No units found for this course yet.
+    </p>
+  );
+
   return (
     <div className="course-contents">
       <h1>{term} - {course}</h1>
-      <div className="unit-grid">
-        {unitsWithFirstNotes.map(({ unit, firstNote }) => (
-          <Link
-            key={unit}
-            href={firstNote
-              ? `/${term}/${course}/units/${unit}/notes/${firstNote}`
-              : `/${term}/${course}/units/${unit}`
-            }
-            className="unit-card"
-          >
-            <div className="unit-title">{unit}</div>
-          </Link>
-        ))}
-      </div>
-      {mustKnowContent && (
+      {displayContent}
+      {mustKnowContent && term === '1B' && (
         <div className="must-know-section content-rectangle">
           <div className="markdown-content" dangerouslySetInnerHTML={{ __html: mustKnowContent }} />
         </div>
@@ -77,6 +89,17 @@ export async function getStaticProps({ params }) {
       mustKnowContent = String(file);
       console.log('DEBUG: Processed mustKnowContent length:', mustKnowContent.length);
       console.log('DEBUG: First 200 chars of processed mustKnowContent:', mustKnowContent.substring(0, 200));
+    }
+  } else if (unitsWithFirstNotes.length === 0 && params.term !== '1B') {
+    const noContentFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'no-content.md');
+    if (fs.existsSync(noContentFilePath)) {
+      const fileContents = fs.readFileSync(noContentFilePath, 'utf8');
+      const processor = unified()
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypeStringify);
+      const file = await processor.process(fileContents);
+      mustKnowContent = String(file);
     }
   }
 
