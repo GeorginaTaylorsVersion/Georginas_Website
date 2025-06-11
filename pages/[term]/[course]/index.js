@@ -98,14 +98,9 @@ export async function getStaticProps({ params }) {
       const fileContents = fs.readFileSync(noContentFilePath, 'utf8');
       console.log('DEBUG: Raw no-content.md content length:', fileContents.length);
       console.log('DEBUG: First 100 chars of raw no-content.md:', fileContents.substring(0, 100));
-      const processor = unified()
-        .use(remarkParse)
-        .use(remarkRehype)
-        .use(rehypeStringify);
-      const file = await processor.process(fileContents);
-      mustKnowContent = String(file);
-      console.log('DEBUG: Processed no-content mustKnowContent length:', mustKnowContent.length);
-      console.log('DEBUG: First 100 chars of processed no-content mustKnowContent:', mustKnowContent.substring(0, 100));
+      mustKnowContent = fileContents;
+      console.log('DEBUG: Assigned raw no-content.md directly to mustKnowContent. Length:', mustKnowContent.length);
+      console.log('DEBUG: First 100 chars of assigned mustKnowContent:', mustKnowContent.substring(0, 100));
     }
   }
 
