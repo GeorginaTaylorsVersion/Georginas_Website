@@ -21,7 +21,7 @@ export default function Header() {
           <a href="/instagram" className={styles['menu-link']}>
             INSTAGRAM
           </a>
-          <a href="/podcast" className={styles['menu-link']}>
+          <a href="https://open.spotify.com/show/363TEoLJ1r6lxJ9EIA8dNv?si=H3zeEfnoSCq8HOmtCUQKWg" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
             PODCAST
           </a>
         </nav>
