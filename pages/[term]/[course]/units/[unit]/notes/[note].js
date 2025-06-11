@@ -27,7 +27,6 @@ export default function NotePage({ term, course, unit, note, noteContent, noteDa
       <Head>
         <title>{unitTitle}</title>
       </Head>
-      <h1>{unitTitle}</h1>
       {noteData.date && <p>{noteData.date}</p>}
       <div 
         className="markdown-content"
