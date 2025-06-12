@@ -1,14 +1,37 @@
 {
-  "course": "COMM 101",
-  "professor": "Peter Blake",
+  "name": "COMM 101",
   "units": [
-    { "title": "1. Time Value of Money", "file": "1. Time Value of Money" },
-    { "title": "2. Corporations and Capital", "file": "2. Corporations and Capital" },
-    { "title": "3. Debt Markets", "file": "3. Debt Markets" },
-    { "title": "4. The Stock Market", "file": "4. The Stock Market" },
-    { "title": "5. Financial Statement Analysis", "file": "5. Financial Statement Analysis" },
-    { "title": "6. Stock Picking Theories", "file": "6. Stock Picking Theories" },
-    { "title": "7. Mutual Funds and Exchange Traded Funds", "file": "7. Mutual Funds and Exchange Traded Funds" },
-    { "title": "8. Options", "file": "8. Options" }
+    {
+      "title": "Time Value of Money",
+      "path": "units/1-time-value-of-money/1-time-value-of-money.md"
+    },
+    {
+      "title": "Corporations and Capital",
+      "path": "units/2-corporations-and-capital/2-corporations-and-capital.md"
+    },
+    {
+      "title": "Debt Markets",
+      "path": "units/3-debt-markets/3-debt-markets.md"
+    },
+    {
+      "title": "The Stock Market",
+      "path": "units/4-the-stock-market/4-the-stock-market.md"
+    },
+    {
+      "title": "Financial Statement Analysis",
+      "path": "units/5-financial-statement-analysis/5-financial-statement-analysis.md"
+    },
+    {
+      "title": "Stock Picking Theories",
+      "path": "units/6-stock-picking-theories/6-stock-picking-theories.md"
+    },
+    {
+      "title": "Mutual Funds and Exchange Traded Funds",
+      "path": "units/7-mutual-funds-and-exchange-traded-funds/7-mutual-funds-and-exchange-traded-funds.md"
+    },
+    {
+      "title": "Options",
+      "path": "units/8-options/8-options.md"
+    }
   ]
 } 
