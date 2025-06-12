@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>5. Types of Recursion</title><meta name="next-head-count" content="3"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/e536495ccbc3df22.css" as="style" crossorigin=""/><link rel="stylesheet" href="/_next/static/css/e536495ccbc3df22.css" crossorigin="" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-fa99431b15635937.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/framework-fae63b21a27d6472.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/main-04104d75f6814829.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/_app-d42a100e2d2d94e7.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/%5Bterm%5D/%5Bcourse%5D/units/%5Bunit%5D/notes/%5Bnote%5D-0638d5a671315a61.js" defer="" crossorigin=""></script><script src="/_next/static/YKfBIw4l_9ufRANpG8rI5/_buildManifest.js" defer="" crossorigin=""></script><script src="/_next/static/YKfBIw4l_9ufRANpG8rI5/_ssgManifest.js" defer="" crossorigin=""></script></head><body><div id="__next"><header class="Header_header-bar__B_YGj"><div class="Header_nav-content__3d8Yq"><div class="Header_name__P6EBs">Georgina&#x27;s Website <span style="margin-left:0.5rem" role="img" aria-label="heart">❤️</span></div><nav class="Header_menu-links__PkxMg"><a href="/personal-website/" class="Header_menu-link__ZRILx">AUTHOR</a><a href="/" class="Header_menu-link__ZRILx">NOTES</a><a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" class="Header_menu-link__ZRILx">GITHUB</a><a href="/instagram" class="Header_menu-link__ZRILx">INSTAGRAM</a><a href="https://open.spotify.com/show/363TEoLJ1r6lxJ9EIA8dNv?si=H3zeEfnoSCq8HOmtCUQKWg" target="_blank" rel="noopener noreferrer" class="Header_menu-link__ZRILx">PODCAST</a></nav></div></header><div class="main-content-padding"><div class="content-rectangle"><div><div class="markdown-content "><h1>Module 5: Types of Recursion</h1>
+<p>Accumulative Approach to Recursion (structural recursion with an accumulator)</p>
+<ul>
+<li>A helper function is required
+<ul>
+<li>helper function requires at least two parameters</li>
+<li>One to keep track of what has been done on previous recursive calls (the "accumulator")</li>
+<li>One to keep track of what remaining to be processed (used to identify the base or stopping cases)</li>
+</ul>
+</li>
+<li>The main function is a wrapper function that sets the initial value of the accumulator(s).</li>
+<li>The main function may also handle special cases.</li>
+</ul>
+<p>Template:</p>
+<pre><code class="python-code-box">def acc_template(acc, remaining, *args):
+    # if at stopping case of remaining:
+    #    return (answer using acc)
+    # else:
+    #    return acc_template(updated-acc,
+    #                       updated-remaining, *args)
+    pass
+
+def fn(*args):
+    # process result of calling
+    #     acc_template(initial-acc,
+    #                 initial-remaining, *args)
+    # Note: consider special cases, as needed
+    pass
+</code></pre>
+<p>e.g. Fibonacci Sequence:</p>
+<p>Original:</p>
+<pre><code class="python-code-box">def fib(n):
+    '''returns nth Fibonacci number
+    fib: Nat -> Nat
+    Example: fib(1) => 1,
+            fib(10) => 55
+    '''
+    if n == 0: return 0
+    elif n == 1: return 1
+    else:
+        return fib(n-1) + fib(n-2)
+</code></pre>
+<p>New:</p>
+<pre><code class="python-code-box">def fib_acc(n, n0, fibs):
+    if n0 >= n: # fib(n) is last list element!
+        return fibs[-1] 
+    else:
+        fibs.append(fibs[-1] + fibs[-2]) # fib(n-1) + fib(n-2)
+        return fib_acc(n, n0+1, fibs)
+
+def fib2(n):
+    if n == 0:
+        return 0
+    else:
+        return fib_acc(n, 1, [0, 1])  # Start with fib(0) and fib(1)
+</code></pre>
+<p>Generative Recursion</p>
+<ul>
+<li>no standard template</li>
+<li>Break the problem into any subproblem(s) that seem natural for the problem</li>
+<li>Determine the base case(s)</li>
+<li>Solve the subproblems, recursively if necessary</li>
+<li>Determine how to combine subproblem solutions to solve the original problem</li>
+<li>TEST! TEST! TEST!</li>
+</ul>
+<p>e.g. gcd</p>
+<pre><code class="python-code-box">def gcd(m, n):
+    if m == 0: return n
+    elif n == 0: return m
+    else: return gcd(n, m % n)
+</code></pre>
+<p>e.g.</p>
+<p>Write the body of a function <code>mult_table(n)</code> that consumes a natural number <code>n</code> and returns the <code>n+1</code> by <code>n+1</code> multiplication table (where each entry in the inner list is equal to the product of which list it is and the inner list position number, or in other words, the product of the row and column numbers). Do not use abstract list functions (you solved this problem with abstract list functions in a previous module). Use accumulative recursion.</p>
+<pre><code class="python-code-box">def build_row_acc(row_num, col_so_far, n, acc):
+    # Base case: if we've processed all columns (0 to n), return completed row
+    if col_so_far > n:
+        return acc
+    else:
+        # Add product of current row and column to the row
+        acc.append(row_num * col_so_far)
+        # Recursively build rest of row, moving to next column
+        return build_row_acc(row_num, col_so_far + 1, n, acc)
+
+def build_table_acc(row_so_far, n, acc):
+    # Base case: if we've processed all rows (0 to n), return completed table
+    if row_so_far > n:
+        return acc
+    else:
+        # Build a new row starting from column 0 and add it to table
+        acc.append(build_row_acc(row_so_far, 0, n, []))
+        # Recursively build rest of table, moving to next row
+        return build_table_acc(row_so_far + 1, n, acc)
+
+def mult_table(n):
+    '''Returns an (n+1) by (n+1) multiplication table where each entry
+    is the product of its row and column numbers.
+    
+    mult_table: Nat => (listof (listof Nat))
+    Example: mult_table(2) => [[0,0,0], 
+                                [0,1,2], 
+                                [0,2,4]]
+    
+    Strategy:
+    1. Start with row 0, building table row by row
+    2. For each row, build it column by column
+    3. Each entry is product of row number and column number
+    '''
+    # Start building table from row 0 with empty accumulator
+    return build_table_acc(0, n, [])
+</code></pre>
+<h3><strong>Reversing a List: Sample Trace</strong></h3>
+<p>If you coded the above problem correctly, the following gives a trace of how your code likely worked assuming your accumulative helper function is called <code>build_reverse</code>:</p>
+<pre><code>reverse([1,2,3,4])
+=> build_reverse([1, 2, 3, 4], [])
+=> build_reverse([2, 3, 4], [1])
+=> build_reverse([3, 4], [2, 1])
+=> build_reverse([4], [3, 2, 1])
+=> build_reverse([], [4, 3, 2, 1])
+=> [4, 3, 2, 1]
+</code></pre>
+<pre><code class="python-code-box">def build_reverse(lst, acc):
+    # Base case: if list is empty, return accumulated result
+    if len(lst) == 0:
+        return acc # this means recursion is done, produce the newest "acc"
+    else:
+        # Take rest of list and add current first element to end of accumulator
+        return build_reverse(lst[1:], [lst[0]] + acc) 
+        # instead of "new_lst = lst[0] + build_reverse(lst[1], new_lst)" do not define new list! "[lst[0]] + acc" is going to be recursed as the new list
+        # this means: calling build_reverse, old list is now updated to list after the first element, 
+		    # new list is updated to list.append the first element of old list.
+
+def reverse(L):
+    '''Returns a new list with elements of L in reverse order
+    reverse: (listof X) -> (listof X)
+    Example: reverse([1,2,3,4]) => [4,3,2,1]
+    '''
+    # Start with empty accumulator
+    return build_reverse(L, [])
+    # this calling build_reverse helper function, defining: lst = L, acc(new list) = [] (empty)
+</code></pre></div></div></div></div><footer><p>© 2025 Georgina Wang. All rights reserved.</p></footer></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"term":"1B","course":"CS 116","unit":"5. Types of Recursion","note":"Module 5 Types of Recursion 1a9115b71c118099b8f2d8916dea058c","noteContent":"\u003ch1\u003eModule 5: Types of Recursion\u003c/h1\u003e\n\u003cp\u003eAccumulative Approach to Recursion (structural recursion with an accumulator)\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eA helper function is required\n\u003cul\u003e\n\u003cli\u003ehelper function requires at least two parameters\u003c/li\u003e\n\u003cli\u003eOne to keep track of what has been done on previous recursive calls (the \"accumulator\")\u003c/li\u003e\n\u003cli\u003eOne to keep track of what remaining to be processed (used to identify the base or stopping cases)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eThe main function is a wrapper function that sets the initial value of the accumulator(s).\u003c/li\u003e\n\u003cli\u003eThe main function may also handle special cases.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eTemplate:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef acc_template(acc, remaining, *args):\n    # if at stopping case of remaining:\n    #    return (answer using acc)\n    # else:\n    #    return acc_template(updated-acc,\n    #                       updated-remaining, *args)\n    pass\n\ndef fn(*args):\n    # process result of calling\n    #     acc_template(initial-acc,\n    #                 initial-remaining, *args)\n    # Note: consider special cases, as needed\n    pass\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003ee.g. Fibonacci Sequence:\u003c/p\u003e\n\u003cp\u003eOriginal:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef fib(n):\n    '''returns nth Fibonacci number\n    fib: Nat -\u003e Nat\n    Example: fib(1) =\u003e 1,\n            fib(10) =\u003e 55\n    '''\n    if n == 0: return 0\n    elif n == 1: return 1\n    else:\n        return fib(n-1) + fib(n-2)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eNew:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef fib_acc(n, n0, fibs):\n    if n0 \u003e= n: # fib(n) is last list element!\n        return fibs[-1] \n    else:\n        fibs.append(fibs[-1] + fibs[-2]) # fib(n-1) + fib(n-2)\n        return fib_acc(n, n0+1, fibs)\n\ndef fib2(n):\n    if n == 0:\n        return 0\n    else:\n        return fib_acc(n, 1, [0, 1])  # Start with fib(0) and fib(1)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eGenerative Recursion\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eno standard template\u003c/li\u003e\n\u003cli\u003eBreak the problem into any subproblem(s) that seem natural for the problem\u003c/li\u003e\n\u003cli\u003eDetermine the base case(s)\u003c/li\u003e\n\u003cli\u003eSolve the subproblems, recursively if necessary\u003c/li\u003e\n\u003cli\u003eDetermine how to combine subproblem solutions to solve the original problem\u003c/li\u003e\n\u003cli\u003eTEST! TEST! TEST!\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003ee.g. gcd\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef gcd(m, n):\n    if m == 0: return n\n    elif n == 0: return m\n    else: return gcd(n, m % n)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003ee.g.\u003c/p\u003e\n\u003cp\u003eWrite the body of a function \u003ccode\u003emult_table(n)\u003c/code\u003e that consumes a natural number \u003ccode\u003en\u003c/code\u003e and returns the \u003ccode\u003en+1\u003c/code\u003e by \u003ccode\u003en+1\u003c/code\u003e multiplication table (where each entry in the inner list is equal to the product of which list it is and the inner list position number, or in other words, the product of the row and column numbers). Do not use abstract list functions (you solved this problem with abstract list functions in a previous module). Use accumulative recursion.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef build_row_acc(row_num, col_so_far, n, acc):\n    # Base case: if we've processed all columns (0 to n), return completed row\n    if col_so_far \u003e n:\n        return acc\n    else:\n        # Add product of current row and column to the row\n        acc.append(row_num * col_so_far)\n        # Recursively build rest of row, moving to next column\n        return build_row_acc(row_num, col_so_far + 1, n, acc)\n\ndef build_table_acc(row_so_far, n, acc):\n    # Base case: if we've processed all rows (0 to n), return completed table\n    if row_so_far \u003e n:\n        return acc\n    else:\n        # Build a new row starting from column 0 and add it to table\n        acc.append(build_row_acc(row_so_far, 0, n, []))\n        # Recursively build rest of table, moving to next row\n        return build_table_acc(row_so_far + 1, n, acc)\n\ndef mult_table(n):\n    '''Returns an (n+1) by (n+1) multiplication table where each entry\n    is the product of its row and column numbers.\n    \n    mult_table: Nat =\u003e (listof (listof Nat))\n    Example: mult_table(2) =\u003e [[0,0,0], \n                                [0,1,2], \n                                [0,2,4]]\n    \n    Strategy:\n    1. Start with row 0, building table row by row\n    2. For each row, build it column by column\n    3. Each entry is product of row number and column number\n    '''\n    # Start building table from row 0 with empty accumulator\n    return build_table_acc(0, n, [])\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e\u003cstrong\u003eReversing a List: Sample Trace\u003c/strong\u003e\u003c/h3\u003e\n\u003cp\u003eIf you coded the above problem correctly, the following gives a trace of how your code likely worked assuming your accumulative helper function is called \u003ccode\u003ebuild_reverse\u003c/code\u003e:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ereverse([1,2,3,4])\n=\u003e build_reverse([1, 2, 3, 4], [])\n=\u003e build_reverse([2, 3, 4], [1])\n=\u003e build_reverse([3, 4], [2, 1])\n=\u003e build_reverse([4], [3, 2, 1])\n=\u003e build_reverse([], [4, 3, 2, 1])\n=\u003e [4, 3, 2, 1]\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef build_reverse(lst, acc):\n    # Base case: if list is empty, return accumulated result\n    if len(lst) == 0:\n        return acc # this means recursion is done, produce the newest \"acc\"\n    else:\n        # Take rest of list and add current first element to end of accumulator\n        return build_reverse(lst[1:], [lst[0]] + acc) \n        # instead of \"new_lst = lst[0] + build_reverse(lst[1], new_lst)\" do not define new list! \"[lst[0]] + acc\" is going to be recursed as the new list\n        # this means: calling build_reverse, old list is now updated to list after the first element, \n\t\t    # new list is updated to list.append the first element of old list.\n\ndef reverse(L):\n    '''Returns a new list with elements of L in reverse order\n    reverse: (listof X) -\u003e (listof X)\n    Example: reverse([1,2,3,4]) =\u003e [4,3,2,1]\n    '''\n    # Start with empty accumulator\n    return build_reverse(L, [])\n    # this calling build_reverse helper function, defining: lst = L, acc(new list) = [] (empty)\n\u003c/code\u003e\u003c/pre\u003e","noteData":{},"unitTitle":"5. Types of Recursion"},"__N_SSG":true},"page":"/[term]/[course]/units/[unit]/notes/[note]","query":{"term":"1B","course":"CS 116","unit":"5. Types of Recursion","note":"Module 5 Types of Recursion 1a9115b71c118099b8f2d8916dea058c"},"buildId":"YKfBIw4l_9ufRANpG8rI5","isFallback":false,"gsp":true,"scriptLoader":[]}</script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script></body></html>

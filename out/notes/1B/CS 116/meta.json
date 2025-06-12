@@ -1,0 +1,16 @@
+{
+  "course": "CS 116",
+  "professor": "Valentina Hideg",
+  "units": [
+    { "title": "1. Introduction to Programming in Python", "file": "1. Introduction to Programming in Python" },
+    { "title": "2. Variables and Conditional Statements", "file": "2. Variables and Conditional Statements" },
+    { "title": "3. Strings and Input:Output", "file": "3. Strings and Input:Output" },
+    { "title": "4. Lists", "file": "4. Lists" },
+    { "title": "5. Types of Recursion", "file": "5. Types of Recursion" },
+    { "title": "6. Iterative Structures in Python", "file": "6. Iterative Structures in Python" },
+    { "title": "7. Efficiency", "file": "7. Efficiency" },
+    { "title": "8. Searching and Sorting Algorithms", "file": "8. Searching and Sorting Algorithms" },
+    { "title": "9. Additional Options for Organizing Data", "file": "9. Additional Options for Organizing Data" },
+    { "title": "10. File Input and Output", "file": "10. File Input and Output" }
+  ]
+} 

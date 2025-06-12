@@ -1,0 +1,14 @@
+{
+  "course": "COMM 101",
+  "professor": "Peter Blake",
+  "units": [
+    { "name": "1. Time Value of Money", "path": "1.-Time-Value-of-Money", "file": "notes" },
+    { "name": "2. Corporations and Capital", "path": "2.-Corporations-and-Capital", "file": "notes" },
+    { "name": "3. Debt Markets", "path": "3.-Debt-Markets", "file": "notes" },
+    { "name": "4. The Stock Market", "path": "4.-The-Stock-Market", "file": "notes" },
+    { "name": "5. Financial Statement Analysis", "path": "5.-Financial-Statement-Analysis", "file": "notes" },
+    { "name": "6. Stock Picking Theories", "path": "6.-Stock-Picking-Theories", "file": "notes" },
+    { "name": "7. Mutual Funds and Exchange Traded Funds", "path": "7.-Mutual-Funds-and-Exchange-Traded-Funds", "file": "notes" },
+    { "name": "8. Options", "path": "8.-Options", "file": "notes" }
+  ]
+} 

@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>6. Iterative Structures in Python</title><meta name="next-head-count" content="3"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/e536495ccbc3df22.css" as="style" crossorigin=""/><link rel="stylesheet" href="/_next/static/css/e536495ccbc3df22.css" crossorigin="" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-fa99431b15635937.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/framework-fae63b21a27d6472.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/main-04104d75f6814829.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/_app-d42a100e2d2d94e7.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/%5Bterm%5D/%5Bcourse%5D/units/%5Bunit%5D/notes/%5Bnote%5D-0638d5a671315a61.js" defer="" crossorigin=""></script><script src="/_next/static/YKfBIw4l_9ufRANpG8rI5/_buildManifest.js" defer="" crossorigin=""></script><script src="/_next/static/YKfBIw4l_9ufRANpG8rI5/_ssgManifest.js" defer="" crossorigin=""></script></head><body><div id="__next"><header class="Header_header-bar__B_YGj"><div class="Header_nav-content__3d8Yq"><div class="Header_name__P6EBs">Georgina&#x27;s Website <span style="margin-left:0.5rem" role="img" aria-label="heart">❤️</span></div><nav class="Header_menu-links__PkxMg"><a href="/personal-website/" class="Header_menu-link__ZRILx">AUTHOR</a><a href="/" class="Header_menu-link__ZRILx">NOTES</a><a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" class="Header_menu-link__ZRILx">GITHUB</a><a href="/instagram" class="Header_menu-link__ZRILx">INSTAGRAM</a><a href="https://open.spotify.com/show/363TEoLJ1r6lxJ9EIA8dNv?si=H3zeEfnoSCq8HOmtCUQKWg" target="_blank" rel="noopener noreferrer" class="Header_menu-link__ZRILx">PODCAST</a></nav></div></header><div class="main-content-padding"><div class="content-rectangle"><div><div class="markdown-content "><h1>Module 6: Iterative Structures in Python</h1>
+<p>There are 2 main ways to parse through a list, for loop and while loop, where a for loop generally do something for every element of the list whereas a while loop will continuously run so long something is true.</p>
+<p>While Loops</p>
+<pre><code class="python-code-box">def singleton(n):
+  answer = []
+  if n >= 0:
+    answer.append(n)
+    n = n - 1 
+# after n = n - 1 run return answer
+  return answer
+</code></pre>
+<pre><code class="python-code-box">def singleton2(n):
+  answer = [] ## initialize loop variables
+  while n >= 0: #'n >= 0' is loop guard
+    answer.append(n) #update variables used in loop guard
+    n = n - 1 #update value being calculated
+# after n = n - 1 run while n >= 0
+  return answer 
+# return answer is 'out of the loop'
+</code></pre>
+<p>Template:</p>
+<pre><code class="python-code-box">## initialize loop variables
+while test: # loop guard
+  ## body, including statements to:
+  ## - update variables used in loop guard
+  ## - update value being calculated
+## additional processing
+</code></pre>
+<h3><strong><code>while</code> Loop Basics</strong></h3>
+<ul>
+<li>If the loop guard is <code>True</code>, execute the loop body.</li>
+<li>If the loop guard is <code>False</code>, do not execute the loop body.</li>
+<li>After completing the loop body, evaluate the loop guard again.</li>
+</ul>
+<pre><code class="python-code-box">def is_prime(n):
+  '''
+  Returns True if n is prime and False otherwise
+  
+  is_prime: Nat -> Bool
+  '''    
+  if n &#x3C; 2:
+    return False
+  test_factor = 2 #define a test_factor to start, not 1 which divides everything
+  while test_factor &#x3C; n: #keep running while as long as test_factor &#x3C; n
+    if n % test_factor == 0: #if n can be divided by any number that is 1 &#x3C; and &#x3C; n
+      return False # then it is not a prime
+    else: #if it can not be divided 
+      test_factor = test_factor + 1 #keep checking until test_factor = n
+  return True #if exited while loop, then all possible test_factor have been check, is prime
+</code></pre>
+<pre><code class="python-code-box">##another version
+def is_prime(n):
+  '''
+  Returns True if n is prime and False otherwise
+  
+  is_prime: Nat -> Bool
+  '''    
+  if n &#x3C; 2:
+    return False
+  test_factor = 2
+  while test_factor * test_factor &#x3C;= n: 
+  #f n has any factor greater than its square root, 
+	#there must also be a corresponding factor smaller than its square root.
+    if n % test_factor == 0:
+      return False
+    test_factor += 1 #the code increase test_factor by 1
+  return True
+</code></pre>
+<pre><code class="python-code-box">##this is an infinite loop
+def loop_forever():
+  ''' 
+  Tries to count to 10 by counting by twos.
+  
+  loop_forever: None -> None
+  '''
+  i = 1
+  my_list = []
+  while i != 10:
+    my_list.append(i)
+    i = i + 2
+  return
+
+loop_forever()
+</code></pre>
+<pre><code class="python-code-box">##Factorial Up
+def factorial(n):
+  '''
+  Returns n!
+  
+  factorial: Nat -> Nat
+  
+  Examples:
+     factorial(0) => 1
+     factorial(4) => 24
+  '''
+  if n &#x3C;= 1:
+    return 1
+  test_factor = 2
+  final = 1
+  while test_factor &#x3C;= n:
+    final = final * test_factor
+    test_factor += 1
+  return final
+</code></pre>
+<pre><code class="python-code-box">##Factorial Down
+def factorial(n):
+  '''
+  Returns n!
+  
+  factorial: Nat -> Nat
+  
+  Examples:
+     factorial(0) => 1
+     factorial(4) => 24
+  '''
+  if n == 0:
+    return 1
+  final = 1
+  while n >= 1:
+    final = final * n
+    n -= 1
+  return final
+</code></pre>
+<p>Write the body of a function halve_evens(L) that returns None and mutates L so that all even numbers in L are halved.
+You must use while loops in your solution. Do not use recursion or abstract list functions.</p>
+<pre><code class="python-code-box">def halve_evens(L):
+  '''
+  Returns None and mutates L so that all even numbers are halved
+  
+  Effects: Mutates L
+  
+  halve_evens: (listof Int) -> None
+  
+  Examples:
+     L = []
+     halve_evens(L) => None
+     and L is still []
+     
+     L = [1,3,5,7]
+     halve_evens(L) => None
+     and L is still [1,3,5,7]
+     
+     L = [1,2,3,4]
+     halve_evens(L) => None
+     and L has been mutated to [1,1,3,2]
+
+  #Wrong version:
+  if L == []:
+    return [] #this is wrong because it returns a list, not None
+  list = [] #this is wrong because it initializes a new list, not mutates the original list
+  index = 0
+  while len(L) > index:
+    if L[index] % 2 == 0:
+      list.append(L[index] // 2) #this does not mutate L, it creates a new list
+    else: list.append(L[index]) 
+    index += 1
+  return list #this is wrong because it returns a list, not None
+  '''
+  index = 0
+  while index &#x3C; len(L):
+    if L[index] % 2 == 0:
+      L[index] = L[index] // 2
+    index += 1
+</code></pre>
+<hr>
+<p>For Loops</p>
+<h3><strong>Compare and Contrast <code>while</code> and <code>for</code> Loops</strong></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong><code>while</code> Loop</strong></th>
+<th><strong><code>for</code> Loop</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initialization</td>
+<td>Loop counter should be initialized outside loop</td>
+<td>Loop counter initialized automatically</td>
+</tr>
+<tr>
+<td>Continuation</td>
+<td>Includes continuation test before body</td>
+<td>Continues while more elements in the collection</td>
+</tr>
+<tr>
+<td>Updates</td>
+<td>Should update loop variables in body of loop</td>
+<td>Loop variable updated automaticallyDoes not update in loop</td>
+</tr>
+<tr>
+<td>Repetition</td>
+<td>Body contains steps to repeat</td>
+<td>Body contains steps to repeat</td>
+</tr>
+</tbody>
+</table>
+<p>Template to iterate over a collection via for loops</p>
+<pre><code class="python-code-box">for item in collection: 
+	#loop_body: some operations involving item
+</code></pre>
+<pre><code class="python-code-box">## Sum of Squares
+def sum_squares(a, b):
+  '''
+  Returns the sum of squares from a to b inclusive.
+  
+  sum_squares: Nat Nat -> Nat
+  
+  Examples:
+     sum_squares(2, 1) => 0
+     sum_squares(1, 2) => 5
+  '''
+  sum_all = 0
+  for i in range(a,b + 1):
+    sq = i*i
+    sum_all = sum_all + sq
+  return sum_all
+
+check.expect("Test 1", sum_squares(2,1), 0)
+check.expect("Test 2", sum_squares(1,2), 5)
+check.expect("Test 3", sum_squares(2,5), 54)
+</code></pre>
+<pre><code class="python-code-box">#mutation
+def multiply_by(values, factor):
+  '''
+  Returns None and mutates values so that each entry
+  is multiplied by factor
+  
+  Effects: Mutates values
+  
+  multiply_by: (listof Int) Int -> None
+  
+  Examples:
+     L = []
+     multiply_by(L, 14) => None
+     and L is still []
+     
+     L = [1, 2, 3]
+     multiply_by(L, 4) => None
+     and L is [4, 8, 12]
+     
+     L = [1, 22]
+     multiply_by(L, 0) => None
+     and L is [0, 0]
+  '''
+  for pos in range(len(values)):
+    values[pos] = values[pos] * factor #make sure to check its values[pos] not values
+</code></pre>
+<pre><code class="python-code-box">def halve_evens_ret(L):
+  '''
+  Returns a copy of L with all even numbers divided by 2
+  
+  halve_evens_ret: (listof Int) -> (listof Int)
+  
+  Examples:
+     halve_evens_ret([]) => []
+     halve_evens_ret([1,3,5,7]) => [1,3,5,7]
+     halve_evens_ret([1,2,3,4]) => [1,1,3,2]
+  '''
+  new_list = []
+  for x in L:
+      if x % 2 == 0:
+          # Even, so append its half
+          new_list.append(x // 2)
+      else:
+          # Odd, so append as is
+          new_list.append(x)
+  
+  # Return the fully built list
+  return new_list
+</code></pre>
+<pre><code class="python-code-box">def halve_evens(L):
+  '''
+  Returns None and mutates L so that all even numbers are halved
+  
+  Effects: Mutates L
+  
+  halve_evens: (listof Int) -> None
+  
+  Examples:
+     L = []
+     halve_evens(L) => None
+     and L is still []
+     
+     L = [1,3,5,7]
+     halve_evens(L) => None
+     and L is still [1,3,5,7]
+     
+     L = [1,2,3,4]
+     halve_evens(L) => None
+     and L has been mutated to [1,1,3,2]
+  '''
+  for i in range(len(L)):
+    if L[i] % 2 == 0:
+      L[i] = L[i] /2
+    else: L[i] = L[i]
+</code></pre>
+<hr>
+<p>Looping over Nested Lists</p>
+<pre><code class="python-code-box">def negate_first(L, val):
+  '''
+  Mutates the list so the first occurrence of val is negated
+  
+  Effects: Mutates L
+  
+  negate_first: (listof (listof Int)) -> None
+  Requires: 
+     val occurs in L
+  
+  Examples:
+     L = []
+     negate_first(L, 10) => None
+     and L is not mutated
+     
+     L = [[0], [3,2,1], [] ,[17,1,9,10], [1, 2]]
+     negate_first(L, 1) => None
+     and L is mutated to:
+     [[0], [3,2,-1], [] ,[17,1,9,10], [1, 2]]
+  '''
+  for sublist in L:
+    for i in range(len(sublist)):
+      if sublist[i] == val:
+        sublist[i] = -val
+        return
+</code></pre>
+<pre><code class="python-code-box">def column(grid, col_num):
+  '''
+  Returns the col_num column of grid
+  
+  column: Grid Nat -> (listof Nat)
+  Requires: 
+     grid is not empty
+     col_num &#x3C;= len(grid)-1
+  
+  Examples:
+     column([[1]], 0) => [1]
+     column([[10,2],[20,1]], 1) => [2, 1]
+  '''
+  result = []
+  for sublist in grid:
+    for i in sublist:
+      col = sublist[col_num]
+    result.append(col)
+  return result
+</code></pre></div></div></div></div><footer><p>© 2025 Georgina Wang. All rights reserved.</p></footer></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"term":"1B","course":"CS 116","unit":"6. Iterative Structures in Python","note":"Module 6 Iterative Structures in Python 1a9115b71c118082bec0cc9ebbc963eb","noteContent":"\u003ch1\u003eModule 6: Iterative Structures in Python\u003c/h1\u003e\n\u003cp\u003eThere are 2 main ways to parse through a list, for loop and while loop, where a for loop generally do something for every element of the list whereas a while loop will continuously run so long something is true.\u003c/p\u003e\n\u003cp\u003eWhile Loops\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef singleton(n):\n  answer = []\n  if n \u003e= 0:\n    answer.append(n)\n    n = n - 1 \n# after n = n - 1 run return answer\n  return answer\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef singleton2(n):\n  answer = [] ## initialize loop variables\n  while n \u003e= 0: #'n \u003e= 0' is loop guard\n    answer.append(n) #update variables used in loop guard\n    n = n - 1 #update value being calculated\n# after n = n - 1 run while n \u003e= 0\n  return answer \n# return answer is 'out of the loop'\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eTemplate:\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e## initialize loop variables\nwhile test: # loop guard\n  ## body, including statements to:\n  ## - update variables used in loop guard\n  ## - update value being calculated\n## additional processing\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3\u003e\u003cstrong\u003e\u003ccode\u003ewhile\u003c/code\u003e Loop Basics\u003c/strong\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eIf the loop guard is \u003ccode\u003eTrue\u003c/code\u003e, execute the loop body.\u003c/li\u003e\n\u003cli\u003eIf the loop guard is \u003ccode\u003eFalse\u003c/code\u003e, do not execute the loop body.\u003c/li\u003e\n\u003cli\u003eAfter completing the loop body, evaluate the loop guard again.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef is_prime(n):\n  '''\n  Returns True if n is prime and False otherwise\n  \n  is_prime: Nat -\u003e Bool\n  '''    \n  if n \u0026#x3C; 2:\n    return False\n  test_factor = 2 #define a test_factor to start, not 1 which divides everything\n  while test_factor \u0026#x3C; n: #keep running while as long as test_factor \u0026#x3C; n\n    if n % test_factor == 0: #if n can be divided by any number that is 1 \u0026#x3C; and \u0026#x3C; n\n      return False # then it is not a prime\n    else: #if it can not be divided \n      test_factor = test_factor + 1 #keep checking until test_factor = n\n  return True #if exited while loop, then all possible test_factor have been check, is prime\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e##another version\ndef is_prime(n):\n  '''\n  Returns True if n is prime and False otherwise\n  \n  is_prime: Nat -\u003e Bool\n  '''    \n  if n \u0026#x3C; 2:\n    return False\n  test_factor = 2\n  while test_factor * test_factor \u0026#x3C;= n: \n  #f n has any factor greater than its square root, \n\t#there must also be a corresponding factor smaller than its square root.\n    if n % test_factor == 0:\n      return False\n    test_factor += 1 #the code increase test_factor by 1\n  return True\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e##this is an infinite loop\ndef loop_forever():\n  ''' \n  Tries to count to 10 by counting by twos.\n  \n  loop_forever: None -\u003e None\n  '''\n  i = 1\n  my_list = []\n  while i != 10:\n    my_list.append(i)\n    i = i + 2\n  return\n\nloop_forever()\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e##Factorial Up\ndef factorial(n):\n  '''\n  Returns n!\n  \n  factorial: Nat -\u003e Nat\n  \n  Examples:\n     factorial(0) =\u003e 1\n     factorial(4) =\u003e 24\n  '''\n  if n \u0026#x3C;= 1:\n    return 1\n  test_factor = 2\n  final = 1\n  while test_factor \u0026#x3C;= n:\n    final = final * test_factor\n    test_factor += 1\n  return final\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e##Factorial Down\ndef factorial(n):\n  '''\n  Returns n!\n  \n  factorial: Nat -\u003e Nat\n  \n  Examples:\n     factorial(0) =\u003e 1\n     factorial(4) =\u003e 24\n  '''\n  if n == 0:\n    return 1\n  final = 1\n  while n \u003e= 1:\n    final = final * n\n    n -= 1\n  return final\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eWrite the body of a function halve_evens(L) that returns None and mutates L so that all even numbers in L are halved.\nYou must use while loops in your solution. Do not use recursion or abstract list functions.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef halve_evens(L):\n  '''\n  Returns None and mutates L so that all even numbers are halved\n  \n  Effects: Mutates L\n  \n  halve_evens: (listof Int) -\u003e None\n  \n  Examples:\n     L = []\n     halve_evens(L) =\u003e None\n     and L is still []\n     \n     L = [1,3,5,7]\n     halve_evens(L) =\u003e None\n     and L is still [1,3,5,7]\n     \n     L = [1,2,3,4]\n     halve_evens(L) =\u003e None\n     and L has been mutated to [1,1,3,2]\n\n  #Wrong version:\n  if L == []:\n    return [] #this is wrong because it returns a list, not None\n  list = [] #this is wrong because it initializes a new list, not mutates the original list\n  index = 0\n  while len(L) \u003e index:\n    if L[index] % 2 == 0:\n      list.append(L[index] // 2) #this does not mutate L, it creates a new list\n    else: list.append(L[index]) \n    index += 1\n  return list #this is wrong because it returns a list, not None\n  '''\n  index = 0\n  while index \u0026#x3C; len(L):\n    if L[index] % 2 == 0:\n      L[index] = L[index] // 2\n    index += 1\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003cp\u003eFor Loops\u003c/p\u003e\n\u003ch3\u003e\u003cstrong\u003eCompare and Contrast \u003ccode\u003ewhile\u003c/code\u003e and \u003ccode\u003efor\u003c/code\u003e Loops\u003c/strong\u003e\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003cstrong\u003eFunction\u003c/strong\u003e\u003c/th\u003e\n\u003cth\u003e\u003cstrong\u003e\u003ccode\u003ewhile\u003c/code\u003e Loop\u003c/strong\u003e\u003c/th\u003e\n\u003cth\u003e\u003cstrong\u003e\u003ccode\u003efor\u003c/code\u003e Loop\u003c/strong\u003e\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eInitialization\u003c/td\u003e\n\u003ctd\u003eLoop counter should be initialized outside loop\u003c/td\u003e\n\u003ctd\u003eLoop counter initialized automatically\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eContinuation\u003c/td\u003e\n\u003ctd\u003eIncludes continuation test before body\u003c/td\u003e\n\u003ctd\u003eContinues while more elements in the collection\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eUpdates\u003c/td\u003e\n\u003ctd\u003eShould update loop variables in body of loop\u003c/td\u003e\n\u003ctd\u003eLoop variable updated automaticallyDoes not update in loop\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eRepetition\u003c/td\u003e\n\u003ctd\u003eBody contains steps to repeat\u003c/td\u003e\n\u003ctd\u003eBody contains steps to repeat\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003eTemplate to iterate over a collection via for loops\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003efor item in collection: \n\t#loop_body: some operations involving item\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e## Sum of Squares\ndef sum_squares(a, b):\n  '''\n  Returns the sum of squares from a to b inclusive.\n  \n  sum_squares: Nat Nat -\u003e Nat\n  \n  Examples:\n     sum_squares(2, 1) =\u003e 0\n     sum_squares(1, 2) =\u003e 5\n  '''\n  sum_all = 0\n  for i in range(a,b + 1):\n    sq = i*i\n    sum_all = sum_all + sq\n  return sum_all\n\ncheck.expect(\"Test 1\", sum_squares(2,1), 0)\ncheck.expect(\"Test 2\", sum_squares(1,2), 5)\ncheck.expect(\"Test 3\", sum_squares(2,5), 54)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003e#mutation\ndef multiply_by(values, factor):\n  '''\n  Returns None and mutates values so that each entry\n  is multiplied by factor\n  \n  Effects: Mutates values\n  \n  multiply_by: (listof Int) Int -\u003e None\n  \n  Examples:\n     L = []\n     multiply_by(L, 14) =\u003e None\n     and L is still []\n     \n     L = [1, 2, 3]\n     multiply_by(L, 4) =\u003e None\n     and L is [4, 8, 12]\n     \n     L = [1, 22]\n     multiply_by(L, 0) =\u003e None\n     and L is [0, 0]\n  '''\n  for pos in range(len(values)):\n    values[pos] = values[pos] * factor #make sure to check its values[pos] not values\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef halve_evens_ret(L):\n  '''\n  Returns a copy of L with all even numbers divided by 2\n  \n  halve_evens_ret: (listof Int) -\u003e (listof Int)\n  \n  Examples:\n     halve_evens_ret([]) =\u003e []\n     halve_evens_ret([1,3,5,7]) =\u003e [1,3,5,7]\n     halve_evens_ret([1,2,3,4]) =\u003e [1,1,3,2]\n  '''\n  new_list = []\n  for x in L:\n      if x % 2 == 0:\n          # Even, so append its half\n          new_list.append(x // 2)\n      else:\n          # Odd, so append as is\n          new_list.append(x)\n  \n  # Return the fully built list\n  return new_list\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef halve_evens(L):\n  '''\n  Returns None and mutates L so that all even numbers are halved\n  \n  Effects: Mutates L\n  \n  halve_evens: (listof Int) -\u003e None\n  \n  Examples:\n     L = []\n     halve_evens(L) =\u003e None\n     and L is still []\n     \n     L = [1,3,5,7]\n     halve_evens(L) =\u003e None\n     and L is still [1,3,5,7]\n     \n     L = [1,2,3,4]\n     halve_evens(L) =\u003e None\n     and L has been mutated to [1,1,3,2]\n  '''\n  for i in range(len(L)):\n    if L[i] % 2 == 0:\n      L[i] = L[i] /2\n    else: L[i] = L[i]\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003cp\u003eLooping over Nested Lists\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef negate_first(L, val):\n  '''\n  Mutates the list so the first occurrence of val is negated\n  \n  Effects: Mutates L\n  \n  negate_first: (listof (listof Int)) -\u003e None\n  Requires: \n     val occurs in L\n  \n  Examples:\n     L = []\n     negate_first(L, 10) =\u003e None\n     and L is not mutated\n     \n     L = [[0], [3,2,1], [] ,[17,1,9,10], [1, 2]]\n     negate_first(L, 1) =\u003e None\n     and L is mutated to:\n     [[0], [3,2,-1], [] ,[17,1,9,10], [1, 2]]\n  '''\n  for sublist in L:\n    for i in range(len(sublist)):\n      if sublist[i] == val:\n        sublist[i] = -val\n        return\n\u003c/code\u003e\u003c/pre\u003e\n\u003cpre\u003e\u003ccode class=\"python-code-box\"\u003edef column(grid, col_num):\n  '''\n  Returns the col_num column of grid\n  \n  column: Grid Nat -\u003e (listof Nat)\n  Requires: \n     grid is not empty\n     col_num \u0026#x3C;= len(grid)-1\n  \n  Examples:\n     column([[1]], 0) =\u003e [1]\n     column([[10,2],[20,1]], 1) =\u003e [2, 1]\n  '''\n  result = []\n  for sublist in grid:\n    for i in sublist:\n      col = sublist[col_num]\n    result.append(col)\n  return result\n\u003c/code\u003e\u003c/pre\u003e","noteData":{},"unitTitle":"6. Iterative Structures in Python"},"__N_SSG":true},"page":"/[term]/[course]/units/[unit]/notes/[note]","query":{"term":"1B","course":"CS 116","unit":"6. Iterative Structures in Python","note":"Module 6 Iterative Structures in Python 1a9115b71c118082bec0cc9ebbc963eb"},"buildId":"YKfBIw4l_9ufRANpG8rI5","isFallback":false,"gsp":true,"scriptLoader":[]}</script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script></body></html>

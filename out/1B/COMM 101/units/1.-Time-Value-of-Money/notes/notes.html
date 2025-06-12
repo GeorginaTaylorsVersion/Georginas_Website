@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>1. Time Value of Money</title><meta name="next-head-count" content="3"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/e536495ccbc3df22.css" as="style" crossorigin=""/><link rel="stylesheet" href="/_next/static/css/e536495ccbc3df22.css" crossorigin="" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" crossorigin="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-fa99431b15635937.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/framework-fae63b21a27d6472.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/main-04104d75f6814829.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/_app-d42a100e2d2d94e7.js" defer="" crossorigin=""></script><script src="/_next/static/chunks/pages/%5Bterm%5D/%5Bcourse%5D/units/%5Bunit%5D/notes/%5Bnote%5D-0638d5a671315a61.js" defer="" crossorigin=""></script><script src="/_next/static/YKfBIw4l_9ufRANpG8rI5/_buildManifest.js" defer="" crossorigin=""></script><script src="/_next/static/YKfBIw4l_9ufRANpG8rI5/_ssgManifest.js" defer="" crossorigin=""></script></head><body><div id="__next"><header class="Header_header-bar__B_YGj"><div class="Header_nav-content__3d8Yq"><div class="Header_name__P6EBs">Georgina&#x27;s Website <span style="margin-left:0.5rem" role="img" aria-label="heart">❤️</span></div><nav class="Header_menu-links__PkxMg"><a href="/personal-website/" class="Header_menu-link__ZRILx">AUTHOR</a><a href="/" class="Header_menu-link__ZRILx">NOTES</a><a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" class="Header_menu-link__ZRILx">GITHUB</a><a href="/instagram" class="Header_menu-link__ZRILx">INSTAGRAM</a><a href="https://open.spotify.com/show/363TEoLJ1r6lxJ9EIA8dNv?si=H3zeEfnoSCq8HOmtCUQKWg" target="_blank" rel="noopener noreferrer" class="Header_menu-link__ZRILx">PODCAST</a></nav></div></header><div class="main-content-padding"><div class="content-rectangle"><div><div class="markdown-content "><h3>Unit 1: Time Value of Money</h3>
+<p>The <strong>time value of money</strong> refers to the concept that money has the ability to earn more money over time. This means that a dollar today is worth more than a dollar in the future because it can be invested to earn a return. To compare cash flows at different points in time, you must either compute their future value by <strong>compounding</strong> or their present value by <strong>discounting</strong>.</p>
+<h3>Simple Interest</h3>
+<p>Simple interest is calculated solely on the <strong>original principal amount</strong>. The interest rate is applied to the principal, the simple interest rate, and the time the loan is outstanding.</p>
+<ul>
+<li>
+<p><strong>Variables:</strong></p>
+<ul>
+<li><strong>PV</strong> (Present Value): The principal amount invested or loaned at the start of the time period (in $).</li>
+<li><strong>r</strong> (Interest Rate): The annual interest rate charged (in %).</li>
+<li><strong>t</strong> (Time): The time period the loan is outstanding (in years).</li>
+<li><strong>I</strong> (Interest): The interest charged or earned over the time period (in $).</li>
+<li><strong>FV</strong> (Future Value): The amount due by the end of the time period (in $).</li>
+</ul>
+</li>
+<li>
+<p><strong>Formulas:</strong></p>
+<ul>
+<li>
+<p>Interest Charged:</p>
+<pre><code>I = PV * r * t
+
+</code></pre>
+</li>
+<li>
+<p>Future Value:</p>
+<pre><code>FV = PV + I
+FV = PV * (1 + r * t)
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Calculating the Number of Days:</strong> In Canada, interest is charged for the day the loan was made <strong>OR</strong> the day it was repaid, but never both. The exact number of days is determined by reference to the calendar.</p>
+</li>
+</ul>
+<h3>Compound Interest - Single Payment</h3>
+<p>Compound interest is the type of investment where the investor earns (or borrower pays) interest on their <strong>principal PLUS the accumulated interest</strong>. This is also known as "interest on interest". The rate published by the bank is typically an <strong>annual nominal rate</strong>, which is then divided by the number of compounding periods per year to get the periodic rate.</p>
+<ul>
+<li>
+<p><strong>Compounding Periods:</strong> Different instruments use different compounding periods, such as semi-annually (twice per year), quarterly, monthly, or even daily.</p>
+</li>
+<li>
+<p><strong>Variables:</strong></p>
+<ul>
+<li><strong>PV</strong>: Present Value or Principal, the amount invested or lent.</li>
+<li><strong>FV</strong>: Future Value or Accumulated Value.</li>
+<li><strong>m</strong>: Number of compounding periods per year.</li>
+<li><strong>n</strong>: Total number of compounding periods (<code>n = m * number of years</code>).</li>
+<li><strong>jm</strong>: Nominal rate or yearly interest rate.</li>
+<li><strong>i</strong>: Interest rate per compounding period (<code>i = jm/m</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Formulas:</strong></p>
+<ul>
+<li>
+<p>Future Value of a Single Payment:</p>
+<pre><code>FV = PV * (1 + i)^n
+
+</code></pre>
+</li>
+<li>
+<p>Present Value of a Single Payment:</p>
+<pre><code>PV = FV * (1 + i)^-n
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Impact of Compounding Frequency:</strong> The <strong>more often</strong> interest is compounded at the same nominal interest rate, the <strong>higher the future value</strong> will be. Conversely, the <strong>lower the present value</strong> will be for a given future amount.</p>
+</li>
+<li>
+<p><strong>Determining Rate or Time for a Single Payment:</strong></p>
+<ul>
+<li>
+<p>Solving for <code>i</code> (rate):</p>
+<pre><code>i = (FV/PV)^(1/n) - 1
+
+</code></pre>
+</li>
+<li>
+<p>Solving for <code>n</code> (time):</p>
+<pre><code>n = log(FV/PV) / log(1+i)
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3>Compound Interest - Simple Annuity</h3>
+<p>A <strong>simple annuity</strong> is an annuity where the <strong>payment interval and the interest compounding period are the same</strong>.</p>
+<ul>
+<li>
+<p><strong>Types of Annuities:</strong></p>
+<ul>
+<li><strong>Ordinary Annuity (Annuity-Immediate)</strong>: Payments are made at the <strong>end</strong> of the payment interval.</li>
+<li><strong>Annuity Due</strong>: Payments are made at the <strong>beginning</strong> of the payment interval.</li>
+</ul>
+</li>
+<li>
+<p><strong>Variables:</strong></p>
+<ul>
+<li><strong>FV</strong>: Future or Accumulated Value.</li>
+<li><strong>PV</strong>: Present or Discounted Value.</li>
+<li><strong>PMT</strong>: Periodic payment made every interval.</li>
+<li><strong>n</strong>: Total number of compounding periods (also number of payments for a simple annuity).</li>
+<li><strong>i</strong>: Interest rate per compounding period.</li>
+</ul>
+</li>
+<li>
+<p><strong>Formulas:</strong></p>
+<ul>
+<li>
+<p>Future Value of a Simple Ordinary Annuity:</p>
+<pre><code>FV = PMT * ((1+i)^n - 1) / i
+
+</code></pre>
+</li>
+<li>
+<p>Present Value of a Simple Ordinary Annuity:</p>
+<pre><code>PV = PMT * (1 - (1+i)^-n) / i
+
+</code></pre>
+</li>
+<li>
+<p>Future Value of a Simple Annuity Due:</p>
+<pre><code>FV = PMT * ((1+i)^n - 1) / i * (1+i)
+FV = (1+i) * sne
+
+</code></pre>
+</li>
+<li>
+<p>Present Value of a Simple Annuity Due:</p>
+<pre><code>PV = PMT * (1 - (1+i)^-n) / i * (1+i)
+PV = (1+i) * ane
+
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Applications:</strong> The present value of an annuity has many useful applications, such as calculating the initial amount of a loan (PV of all payments must equal the loan amount), the cost of an annuity sold by an insurance company, or comparing cash vs. lease options for an asset.</p>
+</li>
+</ul>
+<h3>Perpetuities</h3>
+<p>A <strong>perpetuity</strong> is an annuity where the <strong>equal payments continue forever</strong>. The <strong>accumulated value</strong> of a perpetuity is meaningless as there is no end to payments, but its <strong>present value does have meaning</strong>. Examples include scholarship endowment funds and, theoretically, some common and preferred shares of corporations due to their infinite life.</p>
+<ul>
+<li>
+<p><strong>Formula for Present Value of a Perpetuity (payments at the end of each period):</strong></p>
+<pre><code>PV = PMT / i
+
+</code></pre>
+</li>
+<li>
+<p><strong>Formula for Present Value of a Perpetuity (first payment immediately):</strong></p>
+<pre><code>PV = PMT + (PMT / i)
+
+</code></pre>
+</li>
+</ul>
+<h3>Growing Perpetuities</h3>
+<p>In some cases, such as with many common shares, the amount of the payment is expected to <strong>grow by a constant percentage</strong>. This is still an infinite geometric progression.</p>
+<ul>
+<li>
+<p><strong>Formula for Present Value of a Growing Perpetuity:</strong>
+Where <strong>PMT</strong> is the amount of the <strong>first payment</strong>, <strong>g</strong> is the <strong>growth rate</strong> per period, and <strong>i</strong> is the <strong>interest rate</strong> per period. This formula applies as long as <code>i > g</code>.</p>
+<pre><code>PV = PMT / (i - g)
+
+</code></pre>
+</li>
+</ul>
+<h3>Growing Annuities</h3>
+<p>A <strong>growing annuity</strong> is an annuity where the <strong>payments vary by a common percentage</strong>. This is mathematically referred to as a geometric progression. It's used to value a series of future cash flows that are expected to grow at a consistent rate.</p>
+<ul>
+<li>
+<p><strong>Key Variables</strong>:</p>
+<ul>
+<li><strong>PV</strong> (Present Value): The present value or worth of the growing annuity today.</li>
+<li><strong>PVA</strong>: The present value of the annuity or the value of the first payment.</li>
+<li><strong>n</strong>: The number of periods or length of the annuity.</li>
+<li><strong>r</strong>: The discount or interest rate per period. A higher <code>r</code> decreases the present value.</li>
+<li><strong>g</strong>: The growth rate of the annuity or payments over time. A higher <code>g</code> increases the present value.</li>
+</ul>
+</li>
+<li>
+<p><strong>Formulas for Present Value of a Growing Annuity:</strong>
+(Note: The sources also mention <code>PV = C * ((1 - ((1+r)/(1+g))^n) / (r-g))</code> and for continuous compounding <code>PV = C * ((1 - e^(n * (r - g))) / (r - g))</code>).</p>
+<pre><code>PV = PVA * ((1 - (1+g)^n) / (r-g))
+
+</code></pre>
+</li>
+<li>
+<p><strong>Formula for Future Value of a Growing Annuity:</strong></p>
+<pre><code>FV = PVA * (((1+r)^n - (1+g)^n) / (r-g))
+
+</code></pre>
+</li>
+<li>
+<p><strong>Compounding:</strong> Refers to the process where an investment's value increases as interest is earned on both the principal and previously earned interest.</p>
+</li>
+<li>
+<p><strong>Applications:</strong> Crucial in corporate finance for evaluating investment projects, pricing financial assets (like bonds with growing coupon payments), and calculating foreseeable returns. Also used in personal finance for mortgage payments, retirement planning, and evaluating regular investments.</p>
+</li>
+</ul></div></div></div></div><footer><p>© 2025 Georgina Wang. All rights reserved.</p></footer></div><script id="__NEXT_DATA__" type="application/json" crossorigin="">{"props":{"pageProps":{"term":"1B","course":"COMM 101","unit":"1.-Time-Value-of-Money","note":"notes","noteContent":"\u003ch3\u003eUnit 1: Time Value of Money\u003c/h3\u003e\n\u003cp\u003eThe \u003cstrong\u003etime value of money\u003c/strong\u003e refers to the concept that money has the ability to earn more money over time. This means that a dollar today is worth more than a dollar in the future because it can be invested to earn a return. To compare cash flows at different points in time, you must either compute their future value by \u003cstrong\u003ecompounding\u003c/strong\u003e or their present value by \u003cstrong\u003ediscounting\u003c/strong\u003e.\u003c/p\u003e\n\u003ch3\u003eSimple Interest\u003c/h3\u003e\n\u003cp\u003eSimple interest is calculated solely on the \u003cstrong\u003eoriginal principal amount\u003c/strong\u003e. The interest rate is applied to the principal, the simple interest rate, and the time the loan is outstanding.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eVariables:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003ePV\u003c/strong\u003e (Present Value): The principal amount invested or loaned at the start of the time period (in $).\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003er\u003c/strong\u003e (Interest Rate): The annual interest rate charged (in %).\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003et\u003c/strong\u003e (Time): The time period the loan is outstanding (in years).\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eI\u003c/strong\u003e (Interest): The interest charged or earned over the time period (in $).\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFV\u003c/strong\u003e (Future Value): The amount due by the end of the time period (in $).\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormulas:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eInterest Charged:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eI = PV * r * t\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFuture Value:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFV = PV + I\nFV = PV * (1 + r * t)\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eCalculating the Number of Days:\u003c/strong\u003e In Canada, interest is charged for the day the loan was made \u003cstrong\u003eOR\u003c/strong\u003e the day it was repaid, but never both. The exact number of days is determined by reference to the calendar.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eCompound Interest - Single Payment\u003c/h3\u003e\n\u003cp\u003eCompound interest is the type of investment where the investor earns (or borrower pays) interest on their \u003cstrong\u003eprincipal PLUS the accumulated interest\u003c/strong\u003e. This is also known as \"interest on interest\". The rate published by the bank is typically an \u003cstrong\u003eannual nominal rate\u003c/strong\u003e, which is then divided by the number of compounding periods per year to get the periodic rate.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eCompounding Periods:\u003c/strong\u003e Different instruments use different compounding periods, such as semi-annually (twice per year), quarterly, monthly, or even daily.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eVariables:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003ePV\u003c/strong\u003e: Present Value or Principal, the amount invested or lent.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFV\u003c/strong\u003e: Future Value or Accumulated Value.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003em\u003c/strong\u003e: Number of compounding periods per year.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003en\u003c/strong\u003e: Total number of compounding periods (\u003ccode\u003en = m * number of years\u003c/code\u003e).\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ejm\u003c/strong\u003e: Nominal rate or yearly interest rate.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ei\u003c/strong\u003e: Interest rate per compounding period (\u003ccode\u003ei = jm/m\u003c/code\u003e).\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormulas:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eFuture Value of a Single Payment:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFV = PV * (1 + i)^n\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePresent Value of a Single Payment:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = FV * (1 + i)^-n\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eImpact of Compounding Frequency:\u003c/strong\u003e The \u003cstrong\u003emore often\u003c/strong\u003e interest is compounded at the same nominal interest rate, the \u003cstrong\u003ehigher the future value\u003c/strong\u003e will be. Conversely, the \u003cstrong\u003elower the present value\u003c/strong\u003e will be for a given future amount.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eDetermining Rate or Time for a Single Payment:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eSolving for \u003ccode\u003ei\u003c/code\u003e (rate):\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ei = (FV/PV)^(1/n) - 1\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eSolving for \u003ccode\u003en\u003c/code\u003e (time):\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003en = log(FV/PV) / log(1+i)\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eCompound Interest - Simple Annuity\u003c/h3\u003e\n\u003cp\u003eA \u003cstrong\u003esimple annuity\u003c/strong\u003e is an annuity where the \u003cstrong\u003epayment interval and the interest compounding period are the same\u003c/strong\u003e.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eTypes of Annuities:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eOrdinary Annuity (Annuity-Immediate)\u003c/strong\u003e: Payments are made at the \u003cstrong\u003eend\u003c/strong\u003e of the payment interval.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eAnnuity Due\u003c/strong\u003e: Payments are made at the \u003cstrong\u003ebeginning\u003c/strong\u003e of the payment interval.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eVariables:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eFV\u003c/strong\u003e: Future or Accumulated Value.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ePV\u003c/strong\u003e: Present or Discounted Value.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ePMT\u003c/strong\u003e: Periodic payment made every interval.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003en\u003c/strong\u003e: Total number of compounding periods (also number of payments for a simple annuity).\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ei\u003c/strong\u003e: Interest rate per compounding period.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormulas:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eFuture Value of a Simple Ordinary Annuity:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFV = PMT * ((1+i)^n - 1) / i\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePresent Value of a Simple Ordinary Annuity:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = PMT * (1 - (1+i)^-n) / i\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFuture Value of a Simple Annuity Due:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFV = PMT * ((1+i)^n - 1) / i * (1+i)\nFV = (1+i) * sne\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePresent Value of a Simple Annuity Due:\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = PMT * (1 - (1+i)^-n) / i * (1+i)\nPV = (1+i) * ane\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eApplications:\u003c/strong\u003e The present value of an annuity has many useful applications, such as calculating the initial amount of a loan (PV of all payments must equal the loan amount), the cost of an annuity sold by an insurance company, or comparing cash vs. lease options for an asset.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003ePerpetuities\u003c/h3\u003e\n\u003cp\u003eA \u003cstrong\u003eperpetuity\u003c/strong\u003e is an annuity where the \u003cstrong\u003eequal payments continue forever\u003c/strong\u003e. The \u003cstrong\u003eaccumulated value\u003c/strong\u003e of a perpetuity is meaningless as there is no end to payments, but its \u003cstrong\u003epresent value does have meaning\u003c/strong\u003e. Examples include scholarship endowment funds and, theoretically, some common and preferred shares of corporations due to their infinite life.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormula for Present Value of a Perpetuity (payments at the end of each period):\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = PMT / i\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormula for Present Value of a Perpetuity (first payment immediately):\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = PMT + (PMT / i)\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eGrowing Perpetuities\u003c/h3\u003e\n\u003cp\u003eIn some cases, such as with many common shares, the amount of the payment is expected to \u003cstrong\u003egrow by a constant percentage\u003c/strong\u003e. This is still an infinite geometric progression.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormula for Present Value of a Growing Perpetuity:\u003c/strong\u003e\nWhere \u003cstrong\u003ePMT\u003c/strong\u003e is the amount of the \u003cstrong\u003efirst payment\u003c/strong\u003e, \u003cstrong\u003eg\u003c/strong\u003e is the \u003cstrong\u003egrowth rate\u003c/strong\u003e per period, and \u003cstrong\u003ei\u003c/strong\u003e is the \u003cstrong\u003einterest rate\u003c/strong\u003e per period. This formula applies as long as \u003ccode\u003ei \u003e g\u003c/code\u003e.\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = PMT / (i - g)\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003eGrowing Annuities\u003c/h3\u003e\n\u003cp\u003eA \u003cstrong\u003egrowing annuity\u003c/strong\u003e is an annuity where the \u003cstrong\u003epayments vary by a common percentage\u003c/strong\u003e. This is mathematically referred to as a geometric progression. It's used to value a series of future cash flows that are expected to grow at a consistent rate.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eKey Variables\u003c/strong\u003e:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003ePV\u003c/strong\u003e (Present Value): The present value or worth of the growing annuity today.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ePVA\u003c/strong\u003e: The present value of the annuity or the value of the first payment.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003en\u003c/strong\u003e: The number of periods or length of the annuity.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003er\u003c/strong\u003e: The discount or interest rate per period. A higher \u003ccode\u003er\u003c/code\u003e decreases the present value.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eg\u003c/strong\u003e: The growth rate of the annuity or payments over time. A higher \u003ccode\u003eg\u003c/code\u003e increases the present value.\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormulas for Present Value of a Growing Annuity:\u003c/strong\u003e\n(Note: The sources also mention \u003ccode\u003ePV = C * ((1 - ((1+r)/(1+g))^n) / (r-g))\u003c/code\u003e and for continuous compounding \u003ccode\u003ePV = C * ((1 - e^(n * (r - g))) / (r - g))\u003c/code\u003e).\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ePV = PVA * ((1 - (1+g)^n) / (r-g))\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eFormula for Future Value of a Growing Annuity:\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003eFV = PVA * (((1+r)^n - (1+g)^n) / (r-g))\n\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eCompounding:\u003c/strong\u003e Refers to the process where an investment's value increases as interest is earned on both the principal and previously earned interest.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eApplications:\u003c/strong\u003e Crucial in corporate finance for evaluating investment projects, pricing financial assets (like bonds with growing coupon payments), and calculating foreseeable returns. Also used in personal finance for mortgage payments, retirement planning, and evaluating regular investments.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e","noteData":{},"unitTitle":"1. Time Value of Money"},"__N_SSG":true},"page":"/[term]/[course]/units/[unit]/notes/[note]","query":{"term":"1B","course":"COMM 101","unit":"1.-Time-Value-of-Money","note":"notes"},"buildId":"YKfBIw4l_9ufRANpG8rI5","isFallback":false,"gsp":true,"scriptLoader":[]}</script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script></body></html>
