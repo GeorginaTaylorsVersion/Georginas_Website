@@ -1,4 +1,4 @@
-### Unit 1: Time Value of Money
+# 1. Time Value of Money
 
 The **time value of money** refers to the concept that money has the ability to earn more money over time. This means that a dollar today is worth more than a dollar in the future because it can be invested to earn a return. To compare cash flows at different points in time, you must either compute their future value by **compounding** or their present value by **discounting**.
 

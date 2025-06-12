@@ -1,4 +1,4 @@
-### Unit 7: Mutual Funds and Exchange Traded Funds
+# 7. Mutual Funds and Exchange Traded Funds
 
 This unit explores two popular pooled investment vehicles: mutual funds and exchange-traded funds (ETFs).
 

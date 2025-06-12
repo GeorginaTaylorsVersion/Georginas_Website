@@ -1,4 +1,4 @@
-### Unit 8: Options
+# 8. Options
 
 This unit introduces options, their terminology, and basic concepts.
 

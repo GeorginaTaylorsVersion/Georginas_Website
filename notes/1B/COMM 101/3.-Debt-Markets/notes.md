@@ -1,4 +1,4 @@
-### Unit 3: Debt Markets
+# 3. Debt Markets
 
 This unit delves into debt as an investment type, focusing on the money market and the bond market.
 
@@ -28,7 +28,7 @@ The 5 main investment alternatives in the Canadian money market are:
 4. **Commercial Paper (CP)**:
     - **Short-term unsecured debt issued by a corporation**; term is less than one year.
     - Normally issued in multiples of $50,000.
-    - Rated by agencies (Standard & Poor’s, Moody’s, Fitch, Dominion Bond Rating Service) to indicate safety.
+    - Rated by agencies (Standard & Poor's, Moody's, Fitch, Dominion Bond Rating Service) to indicate safety.
     - Similar to T-bills, sold at a discount, paying face amount on maturity.
 5. **Repurchase Agreements (Repos)**:
     - Standardized agreements where an **investor buys a security from a borrower**, and the borrower agrees to **buy it back at a higher price** on a specified future date (normally within 2 weeks, most common is overnight).

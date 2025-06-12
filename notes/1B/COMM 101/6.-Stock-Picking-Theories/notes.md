@@ -1,4 +1,4 @@
-### Unit 6: Stock Picking Theories
+# 6. Stock Picking Theories
 
 This unit explores various theories and methods investors use to pick stocks, addressing whether it's possible to outperform the market.
 
@@ -41,10 +41,10 @@ These strategies are historically successful and require very little time for th
 - This is called "passive" because the portfolio is not actively traded daily. This strategy has elements of both top-down (picking the universe) and bottom-up (selecting individual stocks).
 - **Real World Examples**:
     - **The Dogs of the Dow**: A popular strategy where the **10 stocks with the highest dividend yield are chosen from the DJIA** on January 1st each year, and an equal 10% is invested in each. This strategy has historically **outperformed the entire DJIA**.
-    - **U.S. Stocks Example (James O’Shaughnessy)**: Studies showed that selecting the top decile (10%) of all stocks based on single metrics like **lowest P/E ratio, P/B, P/CF, P/S, or highest dividend yield** consistently produced **superior returns** compared to the overall market. The **lowest P/E ratio strategy yielded the highest return** (16.11% compounded annually) with slightly lower volatility. The **highest dividend yield strategy produced the lowest volatility**.
+    - **U.S. Stocks Example (James O'Shaughnessy)**: Studies showed that selecting the top decile (10%) of all stocks based on single metrics like **lowest P/E ratio, P/B, P/CF, P/S, or highest dividend yield** consistently produced **superior returns** compared to the overall market. The **lowest P/E ratio strategy yielded the highest return** (16.11% compounded annually) with slightly lower volatility. The **highest dividend yield strategy produced the lowest volatility**.
     - **Canadian Example (S&P/TSX 60)**: Similar results were found in Canada, with selecting the **top 10 stocks based on lowest P/E ratio producing the highest return** (18.59% annual compound return over 15 years).
 - **Combining Variables**: Combining multiple factors can further improve returns and lower volatility.
-    - **Enterprise Value (EV)**: Market value of common and preferred shares plus the market value of debt, minus the company’s cash.
+    - **Enterprise Value (EV)**: Market value of common and preferred shares plus the market value of debt, minus the company's cash.
     - **EBITDA**: Earnings before Interest, Taxes, Depreciation, and Amortization; a proxy for cash flow from operations.
     - **EV/EBITDA**: The ratio of Enterprise Value to EBITDA. **Lower is better**, with a benchmark generally **under 10**.
     - **Shareholder Yield**: Dividends plus share repurchases (net of any stock issued), divided by total market capitalization. Represents the percentage of stock price returned to shareholders. **Higher is better**.
@@ -67,7 +67,7 @@ These strategies are historically successful and require very little time for th
     - **Small Companies**: Often overlooked by large institutional investors, offering better opportunities for significant price increases when discovered.
     - **Durable Competitive Advantage**: A company's ability to maintain competitive edge over time.
     - **Consistently Growing EPS and Book Values**: Seen as strong signals of a good company. Steady growth in EPS suggests a durable competitive advantage. Consistently increasing book values mean intrinsic values are also increasing.
-- **Determining a Company’s Intrinsic Value**: More an art than a science, but value investors aim for reasonable accuracy. They calculate financial ratios and use judgment, building in a **margin of safety** (buying at a price significantly below their estimated intrinsic value).
+- **Determining a Company's Intrinsic Value**: More an art than a science, but value investors aim for reasonable accuracy. They calculate financial ratios and use judgment, building in a **margin of safety** (buying at a price significantly below their estimated intrinsic value).
     - **Ten Year EPS Test (Warren Buffett)**: A numerical approach to estimate future value and potential return. Steps involve calculating historical EPS growth, identifying lowest P/E, projecting future EPS, applying the low P/E, and computing the annual rate of return based on today's price. This analysis uses **past performance** to make assumptions about the future.
     - **Asset vs. Earnings Valuation Test**: Compares a valuation based on assets to one based on earnings. It involves estimating an **adjusted book value** (replacement cost of assets less liabilities) and an **earnings value** (adjusted EPS divided by an estimated cost of capital). A significant gap where earnings value exceeds adjusted asset value is a positive sign.
 - Value investors believe that **patience and due diligence are rewarded**, and discounted stocks will eventually trade at fair value.

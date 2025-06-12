@@ -1,4 +1,4 @@
-### Unit 4: The Stock Market
+# 4. The Stock Market
 
 This unit covers the origins, purpose, types, and regulation of stock markets, as well as how stocks are bought and sold.
 

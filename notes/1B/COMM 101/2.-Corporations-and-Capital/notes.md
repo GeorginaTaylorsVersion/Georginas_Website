@@ -1,4 +1,4 @@
-### Unit 2: Corporations and Capital
+# 2. Corporations and Capital
 
 This unit explains how corporations are formed and how capital is created, focusing on their legal forms and financial structures.
 
