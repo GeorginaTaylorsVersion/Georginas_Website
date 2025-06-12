@@ -22,7 +22,7 @@ export default function NotePage({ term, course, unit, note, noteContent, noteDa
     }
   }, [noteContent]); // Re-run effect if noteContent changes
 
-  const markdownClass = `markdown-content ${course === 'ECON 101' ? 'econ-notes-spacing' : ''}`;
+  const markdownClass = `markdown-content ${(course === 'ECON 101' || course === 'COMM 101') ? 'econ-notes-spacing' : ''}`;
 
   return (
     <div>
