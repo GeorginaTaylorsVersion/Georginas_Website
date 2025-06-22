@@ -41,6 +41,9 @@ export default async function handler(req, res) {
 
     // 2. Construct the prompt for the Gemini API
     const apiKey = process.env.GEMINI_API_KEY;
+    console.log('Gemini API Key loaded:', !!apiKey);
+    console.log('Total notes content length:', allNotesContent.length);
+
     const model = 'gemini-1.5-flash';
 
     const systemPrompt = `You are a helpful chatbot for a university student's notes website. Your name is Georgina's Assistant.
