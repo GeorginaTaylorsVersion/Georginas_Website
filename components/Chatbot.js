@@ -54,11 +54,18 @@ export default function Chatbot() {
                 }),
             });
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+            let data;
+            try {
+                data = await response.json();
+            } catch (e) {
+                data = {};
             }
-
-            const data = await response.json();
+            if (!response.ok) {
+                const errorText = data.message || 'Sorry, something went wrong. Please try again.';
+                const errorMessage = { role: 'model', text: errorText };
+                setMessages((prev) => [...prev, errorMessage]);
+                return;
+            }
             const botMessage = { role: 'model', text: data.answer };
             setMessages((prev) => [...prev, botMessage]);
 
