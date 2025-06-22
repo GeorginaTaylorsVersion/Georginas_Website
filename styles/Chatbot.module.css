@@ -6,21 +6,22 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #E91E63; /* Pink */
+    background: linear-gradient(135deg, #ffb6d5 0%, #ff69b4 100%); /* Soft pink gradient */
     color: white;
-    font-size: 28px;
+    font-size: 32px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(255, 182, 213, 0.35), 0 2px 8px rgba(0,0,0,0.10);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background 0.2s;
 }
 
 .chatButton:hover {
     transform: scale(1.1);
+    background: linear-gradient(135deg, #ff69b4 0%, #ffb6d5 100%); /* Deeper pink on hover */
 }
 
 /* Chat Window */
