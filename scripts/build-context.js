@@ -27,13 +27,25 @@ async function buildContext() {
   console.log('Starting to build notes context for chatbot...');
   try {
     const notesDir = path.join(process.cwd(), 'notes');
-    const noteFiles = await getAllMarkdownFiles(notesDir);
+    const keyDefsPath = path.join(notesDir, 'KEY_DEFINITIONS.md');
     let allNotesContent = '';
 
+    // Prepend key definitions if the file exists
+    try {
+      const keyDefs = await fs.readFile(keyDefsPath, 'utf-8');
+      allNotesContent += `--- START OF NOTE: KEY_DEFINITIONS.md ---\n\n${keyDefs}\n\n--- END OF NOTE: KEY_DEFINITIONS.md ---\n\n`;
+    } catch (e) {
+      // If the file doesn't exist, skip
+      console.warn('No KEY_DEFINITIONS.md found, skipping.');
+    }
+
+    const noteFiles = await getAllMarkdownFiles(notesDir);
     for (const file of noteFiles) {
-        const content = await fs.readFile(file, 'utf-8');
-        const relativePath = path.relative(notesDir, file);
-        allNotesContent += `--- START OF NOTE: ${relativePath} ---\n\n${content}\n\n--- END OF NOTE: ${relativePath} ---\n\n`;
+      // Skip KEY_DEFINITIONS.md if already included
+      if (file === keyDefsPath) continue;
+      const content = await fs.readFile(file, 'utf-8');
+      const relativePath = path.relative(notesDir, file);
+      allNotesContent += `--- START OF NOTE: ${relativePath} ---\n\n${content}\n\n--- END OF NOTE: ${relativePath} ---\n\n`;
     }
 
     const libDir = path.join(process.cwd(), 'lib');
