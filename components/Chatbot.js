@@ -43,19 +43,22 @@ export default function Chatbot() {
         setIsLoading(true);
 
         try {
-            const historyForApi = messages.map(msg => ({ role: msg.role === 'model' ? 'model' : 'user', text: msg.text }));
-            
-            const res = await fetch('/api/chat', {
+            const response = await fetch('/api/chat', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ question: input, history: historyForApi }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question: input,
+                    history: messages.slice(1),
+                }),
             });
 
-            if (!res.ok) {
-                throw new Error('Failed to get response from the server.');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
 
-            const data = await res.json();
+            const data = await response.json();
             const botMessage = { role: 'model', text: data.answer };
             setMessages((prev) => [...prev, botMessage]);
 
