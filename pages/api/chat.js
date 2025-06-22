@@ -1,21 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-// Function to recursively find all markdown files
-async function getAllMarkdownFiles(dir) {
-  let files = [];
-  const entries = await fs.readdir(dir, { withFileTypes: true });
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
-      files = files.concat(await getAllMarkdownFiles(fullPath));
-    } else if (entry.isFile() && path.extname(fullPath) === '.md') {
-      files.push(fullPath);
-    }
-  }
-  return files;
-}
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method Not Allowed' });
@@ -28,22 +13,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 1. Read all notes to build the context
-    const notesDir = path.join(process.cwd(), 'notes');
-    const noteFiles = await getAllMarkdownFiles(notesDir);
-    let allNotesContent = '';
-
-    for (const file of noteFiles) {
-        const content = await fs.readFile(file, 'utf-8');
-        const relativePath = path.relative(notesDir, file);
-        allNotesContent += `--- START OF NOTE: ${relativePath} ---\n\n${content}\n\n--- END OF NOTE: ${relativePath} ---\n\n`;
-    }
-
+    // 1. Read the pre-built context from the JSON file.
+    const contextFilePath = path.join(process.cwd(), 'lib', 'notes-context.json');
+    const contextData = await fs.readFile(contextFilePath, 'utf-8');
+    const { content: allNotesContent } = JSON.parse(contextData);
+    
     // 2. Construct the prompt for the Gemini API
     const apiKey = process.env.GEMINI_API_KEY;
-    console.log('Gemini API Key loaded:', !!apiKey);
-    console.log('Total notes content length:', allNotesContent.length);
-
+    
     const model = 'gemini-1.5-flash-latest';
 
     const systemPrompt = `You are a helpful chatbot for a university student's notes website. Your name is Georgina's Assistant.
@@ -60,7 +37,6 @@ export default async function handler(req, res) {
     // Add previous conversation history
     if (history) {
         history.forEach(turn => {
-            // Map the role from the frontend ('assistant') to the API ('model')
             const role = turn.role === 'assistant' ? 'model' : 'user';
             contents.push({ role: role, parts: [{ text: turn.text }] });
         });
