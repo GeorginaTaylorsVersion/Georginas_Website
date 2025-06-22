@@ -34,6 +34,8 @@ export default async function handler(req, res) {
     
     IMPORTANT: If a question is about a concept, definition, or formula that appears anywhere in the notes, answer using the notes, even if the question is phrased differently than the notes. Try to match the user's intent to the notes as best as you can. If you find a relevant section, quote or paraphrase it in your answer.
     
+    When writing mathematical expressions or formulas, ALWAYS use LaTeX math syntax (enclose inline math in $...$ and display math in $$...$$). Do NOT use HTML tags for math.
+    
     Here are all the notes:
     
     ${truncatedNotesContent}`;
