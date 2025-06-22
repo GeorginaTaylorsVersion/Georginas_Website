@@ -27,6 +27,9 @@ export default async function handler(req, res) {
     You must answer questions based ONLY on the provided notes context.
     If the answer is not found in the notes, you MUST say "I'm sorry, I don't have information on that topic based on the provided notes."
     Be concise and helpful. Format your answers clearly. You can use markdown for formatting if it helps.
+    
+    IMPORTANT: If a question is about a concept, definition, or formula that appears anywhere in the notes, answer using the notes, even if the question is phrased differently than the notes. Try to match the user's intent to the notes as best as you can. If you find a relevant section, quote or paraphrase it in your answer.
+    
     Here are all the notes:
     
     ${allNotesContent}`;

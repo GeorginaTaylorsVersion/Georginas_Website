@@ -1,14 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import styles from '../styles/Chatbot.module.css';
-
-// A simple component to render markdown
-const Markdown = ({ content }) => {
-    // A very basic markdown to HTML converter
-    const html = content
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\n/g, '<br />');
-    return <div dangerouslySetInnerHTML={{ __html: html }} />;
-};
 
 export default function Chatbot() {
     const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +81,11 @@ export default function Chatbot() {
                     <div className={styles.chatMessages}>
                         {messages.map((msg, index) => (
                             <div key={index} className={`${styles.message} ${styles[msg.role]}`}>
-                                <Markdown content={msg.text} />
+                                <ReactMarkdown
+                                    children={msg.text}
+                                    remarkPlugins={[remarkMath]}
+                                    rehypePlugins={[rehypeKatex]}
+                                />
                             </div>
                         ))}
                         {isLoading && (
