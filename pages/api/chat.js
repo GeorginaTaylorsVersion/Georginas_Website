@@ -18,6 +18,10 @@ export default async function handler(req, res) {
     const contextData = await fs.readFile(contextFilePath, 'utf-8');
     const { content: allNotesContent } = JSON.parse(contextData);
     
+    // Truncate context to avoid exceeding Gemini's context window
+    const MAX_CONTEXT_CHARS = 40000;
+    const truncatedNotesContent = allNotesContent.slice(0, MAX_CONTEXT_CHARS);
+
     // 2. Construct the prompt for the Gemini API
     const apiKey = process.env.GEMINI_API_KEY;
     
@@ -32,7 +36,7 @@ export default async function handler(req, res) {
     
     Here are all the notes:
     
-    ${allNotesContent}`;
+    ${truncatedNotesContent}`;
     
     // Construct conversation history for the API
     const contents = [];
