@@ -28,6 +28,11 @@ export default function Chatbot() {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messages]);
 
     const handleSend = async () => {
         if (!input.trim()) return;
