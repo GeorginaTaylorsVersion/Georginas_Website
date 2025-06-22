@@ -81,7 +81,7 @@ export default function Chatbot() {
     return (
         <div>
             <button className={styles.chatButton} onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? '✖' : <span role="img" aria-label="bow" style={{fontSize: '2.1em', color: '#ff69b4', lineHeight: 1}}>🎀</span>}
+                {isOpen ? '✖' : <span role="img" aria-label="bow" style={{fontSize: '1em', color: '#ff69b4', lineHeight: 1}}>🎀</span>}
             </button>
 
             {isOpen && (
