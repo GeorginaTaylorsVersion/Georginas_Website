@@ -55,20 +55,19 @@ export default async function handler(req, res) {
     ${allNotesContent}`;
     
     // Construct conversation history for the API
-    const messages = [
-        { role: 'user', parts: [{ text: systemPrompt }] },
-        { role: 'model', parts: [{ text: "Hello! I am Georgina's Assistant. How can I help you with these notes today?" }] }
-    ];
+    const contents = [];
 
     // Add previous conversation history
     if (history) {
         history.forEach(turn => {
-            messages.push({ role: turn.role, parts: [{ text: turn.text }] });
+            // Map the role from the frontend ('assistant') to the API ('model')
+            const role = turn.role === 'assistant' ? 'model' : 'user';
+            contents.push({ role: role, parts: [{ text: turn.text }] });
         });
     }
 
     // Add the new question
-    messages.push({ role: 'user', parts: [{ text: question }] });
+    contents.push({ role: 'user', parts: [{ text: question }] });
 
     // 3. Call the Gemini API
     const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
@@ -76,7 +75,12 @@ export default async function handler(req, res) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ contents: messages }),
+      body: JSON.stringify({ 
+        contents: contents,
+        system_instruction: {
+          parts: [{ text: systemPrompt }]
+        }
+      }),
     });
 
     if (!response.ok) {
