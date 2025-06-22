@@ -1,2 +1,9 @@
 node_modules
 .next 
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Cache for chatbot context
+/lib 
