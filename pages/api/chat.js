@@ -44,7 +44,7 @@ export default async function handler(req, res) {
     console.log('Gemini API Key loaded:', !!apiKey);
     console.log('Total notes content length:', allNotesContent.length);
 
-    const model = 'gemini-1.5-flash';
+    const model = 'gemini-2.0-flash';
 
     const systemPrompt = `You are a helpful chatbot for a university student's notes website. Your name is Georgina's Assistant.
     You must answer questions based ONLY on the provided notes context.
