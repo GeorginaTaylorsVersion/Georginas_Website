@@ -5,11 +5,14 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkMath from 'remark-math';
 import remarkRehype from 'remark-rehype';
+import rehypeRaw from 'rehype-raw';
 import rehypeKatex from 'rehype-katex';
 import rehypeStringify from 'rehype-stringify';
 import remarkGfm from 'remark-gfm';
 import rehypePrependImageBasePath from '../../../../../../lib/rehype-prepend-image-base-path.mjs';
 import remarkPythonCodeBox from '../../../../../../lib/remark-python-code-box.mjs';
+import remarkConsecutiveImages from '../../../../../../lib/remark-consecutive-images.mjs';
+import rehypeConsecutiveImages from '../../../../../../lib/rehype-consecutive-images.mjs';
 
 export default function NotePage({ term, course, unit, note, noteContent, noteData, unitTitle }) {
   useEffect(() => {
@@ -73,7 +76,9 @@ export async function getStaticProps({ params }) {
     .use(remarkGfm)
     .use(remarkMath)
     .use(remarkPythonCodeBox)
-    .use(remarkRehype)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeConsecutiveImages)
     .use(rehypeKatex)
     .use(rehypePrependImageBasePath, { term, course, unit })
     .use(rehypeStringify);
