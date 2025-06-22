@@ -36,7 +36,7 @@ trick: is the value of $y^\prime$ dependent on the value of x? If no, eliminate 
 
 e.g. Consider the DE $\frac{dy}{dx}=x^2y^2+1$. The DE may not appear to be *too* complicated (after all, it only involves positive integer powers of x and y), but it turns out this DE cannot be solved analytically for exact solutions. Still, we can plot its direction field to get an idea of what the solution curves would need to look like.
 
-![image1.png](/notes/1B/MATH 138/units/2. Differential Equations/image1.png)
+![image.png](/notes/1B/MATH 138/units/2. Differential Equations/image.png)
 
 From the direction field, it appears that all the solution curves are increasing functions of x. We can see from the DE that this must be the case. Indeed, if $y=y(x)$ is a solution, then the derivative of y is equal to $x^2y^2+1$, which is positive. Since $y^\prime (x) \gt 0$ for all x, it follows that y is an increasing function.
 
@@ -83,7 +83,7 @@ A solution to a DE that is separate from a family of solutions to the DE is call
 
 Imagine a tank filled with a thoroughly-mixed solution (e.g., brine, sugar water, etc.) at some initial level of concentration. The solution drains from the tank at a certain rate and, at the same time, more of the solution is pumped into the tank at a certain (possibly different) rate. The incoming solution may have a different concentration than the solution in the tank initially.
 
-![image1.png](/notes/1B/MATH 138/units/2. Differential Equations/image1.png)
+![image 1.png](/notes/1B/MATH 138/units/2. Differential Equations/image 1.png)
 
 If $A(t)$ denotes the amount of solute (e.g, salt, sugar, etc.) present in the tank at time $t$, then the rate of change of $A(t)$ with respect to $t$ is equal to the rate at which the substance enters the tank minus the rate at which the substance leaves the tank. This observation can be used to construct a separable DE to model the scenario: $\frac{dA}{dt}=\left(\begin{array}{c} \text {rate of}\\ \text {substance in} \end{array}\right)-\left(\begin{array}{c} \text {rate of}\\ \text {substance out} \end{array}\right)$. 
 
