@@ -3,7 +3,6 @@ import path from 'path';
 import fetch from 'node-fetch';
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 function cosineSimilarity(a, b) {
   let dot = 0, aNorm = 0, bNorm = 0;
@@ -47,10 +46,6 @@ export default async function handler(req, res) {
     console.error('Missing OpenAI API key');
     return res.status(503).json({ message: 'Sorry, the assistant is temporarily unavailable due to a configuration issue (OpenAI API key missing).' });
   }
-  if (!GEMINI_API_KEY) {
-    console.error('Missing Gemini API key');
-    return res.status(503).json({ message: 'Sorry, the assistant is temporarily unavailable due to a configuration issue (Gemini API key missing).' });
-  }
 
   try {
     // 1. Load embeddings
@@ -85,45 +80,51 @@ export default async function handler(req, res) {
     const topChunks = scored.slice(0, 5);
     const contextText = topChunks.map(c => c.text).join('\n\n---\n\n');
 
-    // 4. Build the prompt for Gemini
-    const model = 'gemini-1.5-flash-latest';
-    const systemPrompt = `You are a helpful chatbot for a university student's notes website. Your name is Georgina's Assistant.\nYou must answer questions based ONLY on the provided notes context.\nIf the answer is not found in the notes, you MUST say "I'm sorry, I don't have information on that topic based on the provided notes."\nBe concise and helpful. Format your answers clearly. You can use markdown for formatting if it helps.\nWhen writing mathematical expressions or formulas, ALWAYS use LaTeX math syntax (enclose inline math in $...$ and display math in $$...$$). Do NOT use HTML tags for math.\n\nHere are the most relevant notes:\n\n${contextText}`;
+    // 4. Build the prompt for OpenAI
+    const systemPrompt = `You are a helpful chatbot for a university student's notes website. Your name is Georgina's Assistant.\nYou must answer questions based ONLY on the provided notes context.\nIf the answer is not found in the notes, you MUST say \"I'm sorry, I don't have information on that topic based on the provided notes.\"\nBe concise and helpful. Format your answers clearly. You can use markdown for formatting if it helps.\nWhen writing mathematical expressions or formulas, ALWAYS use LaTeX math syntax (enclose inline math in $...$ and display math in $$...$$). Do NOT use HTML tags for math.\n\nHere are the most relevant notes:\n\n${contextText}`;
 
-    // Build conversation history for Gemini
-    const contents = [];
+    // Build conversation history for OpenAI
+    let messagesArr = [];
     if (history) {
       history.forEach(turn => {
-        const role = turn.role === 'assistant' ? 'model' : 'user';
-        contents.push({ role: role, parts: [{ text: turn.text }] });
+        const role = turn.role === 'assistant' ? 'assistant' : 'user';
+        messagesArr.push({ role: role, content: turn.text });
       });
     }
-    contents.push({ role: 'user', parts: [{ text: question }] });
+    messagesArr.push({ role: 'user', content: question });
 
-    // Call Gemini
+    // Call OpenAI Chat Completion
     let response;
     try {
-      response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`, {
+      response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        },
         body: JSON.stringify({
-          contents,
-          system_instruction: { role: 'system', parts: [{ text: systemPrompt }] },
+          model: 'gpt-3.5-turbo',
+          messages: [
+            { role: 'system', content: systemPrompt },
+            ...messagesArr
+          ],
+          temperature: 0.2,
         }),
       });
     } catch (err) {
-      console.error('Gemini API network error:', err);
+      console.error('OpenAI API network error:', err);
       return res.status(503).json({ message: 'Sorry, the assistant is temporarily unavailable due to a network error.' });
     }
     if (!response.ok) {
       const err = await response.text();
-      console.error('Gemini API error:', err);
+      console.error('OpenAI API error:', err);
       if (err.includes('quota') || err.includes('exceeded')) {
         return res.status(503).json({ message: 'Sorry, the assistant is temporarily unavailable due to API quota limits.' });
       }
       return res.status(500).json({ message: 'Sorry, something went wrong while generating an answer. Please try again later.' });
     }
     const data = await response.json();
-    const answer = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    const answer = data.choices?.[0]?.message?.content;
     if (!answer || answer.trim() === '' || answer.trim().toLowerCase().includes('something went wrong')) {
       return res.status(200).json({ answer: "I'm sorry, I don't have information on that topic based on the provided notes." });
     }

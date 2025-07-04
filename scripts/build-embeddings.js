@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch');
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const NOTES_DIR = path.join(process.cwd(), 'notes');
 const OUTPUT_FILE = path.join(process.cwd(), 'lib', 'note-embeddings.json');
 
@@ -41,28 +41,28 @@ function chunkText(text, maxLen = 500) {
 }
 
 async function getEmbedding(text) {
-  // Gemini embedding endpoint (v1beta)
-  const model = 'embedding-001';
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:embedContent?key=${GEMINI_API_KEY}`;
+  // OpenAI embedding endpoint
+  const url = 'https://api.openai.com/v1/embeddings';
   const res = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'Authorization': `Bearer ${OPENAI_API_KEY}`,
     },
     body: JSON.stringify({
-      content: { parts: [{ text }] },
+      input: text,
+      model: 'text-embedding-ada-002',
     }),
   });
   if (!res.ok) throw new Error(await res.text());
   const data = await res.json();
-  // Gemini returns { embedding: { values: [...] } }
-  if (!data.embedding || !data.embedding.values) throw new Error('No embedding returned from Gemini');
-  return data.embedding.values;
+  if (!data.data || !data.data[0] || !data.data[0].embedding) throw new Error('No embedding returned from OpenAI');
+  return data.data[0].embedding;
 }
 
 async function main() {
-  if (!GEMINI_API_KEY) {
-    console.error('Missing GEMINI_API_KEY in environment.');
+  if (!OPENAI_API_KEY) {
+    console.error('Missing OPENAI_API_KEY in environment.');
     process.exit(1);
   }
   console.log('Finding markdown files...');
