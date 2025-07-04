@@ -72,9 +72,15 @@
     padding: 15px;
     overflow-y: auto;
     background-color: #f4f7f9;
-    min-height: 100px;
-    max-height: 60vh;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the messagesEndRef does not create extra space */
+.chatMessages > div:last-child[ref] {
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .message {
