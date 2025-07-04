@@ -6,7 +6,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ffb6d5 0%, #ff69b4 100%); /* Soft pink gradient */
+    background: linear-gradient(135deg, #ffd6e0 0%, #ffb6d5 100%); /* Theme pink gradient */
     color: white;
     font-size: 32px;
     border: none;
@@ -21,7 +21,7 @@
 
 .chatButton:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #ff69b4 0%, #ffb6d5 100%); /* Deeper pink on hover */
+    background: linear-gradient(135deg, #ffb6d5 0%, #ffd6e0 100%); /* Slightly deeper on hover */
 }
 
 /* Chat Window */
@@ -45,8 +45,8 @@
 
 /* Chat Header */
 .chatHeader {
-    background-color: #E91E63; /* Pink */
-    color: white;
+    background-color: #ffd6e0; /* Theme pink */
+    color: #2c3e50; /* Match theme text color for contrast */
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -86,8 +86,8 @@
 }
 
 .user {
-    background-color: #E91E63; /* Pink */
-    color: white;
+    background-color: #ffd6e0; /* Theme pink */
+    color: #2c3e50; /* Match theme text color for contrast */
     align-self: flex-end;
     border-bottom-right-radius: 4px;
     margin-left: auto;
@@ -119,12 +119,12 @@
 
 .chatInput input:focus {
     outline: none;
-    border-color: #E91E63; /* Pink */
+    border-color: #ffd6e0; /* Theme pink */
 }
 
 .chatInput button {
-    background-color: #E91E63; /* Pink */
-    color: white;
+    background-color: #ffd6e0; /* Theme pink */
+    color: #2c3e50; /* Match theme text color for contrast */
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -134,11 +134,12 @@
 }
 
 .chatInput button:hover {
-    background-color: #c2185b; /* Darker Pink */
+    background-color: #ffb6d5; /* Slightly deeper pink for hover */
 }
 
 .chatInput button:disabled {
-    background-color: #f8bbd0; /* Lighter Pink */
+    background-color: #ffeaf4; /* Lighter pink for disabled */
+    color: #aaa;
     cursor: not-allowed;
 }
 
