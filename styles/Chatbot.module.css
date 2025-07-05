@@ -6,12 +6,12 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #ffd6e0 0%, #ffb6d5 100%); /* Theme pink gradient */
+    background: linear-gradient(135deg, #F2AFBC 0%, #e89aa8 100%); /* Theme pink gradient */
     color: white;
     font-size: 32px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(255, 182, 213, 0.35), 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 6px 18px rgba(242, 175, 188, 0.35), 0 2px 8px rgba(0,0,0,0.10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
 
 .chatButton:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #ffb6d5 0%, #ffd6e0 100%); /* Slightly deeper on hover */
+    background: linear-gradient(135deg, #e89aa8 0%, #F2AFBC 100%); /* Slightly deeper on hover */
 }
 
 /* Chat Window */
@@ -45,7 +45,7 @@
 
 /* Chat Header */
 .chatHeader {
-    background-color: #ffd6e0; /* Theme pink */
+    background-color: #F2AFBC; /* Theme pink */
     color: #2c3e50; /* Match theme text color for contrast */
     padding: 15px;
     display: flex;
@@ -92,7 +92,7 @@
 }
 
 .user {
-    background-color: #ffd6e0; /* Theme pink */
+    background-color: #F2AFBC; /* Theme pink */
     color: #2c3e50; /* Match theme text color for contrast */
     align-self: flex-end;
     border-bottom-right-radius: 4px;
@@ -125,11 +125,11 @@
 
 .chatInput input:focus {
     outline: none;
-    border-color: #ffd6e0; /* Theme pink */
+    border-color: #F2AFBC; /* Theme pink */
 }
 
 .chatInput button {
-    background-color: #ffd6e0; /* Theme pink */
+    background-color: #F2AFBC; /* Theme pink */
     color: #2c3e50; /* Match theme text color for contrast */
     border: none;
     border-radius: 20px;
@@ -140,11 +140,11 @@
 }
 
 .chatInput button:hover {
-    background-color: #ffb6d5; /* Slightly deeper pink for hover */
+    background-color: #e89aa8; /* Slightly deeper pink for hover */
 }
 
 .chatInput button:disabled {
-    background-color: #ffeaf4; /* Lighter pink for disabled */
+    background-color: #f8d5dc; /* Lighter pink for disabled */
     color: #aaa;
     cursor: not-allowed;
 }
