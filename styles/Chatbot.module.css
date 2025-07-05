@@ -6,12 +6,12 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #F2AFBC 0%, #e89aa8 100%); /* Theme pink gradient */
+    background: #96CBFC; /* Theme blue */
     color: white;
     font-size: 32px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 6px 18px rgba(242, 175, 188, 0.35), 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 6px 18px rgba(150, 203, 252, 0.35), 0 2px 8px rgba(0,0,0,0.10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,7 @@
 
 .chatButton:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, #e89aa8 0%, #F2AFBC 100%); /* Slightly deeper on hover */
+    background: #7bb8f8; /* Slightly deeper on hover */
 }
 
 /* Chat Window */
@@ -45,7 +45,7 @@
 
 /* Chat Header */
 .chatHeader {
-    background-color: #F2AFBC; /* Theme pink */
+    background-color: #96CBFC; /* Theme blue */
     color: #2c3e50; /* Match theme text color for contrast */
     padding: 15px;
     display: flex;
@@ -92,7 +92,7 @@
 }
 
 .user {
-    background-color: #F2AFBC; /* Theme pink */
+    background-color: #96CBFC; /* Theme blue */
     color: #2c3e50; /* Match theme text color for contrast */
     align-self: flex-end;
     border-bottom-right-radius: 4px;
@@ -125,11 +125,11 @@
 
 .chatInput input:focus {
     outline: none;
-    border-color: #F2AFBC; /* Theme pink */
+    border-color: #96CBFC; /* Theme blue */
 }
 
 .chatInput button {
-    background-color: #F2AFBC; /* Theme pink */
+    background-color: #96CBFC; /* Theme blue */
     color: #2c3e50; /* Match theme text color for contrast */
     border: none;
     border-radius: 20px;
@@ -140,11 +140,11 @@
 }
 
 .chatInput button:hover {
-    background-color: #e89aa8; /* Slightly deeper pink for hover */
+    background-color: #7bb8f8; /* Slightly deeper blue for hover */
 }
 
 .chatInput button:disabled {
-    background-color: #f8d5dc; /* Lighter pink for disabled */
+    background-color: #d4e7fc; /* Lighter blue for disabled */
     color: #aaa;
     cursor: not-allowed;
 }
