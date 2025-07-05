@@ -1,6 +1,6 @@
 /* Styles from personal-website/styles.css navigation */
 .header-bar {
-  background: linear-gradient(to right, #ffd6e0, #ffecf2); /* Restoring pink gradient */
+  background: #ffd6e0;
   position: fixed;
   width: 100%;
   top: 0;
