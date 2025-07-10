@@ -32,6 +32,7 @@
     width: 370px;
     max-height: 70vh;
     height: 70vh; /* Set fixed height */
+    margin-top: 24px; /* Add space at the top of the window */
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
