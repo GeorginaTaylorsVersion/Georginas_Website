@@ -31,7 +31,7 @@
     right: 25px;
     width: 370px;
     max-height: 70vh;
-    height: auto;
+    height: 70vh; /* Set fixed height */
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -40,7 +40,6 @@
     overflow: hidden;
     z-index: 9998;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    overflow-y: auto;
 }
 
 /* Chat Header */
@@ -68,19 +67,13 @@
 
 /* Messages Area */
 .chatMessages {
-    flex-grow: 1;
+    flex: 1 1 0%; /* Fill available space */
+    min-height: 0; /* Allow shrinking for flexbox */
     padding: 15px;
     overflow-y: auto;
     background-color: #f4f7f9;
     display: flex;
     flex-direction: column;
-}
-
-/* Ensure the messagesEndRef does not create extra space */
-.chatMessages > div:last-child[ref] {
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 .message {
