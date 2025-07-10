@@ -69,11 +69,11 @@
 .chatMessages {
     flex: 1 1 0%; /* Fill available space */
     min-height: 0; /* Allow shrinking for flexbox */
-    padding: 16px 15px 8px 15px; /* Space above first bubble and below last */
+    padding: 8px 15px; /* No top/bottom padding */
     overflow-y: auto;
     background-color: #f4f7f9;
     display: flex;
-    flex-direction: column; /* Restore original order */
+    flex-direction: column-reverse; /* Anchor messages/input at bottom */
 }
 
 .message {
