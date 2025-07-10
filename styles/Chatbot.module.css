@@ -69,7 +69,7 @@
 .chatMessages {
     flex: 1 1 0%; /* Fill available space */
     min-height: 0; /* Allow shrinking for flexbox */
-    padding: 15px;
+    padding: 0 15px 8px 15px; /* Only side and small bottom padding */
     overflow-y: auto;
     background-color: #f4f7f9;
     display: flex;
