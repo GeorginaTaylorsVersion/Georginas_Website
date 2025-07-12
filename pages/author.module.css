@@ -9,7 +9,7 @@
     color: #2c3e50;
     padding: 120px 2rem 2rem;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
@@ -91,7 +91,7 @@
     margin: 0 auto;
     padding: 4rem 2rem;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
@@ -318,7 +318,6 @@
 .contactItem {
     display: flex;
     align-items: center;
-    gap: 1rem;
     padding: 1.5rem;
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -330,12 +329,7 @@
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contactItem i {
-    font-size: 1.5rem;
-    color: #3498db;
-    width: 40px;
-    text-align: center;
-}
+
 
 .contactItem h4 {
     color: #2c3e50;

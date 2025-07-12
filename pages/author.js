@@ -135,7 +135,7 @@ export default function Author() {
       <Head>
         <title>Georgina Wang - Author</title>
         <meta name="description" content="Georgina Wang - Mathematics Co-op Student at the University of Waterloo" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
 
@@ -147,9 +147,9 @@ export default function Author() {
           <h2>Mathematics Co-op Student at the University of Waterloo</h2>
           <p className={styles.heroSubtitle}>Majoring in Biostatistics with a minor in Economics</p>
           <div className={styles.heroContact}>
-            <p><i className="fas fa-phone"></i> (289) 888-4577</p>
-            <p><i className="fas fa-envelope"></i> georgina.wang@uwaterloo.ca</p>
-            <p><i className="fas fa-id-card"></i> Student Number: 21088642</p>
+            <p>(289) 888-4577</p>
+            <p>georgina.wang@uwaterloo.ca</p>
+            <p>Student Number: 21088642</p>
           </div>
           <div className={styles.socialLinks}>
             <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
@@ -169,13 +169,13 @@ export default function Author() {
       <main className={styles.main}>
         {/* About Section */}
         <section id="about" className={styles.section}>
-          <h2><i className="fas fa-user"></i> About Me</h2>
+          <h2>About Me</h2>
           <p>Highly organized and detail-oriented mathematics co-op student with proven experience in software development, campaign coordination, and leadership roles. Over 2 years of professional experience in software engineering and cross-functional collaboration, improving operational efficiency by 20%. Passionate about data analysis, statistical modeling, and creating innovative solutions through technology.</p>
         </section>
 
         {/* Work Experience Section */}
         <section id="experience" className={styles.section}>
-          <h2><i className="fas fa-briefcase"></i> Work Experience</h2>
+          <h2>Work Experience</h2>
           
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
@@ -207,7 +207,7 @@ export default function Author() {
 
         {/* Volunteer Experience Section */}
         <section id="volunteer" className={styles.section}>
-          <h2><i className="fas fa-hands-helping"></i> Volunteer Experience</h2>
+          <h2>Volunteer Experience</h2>
           
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
@@ -238,7 +238,7 @@ export default function Author() {
 
         {/* Extracurricular Section */}
         <section id="extracurricular" className={styles.section}>
-          <h2><i className="fas fa-star"></i> Extracurricular</h2>
+          <h2>Extracurricular</h2>
           
           <div className={styles.experienceItem}>
             <div className={styles.experienceHeader}>
@@ -256,7 +256,7 @@ export default function Author() {
 
         {/* Projects Section */}
         <section id="projects" className={styles.section}>
-          <h2><i className="fas fa-code"></i> Projects</h2>
+          <h2>Projects</h2>
           
           <div className={styles.projectItem}>
             <div className={styles.experienceHeader}>
@@ -276,7 +276,7 @@ export default function Author() {
 
         {/* Education Section */}
         <section id="education" className={styles.section}>
-          <h2><i className="fas fa-graduation-cap"></i> Education</h2>
+          <h2>Education</h2>
           
           <div className={styles.educationItem}>
             <div className={styles.educationHeader}>
@@ -302,7 +302,7 @@ export default function Author() {
 
         {/* Certifications Section */}
         <section id="certifications" className={styles.section}>
-          <h2><i className="fas fa-certificate"></i> Certifications</h2>
+          <h2>Certifications</h2>
           
           <div className={styles.certificationsGrid}>
             <div className={styles.certItem}>
@@ -351,11 +351,11 @@ export default function Author() {
 
         {/* Skills Section */}
         <section id="skills" className={styles.section}>
-          <h2><i className="fas fa-tools"></i> Skills</h2>
+          <h2>Skills</h2>
           
           <div className={styles.skillsGrid}>
             <div className={styles.skillsColumn}>
-              <h3><i className="fas fa-code"></i> Technical Skills</h3>
+              <h3>Technical Skills</h3>
               <ul>
                 <li><strong>Programming Languages:</strong> Python, Racket</li>
                 <li><strong>Software Tools:</strong> Microsoft 365 Suite, Azure Machine Learning Service</li>
@@ -364,7 +364,7 @@ export default function Author() {
             </div>
             
             <div className={styles.skillsColumn}>
-              <h3><i className="fas fa-comments"></i> Soft Skills</h3>
+              <h3>Soft Skills</h3>
               <ul>
                 <li>Leadership</li>
                 <li>Problem-Solving</li>
@@ -375,7 +375,7 @@ export default function Author() {
             </div>
             
             <div className={styles.skillsColumn}>
-              <h3><i className="fas fa-language"></i> Languages</h3>
+              <h3>Languages</h3>
               <ul>
                 <li><strong>English:</strong> Fluent</li>
                 <li><strong>Chinese:</strong> Fluent</li>
@@ -387,10 +387,9 @@ export default function Author() {
 
         {/* Contact Section */}
         <section id="contact" className={styles.section}>
-          <h2><i className="fas fa-envelope"></i> Contact</h2>
+          <h2>Contact</h2>
           <div className={styles.contactGrid}>
             <div className={styles.contactItem}>
-              <i className="fas fa-phone"></i>
               <div>
                 <h4>Phone</h4>
                 <p>(289) 888-4577</p>
@@ -398,7 +397,6 @@ export default function Author() {
             </div>
             
             <div className={styles.contactItem}>
-              <i className="fas fa-envelope"></i>
               <div>
                 <h4>Email</h4>
                 <p>georgina.wang@uwaterloo.ca</p>
@@ -406,7 +404,6 @@ export default function Author() {
             </div>
             
             <div className={styles.contactItem}>
-              <i className="fab fa-linkedin"></i>
               <div>
                 <h4>LinkedIn</h4>
                 <p><a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer">Connect with me</a></p>
@@ -414,7 +411,6 @@ export default function Author() {
             </div>
             
             <div className={styles.contactItem}>
-              <i className="fas fa-globe"></i>
               <div>
                 <h4>Website</h4>
                 <p><a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer">Visit my website</a></p>
