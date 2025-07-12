@@ -200,6 +200,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    padding-left: 0;
 }
 
 .clubs li {
@@ -209,21 +210,28 @@
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
+    margin-bottom: 0;
+    padding-left: 0;
+    position: static;
+}
+
+.clubs li::before {
+    display: none;
 }
 
 /* Lists */
-ul {
+.section ul {
     list-style: none;
     padding-left: 0;
 }
 
-li {
+.section li {
     margin-bottom: 0.8rem;
     padding-left: 1.5rem;
     position: relative;
 }
 
-li::before {
+.section li::before {
     content: "•";
     color: #3498db;
     position: absolute;
