@@ -148,7 +148,7 @@
 .educationItem h3,
 .projectItem h3 {
     color: #3498db;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -244,7 +244,7 @@
 .skillsColumn h3 {
     color: #3498db;
     margin-bottom: 1.5rem;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -362,7 +362,7 @@
     padding: 2rem;
     margin-top: 4rem;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
 }
 
