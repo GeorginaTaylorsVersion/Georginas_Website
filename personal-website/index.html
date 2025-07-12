@@ -1,198 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-    import Link from 'next/link';
-    import styles from './Header.module.css';
-    
-    export default function Header() {
-      return (
-        <header className={styles['header-bar']}>
-          <div className={styles['nav-content']}>
-            <div className={styles.name}>
-              Georgina's Website <span style={{ marginLeft: '0.5rem' }} role="img" aria-label="heart">❤️</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgina Wang - Author</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-bar">
+        <div class="nav-content">
+            <div class="name">
+                <a href="/">Georgina's Website <span role="img" aria-label="heart">❤️</span></a>
             </div>
-            <nav className={styles['menu-links']}>
-              <a href="/" className={styles['menu-link']}>
-                AUTHOR
-              </a>
-              <a href="/notes" className={styles['menu-link']}>
-                NOTES
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
-                GITHUB
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
-                INSTAGRAM
-              </a>
-              <a href="https://open.spotify.com/show/363TEoLJ1r6lxJ9EIA8dNv?si=H3zeEfnoSCq8HOmtCUQKWg" target="_blank" rel="noopener noreferrer" className={styles['menu-link']}>
-                PODCAST
-              </a>
+            <nav class="menu-links">
+                <a href="/personal-website/" class="menu-link active">AUTHOR</a>
+                <a href="/" class="menu-link">NOTES</a>
+                <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" class="menu-link">GITHUB</a>
+                <a href="/instagram" class="menu-link">INSTAGRAM</a>
+                <a href="https://open.spotify.com/show/363TEoLJ1r6lxJ9EIA8dNv?si=H3zeEfnoSCq8HOmtCUQKWg" target="_blank" rel="noopener noreferrer" class="menu-link">PODCAST</a>
             </nav>
-          </div>
-        </header>
-      );
-    } 
-    /* Styles from personal-website/styles.css navigation */
-    .header-bar {
-      background: linear-gradient(to right, #ffd6e0, #ffecf2); /* Using gradient from personal website */
-      position: fixed; /* Keeping it fixed as in personal website */
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(255, 214, 224, 0.5);
-      backdrop-filter: blur(5px);
-      padding: 1rem; /* Adjusting padding */
-      display: flex; /* Add display flex to make it a flex container */
-      align-items: center; /* Vertically center items in the header */
-    }
-    
-    .nav-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 1rem; /* Add horizontal padding */
-    }
-    
-    .name {
-      color: #2c3e50; /* Using explicit color from personal website's primary color */
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    
-    /* Ensure site title link styling */
-    .name a {
-        color: #2c3e50; /* Match the name color */
-        text-decoration: none; /* Remove underline */
-        display: flex; /* Keep flex for heart emoji alignment */
-        align-items: center;
-    }
-    
-    .menu-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem; /* Using gap from personal website li margin */
-    }
-    
-    .menu-link {
-      color: #2c3e50; /* Using explicit color from personal website's primary color */
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .menu-link:hover {
-      color: #3498db; /* Using explicit color from personal website's secondary color */
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem; /* Add gap between title and links in column layout */
-      }
-    
-      .menu-links {
-        margin-top: 0; /* Remove top margin as gap is on nav-content */
-        flex-direction: column;
-        gap: 0.5rem; /* Adjusting gap for column layout */
-      }
-    }
-    
-    /* Remove potentially conflicting site-title a style */
-    /* Keeping some original notes header styles for the site title appearance */
-    /* .site-title a {
-        color: #fff; /* Keeping white color from notes header */
-    /*    font-family: 'Times New Roman', Times, serif; /* Keeping font from notes header */
-    /*    font-weight: bold; /* Keeping font weight */
-    /*    font-size: 1.7rem; /* Keeping font size */
-    /* } */ 
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-image">
+                <img src="images/profile.jpg" alt="Georgina Wang" class="profile-photo">
+            </div>
+            <h1>Georgina Wang</h1>
+            <h2>Mathematics Co-op Student at the University of Waterloo</h2>
+            <p class="hero-subtitle">Majoring in Biostatistics with a minor in Economics</p>
+            <div class="hero-contact">
+                <p><i class="fas fa-phone"></i> (289) 888-4577</p>
+                <p><i class="fas fa-envelope"></i> georgina.wang@uwaterloo.ca</p>
+                <p><i class="fas fa-id-card"></i> Student Number: 21088642</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer" title="Personal Website">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
     <main>
+        <!-- About Section -->
         <section id="about">
-            <h2>About Me</h2>
-            <p>Highly organized and detail-oriented mathematics co-op student with proven experience in software development, campaign coordination, and leadership roles. Over 2 years of professional experience in software engineering and cross-functional collaboration, improving operational efficiency by 20%.</p>
+            <h2><i class="fas fa-user"></i> About Me</h2>
+            <p>Highly organized and detail-oriented mathematics co-op student with proven experience in software development, campaign coordination, and leadership roles. Over 2 years of professional experience in software engineering and cross-functional collaboration, improving operational efficiency by 20%. Passionate about data analysis, statistical modeling, and creating innovative solutions through technology.</p>
         </section>
 
+        <!-- Work Experience Section -->
         <section id="experience">
-            <h2>Work Experience</h2>
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            
             <div class="experience-item">
-                <h3>Junior Software Engineer</h3>
-                <p class="company">Shanghai Jiashi Industrial Co., Ltd. | Shanghai, China</p>
-                <p class="date">2023-2024</p>
+                <div class="experience-header">
+                    <h3>Junior Software Engineer</h3>
+                    <span class="company">Shanghai Jiashi Industrial Co., Ltd.</span>
+                    <span class="location">Shanghai, China</span>
+                    <span class="date">2023-2024</span>
+                </div>
                 <ul>
                     <li>Developed and optimized software applications that improved industrial processes by 20%</li>
-                    <li>Collaborated with cross-functional teams to implement Python and Java solutions, reduce system downtime by 10%</li>
-                    <li>Conducted code reviews, debugging, and testing, ensuring 95% bug-free deliverables</li>
+                    <li>Collaborated with cross-functional teams to implement Python and Java solutions, reducing system downtime by 10%</li>
+                    <li>Conducted code reviews, debugging, and testing, ensuring 95% bug-free deliveries</li>
                 </ul>
             </div>
 
             <div class="experience-item">
-                <h3>Election Campaign Support</h3>
-                <p class="company">PC Party of Ontario | Oakville North Burlington</p>
-                <p class="date">2022</p>
+                <div class="experience-header">
+                    <h3>Election Campaign Support</h3>
+                    <span class="company">PC Party of Ontario</span>
+                    <span class="location">Oakville North Burlington</span>
+                    <span class="date">2022</span>
+                </div>
                 <ul>
-                    <li>Directed voter engagement activities, resulted in a 15% increase in voter turnout in targeted areas</li>
+                    <li>Directed voter engagement activities, resulting in a 15% increase in voter turnout in targeted areas</li>
                     <li>Trained 10+ new volunteers, enhancing team efficiency during campaign efforts</li>
                 </ul>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Bachelor of Mathematics (expected)</h3>
-                <p class="school">University of Waterloo</p>
-                <p class="date">2024-2029</p>
-                <p class="gpa">GPA: 3.5+</p>
-                <p>Relevant Courses: Calculus, Linear Algebra, Intro to Programming, Intro to Financial Markets, Intro to Microeconomics, Intro to Health</p>
+        <!-- Volunteer Experience Section -->
+        <section id="volunteer">
+            <h2><i class="fas fa-hands-helping"></i> Volunteer Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Camp Coordinator</h3>
+                    <span class="company">Big Theater Company</span>
+                    <span class="location">Oakville</span>
+                    <span class="date">2021</span>
+                </div>
+                <ul>
+                    <li>Managed programming, safety, logistics, communication, and performance preparation</li>
+                    <li>Oversaw supervision and gathered feedback</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Veterinary Assistant Intern</h3>
+                    <span class="company">Mavis Animal Hospital</span>
+                    <span class="location">Mississauga</span>
+                    <span class="date">2022-2023</span>
+                </div>
+                <ul>
+                    <li>Administered routine and post-surgical care for 10+ animals weekly, ensuring compliance with clinic protocols</li>
+                    <li>Assisted and prepared 10+ surgeries weekly and maintained clinic sanitation</li>
+                </ul>
             </div>
         </section>
 
+        <!-- Extracurricular Section -->
+        <section id="extracurricular">
+            <h2><i class="fas fa-star"></i> Extracurricular</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <h3>Sergeant</h3>
+                    <span class="company">540 Golden Hawks Air Cadets</span>
+                    <span class="location">Oakville</span>
+                    <span class="date">2019-2023</span>
+                </div>
+                <ul>
+                    <li>Led, trained, and mentored junior cadets, supervised activities</li>
+                    <li>Served as a role model and communicator within the unit</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2><i class="fas fa-code"></i> Projects</h2>
+            
+            <div class="project-item">
+                <div class="experience-header">
+                    <h3>Personal Academic Website with AI-Powered Chatbot</h3>
+                    <span class="date">2025</span>
+                </div>
+                <ul>
+                    <li>Developed a comprehensive personal website using Next.js and React, featuring a modern responsive design with custom CSS styling</li>
+                    <li>Implemented an intelligent AI chatbot using Google's Gemini API that provides contextual responses based on academic notes and course materials</li>
+                    <li>Created a dynamic content management system for organizing and displaying university course notes across multiple subjects and terms</li>
+                    <li>Integrated vector embeddings and semantic search functionality to enable the chatbot to accurately reference and explain course concepts</li>
+                    <li>Deployed the application on Vercel with continuous integration from GitHub, ensuring seamless updates and version control</li>
+                    <li>Optimized user experience with smooth animations, responsive design, and intuitive navigation for both desktop and mobile devices</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <h3>Bachelor of Mathematics (Expected)</h3>
+                    <span class="school">University of Waterloo</span>
+                    <span class="location">Waterloo, ON</span>
+                    <span class="date">2024-2029</span>
+                </div>
+                <p class="major">Majoring in Biostatistics with a minor in Economics</p>
+                <p class="gpa">GPA: 3.5+</p>
+                <div class="clubs">
+                    <h4>Clubs & Organizations:</h4>
+                    <ul>
+                        <li>UW English Society</li>
+                        <li>UW Moot Court</li>
+                        <li>UW SafeTails Initiative</li>
+                        <li>Women's Centre</li>
+                        <li>ICSN</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2><i class="fas fa-certificate"></i> Certifications</h2>
+            
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <h4>AI-900: Microsoft Azure AI Fundamentals</h4>
+                    <span class="issuer">Microsoft Certification</span>
+                    <span class="date">2022</span>
+                </div>
+                
+                <div class="cert-item">
+                    <h4>Introduction to Statistics</h4>
+                    <span class="issuer">Stanford University</span>
+                    <span class="date">2023</span>
+                </div>
+                
+                <div class="cert-item">
+                    <h4>Introduction to Philosophy</h4>
+                    <span class="issuer">The University of Edinburgh</span>
+                    <span class="date">2023</span>
+                </div>
+                
+                <div class="cert-item">
+                    <h4>Google Data Analytics Professional Certificate</h4>
+                    <span class="issuer">Google Career Certificates</span>
+                    <span class="date">2023</span>
+                </div>
+                
+                <div class="cert-item">
+                    <h4>Google Business Intelligence Professional Certificate</h4>
+                    <span class="issuer">Google Career Certificates</span>
+                    <span class="date">2023</span>
+                </div>
+                
+                <div class="cert-item">
+                    <h4>Meta Data Analyst Professional Certificate</h4>
+                    <span class="issuer">Meta</span>
+                    <span class="date">2024</span>
+                </div>
+                
+                <div class="cert-item">
+                    <h4>Meta Social Media Marketing Professional Certificate</h4>
+                    <span class="issuer">Meta</span>
+                    <span class="date">2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
         <section id="skills">
-            <h2>Skills & Certifications</h2>
+            <h2><i class="fas fa-tools"></i> Skills</h2>
+            
             <div class="skills-grid">
                 <div class="skills-column">
-                    <h3>Technical Skills</h3>
+                    <h3><i class="fas fa-code"></i> Technical Skills</h3>
                     <ul>
-                        <li>Python, Racket</li>
-                        <li>Microsoft 365 Suite</li>
-                        <li>Azure Machine Learning Service</li>
-                        <li>Statistical Analysis</li>
-                        <li>Data Visualization</li>
+                        <li><strong>Programming Languages:</strong> Python, Racket</li>
+                        <li><strong>Software Tools:</strong> Microsoft 365 Suite, Azure Machine Learning Service</li>
+                        <li><strong>Data Analysis:</strong> Statistical analysis, report writing, and data visualization</li>
                     </ul>
                 </div>
+                
                 <div class="skills-column">
-                    <h3>Certifications</h3>
+                    <h3><i class="fas fa-comments"></i> Soft Skills</h3>
                     <ul>
-                        <li>Microsoft Azure AI Fundamentals</li>
-                        <li>Google Data Analytics Professional Certificate</li>
-                        <li>Meta Data Analyst Professional Certificate</li>
-                        <li>Meta Social Media Marketing Professional Certificate</li>
+                        <li>Leadership</li>
+                        <li>Problem-Solving</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Event Planning</li>
                     </ul>
                 </div>
+                
                 <div class="skills-column">
-                    <h3>Languages</h3>
+                    <h3><i class="fas fa-language"></i> Languages</h3>
                     <ul>
-                        <li>English (Fluent)</li>
-                        <li>Chinese (Fluent)</li>
-                        <li>French (Working Knowledge)</li>
+                        <li><strong>English:</strong> Fluent</li>
+                        <li><strong>Chinese:</strong> Fluent</li>
+                        <li><strong>French:</strong> Working knowledge</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-phone"></i> (289) 888-4577</p>
-                <p><i class="fas fa-envelope"></i> georgina.wang@uwaterloo.ca</p>
-                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank">LinkedIn Profile</a></p>
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>(289) 888-4577</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>georgina.wang@uwaterloo.ca</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer">Connect with me</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <h4>Website</h4>
+                        <p><a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer">Visit my website</a></p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
+            <p>Built with ❤️ using modern web technologies</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
