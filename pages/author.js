@@ -142,9 +142,7 @@ export default function Author() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <div className={styles.profileImage}>
-            <img src="/personal-website/images/profile.jpg" alt="Georgina Wang" className={styles.profilePhoto} />
-          </div>
+
           <h1>Georgina Wang</h1>
           <h2>Mathematics Co-op Student at the University of Waterloo</h2>
           <p className={styles.heroSubtitle}>Majoring in Biostatistics with a minor in Economics</p>
@@ -154,14 +152,14 @@ export default function Author() {
             <p><i className="fas fa-id-card"></i> Student Number: 21088642</p>
           </div>
           <div className={styles.socialLinks}>
-            <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-              <i className="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
+              LinkedIn
             </a>
-            <a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer" title="Personal Website">
-              <i className="fas fa-globe"></i>
+            <a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
+              Website
             </a>
-            <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" title="GitHub">
-              <i className="fab fa-github"></i>
+            <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
+              GitHub
             </a>
           </div>
         </div>
@@ -427,12 +425,12 @@ export default function Author() {
       </main>
 
       {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
-          <p>Built with ❤️ using modern web technologies</p>
-        </div>
-      </footer>
+              <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
+            <p>Built with modern web technologies</p>
+          </div>
+        </footer>
     </>
   );
 } 

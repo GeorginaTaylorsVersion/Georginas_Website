@@ -8,6 +8,9 @@
     text-align: center;
     color: #2c3e50;
     padding: 120px 2rem 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .heroContent {
@@ -15,24 +18,7 @@
     padding: 2rem;
 }
 
-.profileImage {
-    margin-bottom: 2rem;
-}
 
-.profilePhoto {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #ffffff;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profilePhoto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
-}
 
 .hero h1 {
     font-size: 3.5rem;
@@ -76,21 +62,27 @@
     margin-top: 2rem;
 }
 
-.socialLinks a {
+.socialButton {
     color: #2c3e50;
-    font-size: 1.8rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
     display: inline-block;
-    padding: 0.5rem;
-    border-radius: 50%;
+    padding: 12px 24px;
+    border-radius: 25px;
     background-color: #ffffff;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    margin: 0 8px;
+    border: 2px solid transparent;
 }
 
-.socialLinks a:hover {
+.socialButton:hover {
     color: #3498db;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
+    background-color: #f8f9fa;
 }
 
 /* Main Content */
@@ -98,6 +90,9 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .section {
@@ -372,6 +367,9 @@
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .footerContent p {
@@ -390,11 +388,6 @@
 
     .heroSubtitle {
         font-size: 1rem;
-    }
-
-    .profilePhoto {
-        width: 150px;
-        height: 150px;
     }
 
     .main {
@@ -426,8 +419,10 @@
         gap: 1rem;
     }
 
-    .socialLinks a {
-        font-size: 1.5rem;
+    .socialButton {
+        font-size: 12px;
+        padding: 10px 20px;
+        margin: 0 4px;
     }
 }
 
@@ -448,11 +443,6 @@
         font-size: 1.2rem;
     }
 
-    .profilePhoto {
-        width: 120px;
-        height: 120px;
-    }
-
     .section h2 {
         font-size: 1.5rem;
     }
@@ -461,5 +451,11 @@
     .educationItem h3,
     .projectItem h3 {
         font-size: 1.2rem;
+    }
+
+    .socialButton {
+        font-size: 11px;
+        padding: 8px 16px;
+        margin: 0 2px;
     }
 } 
