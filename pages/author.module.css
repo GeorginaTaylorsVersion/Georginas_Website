@@ -89,8 +89,8 @@
 }
 
 .section {
-    margin: 1.2rem 0;
-    padding: 1.2rem;
+    margin: 3rem 0;
+    padding: 2.5rem;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
@@ -161,7 +161,6 @@
 
 .date {
     color: #6c757d;
-    font-style: italic;
     display: inline;
     margin-left: 1rem;
 }
@@ -233,10 +232,8 @@
 /* Skills Grid */
 .skillsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-    max-width: 900px;
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .skillsColumn h3 {
@@ -328,13 +325,13 @@
     }
 
     .section {
-        padding: 0.8rem;
-        margin: 0.8rem 0;
+        padding: 1.5rem;
+        margin: 2rem 0;
     }
 
-    .skillsGrid {
+    .skillsGrid,
+    .certificationsGrid {
         grid-template-columns: 1fr;
-        gap: 0.7rem;
     }
 
     .date {
