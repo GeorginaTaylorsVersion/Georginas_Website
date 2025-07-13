@@ -344,7 +344,7 @@ export default function Author() {
               </ul>
             </div>
             
-            <div className={styles.skillsColumn}>
+            <div className={styles.skillsColumn + ' ' + styles.softSkills}>
               <h3>Soft Skills</h3>
               <ul>
                 <li>Leadership</li>

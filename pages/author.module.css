@@ -238,6 +238,10 @@
     display: none;
 }
 
+.skillsColumn.softSkills {
+    padding-left: 2rem;
+}
+
 /* Certifications Grid */
 .certificationsGrid {
     display: grid;
