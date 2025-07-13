@@ -166,12 +166,6 @@ export default function Author() {
 
       {/* Main Content */}
       <main className={styles.main}>
-        {/* About Section */}
-        <section id="about" className={styles.section}>
-          <h2>About Me</h2>
-          <p>Highly organized and detail-oriented mathematics co-op student with proven experience in software development, campaign coordination, and leadership roles. Over 2 years of professional experience in software engineering and cross-functional collaboration, improving operational efficiency by 20%. Passionate about data analysis, statistical modeling, and creating innovative solutions through technology.</p>
-        </section>
-
         {/* Work Experience Section */}
         <section id="experience" className={styles.section}>
           <h2>Work Experience</h2>
@@ -282,7 +276,7 @@ export default function Author() {
               <span className={styles.date}>2024-2029</span>
             </div>
             <p className={styles.major}>Majoring in Biostatistics with a minor in Economics</p>
-            <p className={styles.gpa}>GPA: 3.5+</p>
+            <p className={styles.gpa}>GPA: 4.0+</p>
             <div className={styles.clubs}>
               <h4>Clubs & Organizations:</h4>
               <ul>
@@ -291,6 +285,7 @@ export default function Author() {
                 <li>UW SafeTails Initiative</li>
                 <li>Women's Centre</li>
                 <li>ICSN</li>
+                <li>Math Society Marketing Team</li>
               </ul>
             </div>
           </div>
@@ -381,13 +376,6 @@ export default function Author() {
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <p>&copy; 2025 Georgina Wang. All rights reserved.</p>
-        </div>
-      </footer>
     </>
   );
 } 

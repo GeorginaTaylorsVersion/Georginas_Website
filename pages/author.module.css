@@ -76,7 +76,6 @@
 .socialLinks a:hover {
     color: #2c3e50;
     transform: translateY(-3px);
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Main Content */
@@ -174,7 +173,7 @@
 
 .gpa {
     font-weight: 600;
-    color: #3498db;
+    color: #2c3e50;
     margin-bottom: 1rem;
 }
 
@@ -182,6 +181,7 @@
     color: #2c3e50;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    padding-left: 0;
 }
 
 .clubs ul {
@@ -200,7 +200,7 @@
     font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 0;
-    padding-left: 0;
+    padding-left: 0.8rem;
     position: static;
 }
 
@@ -302,21 +302,7 @@
     float: none;
 }
 
-/* Footer */
-.footer {
-    background-color: #2c3e50;
-    color: #ffffff;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-    line-height: 1.6;
-}
 
-.footerContent p {
-    margin: 0.5rem 0;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
