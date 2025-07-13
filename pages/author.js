@@ -135,7 +135,7 @@ export default function Author() {
       <Head>
         <title>Georgina Wang - Author</title>
         <meta name="description" content="Georgina Wang - Mathematics Co-op Student at the University of Waterloo" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
 
@@ -152,14 +152,14 @@ export default function Author() {
             <p>Student Number: 21088642</p>
           </div>
           <div className={styles.socialLinks}>
-            <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              LinkedIn
+            <a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i className="fab fa-linkedin"></i>
             </a>
-            <a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              Website
+            <a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer" title="Personal Website">
+              <i className="fas fa-globe"></i>
             </a>
-            <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" className={styles.socialButton}>
-              GitHub
+            <a href="https://github.com/GeorginaTaylorsVersion/Georginas_Website" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <i className="fab fa-github"></i>
             </a>
           </div>
         </div>
@@ -264,12 +264,9 @@ export default function Author() {
               <span className={styles.date}>2025</span>
             </div>
             <ul>
-              <li>Developed a comprehensive personal website using Next.js and React, featuring a modern responsive design with custom CSS styling</li>
-              <li>Implemented an intelligent AI chatbot using Google's Gemini API that provides contextual responses based on academic notes and course materials</li>
-              <li>Created a dynamic content management system for organizing and displaying university course notes across multiple subjects and terms</li>
-              <li>Integrated vector embeddings and semantic search functionality to enable the chatbot to accurately reference and explain course concepts</li>
-              <li>Deployed the application on Vercel with continuous integration from GitHub, ensuring seamless updates and version control</li>
-              <li>Optimized user experience with smooth animations, responsive design, and intuitive navigation for both desktop and mobile devices</li>
+              <li>Built and deployed a responsive website using Next.js and React with custom CSS</li>
+              <li>Integrated a Gemini API chatbot with semantic search over academic notes</li>
+              <li>Created a dynamic note system and optimized UX for all devices</li>
             </ul>
           </div>
         </section>
@@ -390,6 +387,7 @@ export default function Author() {
           <h2>Contact</h2>
           <div className={styles.contactGrid}>
             <div className={styles.contactItem}>
+              <i className="fas fa-phone"></i>
               <div>
                 <h4>Phone</h4>
                 <p>(289) 888-4577</p>
@@ -397,6 +395,7 @@ export default function Author() {
             </div>
             
             <div className={styles.contactItem}>
+              <i className="fas fa-envelope"></i>
               <div>
                 <h4>Email</h4>
                 <p>georgina.wang@uwaterloo.ca</p>
@@ -404,6 +403,7 @@ export default function Author() {
             </div>
             
             <div className={styles.contactItem}>
+              <i className="fab fa-linkedin"></i>
               <div>
                 <h4>LinkedIn</h4>
                 <p><a href="https://www.linkedin.com/in/georgina-wang-52a552346" target="_blank" rel="noopener noreferrer">Connect with me</a></p>
@@ -411,6 +411,7 @@ export default function Author() {
             </div>
             
             <div className={styles.contactItem}>
+              <i className="fas fa-globe"></i>
               <div>
                 <h4>Website</h4>
                 <p><a href="https://georginas-website.vercel.app/" target="_blank" rel="noopener noreferrer">Visit my website</a></p>

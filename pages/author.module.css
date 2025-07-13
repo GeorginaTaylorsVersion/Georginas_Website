@@ -8,9 +8,9 @@
     text-align: center;
     color: #2c3e50;
     padding: 120px 2rem 2rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    line-height: 1.5;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .heroContent {
@@ -62,27 +62,21 @@
     margin-top: 2rem;
 }
 
-.socialButton {
+.socialLinks a {
     color: #2c3e50;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
-    padding: 12px 24px;
-    border-radius: 25px;
+    padding: 0.5rem;
+    border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    margin: 0 8px;
-    border: 2px solid transparent;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.socialButton:hover {
+.socialLinks a:hover {
     color: #3498db;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border-color: #3498db;
-    background-color: #f8f9fa;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Main Content */
@@ -90,9 +84,9 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    line-height: 1.5;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .section {
@@ -148,7 +142,7 @@
 .educationItem h3,
 .projectItem h3 {
     color: #3498db;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -244,7 +238,7 @@
 .skillsColumn h3 {
     color: #3498db;
     margin-bottom: 1.5rem;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -318,6 +312,7 @@
 .contactItem {
     display: flex;
     align-items: center;
+    gap: 1rem;
     padding: 1.5rem;
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -329,7 +324,12 @@
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-
+.contactItem i {
+    font-size: 1.5rem;
+    color: #3498db;
+    width: 40px;
+    text-align: center;
+}
 
 .contactItem h4 {
     color: #2c3e50;
@@ -361,9 +361,9 @@
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    line-height: 1.5;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .footerContent p {
@@ -413,10 +413,8 @@
         gap: 1rem;
     }
 
-    .socialButton {
-        font-size: 12px;
-        padding: 10px 20px;
-        margin: 0 4px;
+    .socialLinks a {
+        font-size: 1.5rem;
     }
 }
 
@@ -445,11 +443,5 @@
     .educationItem h3,
     .projectItem h3 {
         font-size: 1.2rem;
-    }
-
-    .socialButton {
-        font-size: 11px;
-        padding: 8px 16px;
-        margin: 0 2px;
     }
 } 
