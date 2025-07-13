@@ -162,7 +162,7 @@
 .date {
     color: #6c757d;
     display: inline;
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 .major {
@@ -177,36 +177,11 @@
     margin-bottom: 1rem;
 }
 
-.clubs h4 {
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-    padding-left: 0;
+.clubs {
     font-weight: normal;
-}
-
-.clubs ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding-left: 0;
-}
-
-.clubs li {
-    background-color: #ffd6e0;
     color: #2c3e50;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
     margin-bottom: 0;
-    padding-left: 0.8rem;
-    position: static;
-}
-
-.clubs li::before {
-    display: none;
+    margin-top: 0.5rem;
 }
 
 /* Lists */

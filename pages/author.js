@@ -277,17 +277,7 @@ export default function Author() {
             </div>
             <p className={styles.major}>Majoring in Biostatistics with a minor in Economics</p>
             <p className={styles.gpa}>GPA: 4.0+</p>
-            <div className={styles.clubs}>
-              <h4>Clubs & Organizations:</h4>
-              <ul>
-                <li>English Society </li>
-                <li>Moot Court </li>
-                <li>SafeTails Initiative </li>
-                <li>Women's Centre </li>
-                <li>ICSN </li>
-                <li>Math Society Marketing Team </li>
-              </ul>
-            </div>
+            <p className={styles.clubs}>Clubs & Organizations: English Society, Moot Court, SafeTails Initiative, Women's Centre, ICSN, Math Society Marketing Team</p>
           </div>
         </section>
 
