@@ -162,7 +162,8 @@
 .date {
     color: #6c757d;
     font-style: italic;
-    float: right;
+    display: inline;
+    margin-left: 1rem;
 }
 
 .major {
@@ -172,7 +173,7 @@
 }
 
 .gpa {
-    font-weight: 600;
+    font-weight: normal;
     color: #2c3e50;
     margin-bottom: 1rem;
 }
@@ -182,6 +183,7 @@
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
     padding-left: 0;
+    font-weight: normal;
 }
 
 .clubs ul {
@@ -271,7 +273,7 @@
 
 .certItem {
     background-color: #f8f9fa;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     border-left: 4px solid #3498db;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -285,21 +287,22 @@
 .certItem h4 {
     color: #2c3e50;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
 }
 
 .certItem .issuer {
     color: #3498db;
     font-weight: 500;
     display: block;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .certItem .date {
     color: #6c757d;
     font-size: 0.9rem;
-    float: none;
+    display: inline;
+    margin-left: 0;
 }
 
 
@@ -333,9 +336,8 @@
     }
 
     .date {
-        float: none;
-        display: block;
-        margin-top: 0.5rem;
+        display: inline;
+        margin-left: 0.5rem;
     }
 
     .clubs ul {

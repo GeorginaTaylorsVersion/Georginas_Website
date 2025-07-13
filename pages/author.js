@@ -280,9 +280,9 @@ export default function Author() {
             <div className={styles.clubs}>
               <h4>Clubs & Organizations:</h4>
               <ul>
-                <li>UW English Society</li>
-                <li>UW Moot Court</li>
-                <li>UW SafeTails Initiative</li>
+                <li>English Society</li>
+                <li>Moot Court</li>
+                <li>SafeTails Initiative</li>
                 <li>Women's Centre</li>
                 <li>ICSN</li>
                 <li>Math Society Marketing Team</li>
