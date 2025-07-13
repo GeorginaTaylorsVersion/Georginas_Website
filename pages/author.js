@@ -280,12 +280,12 @@ export default function Author() {
             <div className={styles.clubs}>
               <h4>Clubs & Organizations:</h4>
               <ul>
-                <li>English Society</li>
-                <li>Moot Court</li>
-                <li>SafeTails Initiative</li>
-                <li>Women's Centre</li>
-                <li>ICSN</li>
-                <li>Math Society Marketing Team</li>
+                <li>English Society </li>
+                <li>Moot Court </li>
+                <li>SafeTails Initiative </li>
+                <li>Women's Centre </li>
+                <li>ICSN </li>
+                <li>Math Society Marketing Team </li>
               </ul>
             </div>
           </div>
