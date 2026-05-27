@@ -57,16 +57,25 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header-bar {
+    padding: 0.8rem 1rem;
+  }
   .nav-content {
     flex-direction: column;
     text-align: center;
-    gap: 1rem; /* Add gap between title and links in column layout */
+    gap: 0.6rem;
   }
-
+  .name {
+    font-size: 1.3rem;
+    white-space: normal;
+  }
   .menu-links {
-    margin-top: 0; /* Remove top margin as gap is on nav-content */
-    flex-direction: column;
-    gap: 0.5rem; /* Adjusting gap for column layout */
+    margin-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 

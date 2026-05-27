@@ -1,25 +1,310 @@
+.container {
+    max-width: 900px;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 120px 0 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #222;
+}
+
+/* === Hero card === */
 .hero {
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #fff;
+    border: 1.5px solid #f2f2f2;
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+    padding: 3rem 2rem 2.5rem;
     text-align: center;
-    color: var(--primary-color);
-    padding-top: 60px;
+    margin-bottom: 2.5rem;
 }
 
-.hero-content {
-    max-width: 800px;
-    padding: 1rem 2rem;
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0 0 0.6rem;
+    color: #222;
 }
 
+.hero h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0 0 0.5rem;
+    color: #444;
+}
+
+.heroSubtitle {
+    font-size: 1.05rem;
+    color: #666;
+    margin: 0 0 1.5rem;
+}
+
+.heroContact {
+    margin: 1rem 0 1.2rem;
+}
+
+.heroContact p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+.socialLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+}
+
+.socialLink {
+    background: #ffeaf4;
+    border-radius: 999px;
+    padding: 0.4em 1.1em;
+    color: #222;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+}
+
+.socialLink:hover {
+    background: #ffb6d5;
+    color: #b94a4a;
+    box-shadow: 0 2px 8px 0 rgba(233, 30, 99, 0.10);
+}
+
+/* === Section cards === */
+.section {
+    background: #fff;
+    border: 1.5px solid #f2f2f2;
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+    padding: 2rem 2rem 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #222;
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+/* === Experience / Education / Project items === */
+.experienceItem,
+.educationItem,
+.projectItem {
+    padding: 1.2rem 0;
+    border-top: 1px solid #f7f7f7;
+}
+
+.experienceItem:first-child,
+.educationItem:first-child,
+.projectItem:first-child {
+    padding-top: 0.5rem;
+    border-top: none;
+}
+
+.experienceItem:last-child,
+.educationItem:last-child,
+.projectItem:last-child {
+    padding-bottom: 0;
+}
+
+.experienceItem h3,
+.educationItem h3,
+.projectItem h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #222;
+    margin: 0 0 0.3rem;
+}
+
+.experienceHeader,
+.educationHeader {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.company,
+.school {
+    color: #444;
+    margin-right: 0.6rem;
+}
+
+.location,
+.date {
+    color: #888;
+    margin-right: 0.6rem;
+}
+
+.major,
+.gpa,
+.clubs {
+    color: #444;
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+
+.section ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0.6rem 0 0;
+}
+
+.section li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    line-height: 1.55;
+}
+
+.section li::before {
+    content: "•";
+    color: #f2b6d5;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* === Project CTA pill === */
+.projectCta {
+    display: inline-block;
+    margin-top: 0.9rem;
+    background: #ffeaf4;
+    border-radius: 999px;
+    padding: 0.4em 1.1em;
+    color: #222;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+}
+
+.projectCta:hover {
+    background: #ffb6d5;
+    color: #b94a4a;
+    box-shadow: 0 2px 8px 0 rgba(233, 30, 99, 0.10);
+}
+
+/* === Certifications grid === */
+.certificationsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.certItem {
+    background: #fff7fa;
+    border: 1.5px solid #f2f2f2;
+    border-radius: 0.7rem;
+    padding: 1rem 1.2rem;
+    transition: background 0.18s, border-color 0.18s;
+}
+
+.certItem:hover {
+    background: #ffeaf4;
+    border-color: #f2b6d5;
+}
+
+.certItem h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    margin: 0 0 0.3rem;
+}
+
+.certItem .issuer {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0 0 0.2rem;
+}
+
+.certItem .date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-right: 0;
+}
+
+/* === Skills grid === */
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.skillsColumn h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #222;
+    margin: 0 0 0.8rem;
+}
+
+.skillsColumn ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.skillsColumn li {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.skillsColumn li::before {
+    display: none;
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
+    .container {
+        padding: 110px 0 2rem;
+        width: 95vw;
+    }
+    .hero {
+        padding: 2.2rem 1.2rem 1.8rem;
+    }
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-
     .hero h2 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
-} 
+    .heroSubtitle {
+        font-size: 1rem;
+    }
+    .section {
+        padding: 1.5rem 1.2rem;
+    }
+    .section h2 {
+        font-size: 1.6rem;
+    }
+    .experienceItem h3,
+    .educationItem h3,
+    .projectItem h3 {
+        font-size: 1.15rem;
+    }
+    .certificationsGrid,
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 100px 0 1.5rem;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    .hero h2 {
+        font-size: 1rem;
+    }
+    .socialLink {
+        font-size: 0.9rem;
+        padding: 0.35em 0.9em;
+    }
+}

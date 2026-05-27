@@ -16,14 +16,10 @@ import rehypeConsecutiveImages from '../../../../../../lib/rehype-consecutive-im
 
 export default function NotePage({ term, course, unit, note, noteContent, noteData, unitTitle }) {
   useEffect(() => {
-    // Ensure renderMathInElement is available and then run it
     if (window.renderMathInElement) {
-      console.log('DEBUG: window.renderMathInElement is defined. Running it.');
       window.renderMathInElement(document.body);
-    } else {
-      console.log('DEBUG: window.renderMathInElement is NOT defined.');
     }
-  }, [noteContent]); // Re-run effect if noteContent changes
+  }, [noteContent]);
 
   const markdownClass = `markdown-content ${(course === 'ECON 101' || course === 'COMM 101') ? 'econ-notes-spacing' : ''}`;
 
@@ -63,14 +59,6 @@ export async function getStaticProps({ params }) {
   const { content, data } = getNoteContent(term, course, unit, note);
   const unitTitle = getUnitTitle(term, course, unit);
 
-  console.log('DEBUG: Content from getNoteContent. Length:', content.length);
-  if (content.length > 0) {
-    console.log('DEBUG: First 100 chars of content:', content.substring(0, 100));
-  } else {
-    console.log('DEBUG: Content is empty.');
-  }
-
-  // Correct unified markdown processor
   const processor = unified()
     .use(remarkParse)
     .use(remarkGfm)
@@ -85,8 +73,6 @@ export async function getStaticProps({ params }) {
 
   const file = await processor.process(content);
   const noteContent = String(file);
-
-  console.log('DEBUG: Markdown processed to HTML. Length:', noteContent.length);
 
   return { props: { term, course, unit, note, noteContent, noteData: data, unitTitle } };
 } 

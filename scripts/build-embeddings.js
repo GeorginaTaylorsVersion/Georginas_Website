@@ -40,9 +40,11 @@ function chunkText(text, maxLen = 500) {
   return chunks;
 }
 
-async function getEmbedding(text) {
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+async function getEmbedding(text, attempt = 1) {
   // Gemini embedding endpoint (v1beta)
-  const model = 'embedding-001';
+  const model = 'gemini-embedding-001';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:embedContent?key=${GEMINI_API_KEY}`;
   const res = await fetch(url, {
     method: 'POST',
@@ -53,6 +55,14 @@ async function getEmbedding(text) {
       content: { parts: [{ text }] },
     }),
   });
+  if (res.status === 429 && attempt <= 6) {
+    const body = await res.text();
+    const match = body.match(/retry in ([0-9.]+)s/i);
+    const waitMs = match ? Math.ceil(parseFloat(match[1]) * 1000) + 500 : 2000 * attempt;
+    console.log(`  rate-limited; sleeping ${waitMs}ms then retrying (attempt ${attempt + 1})`);
+    await sleep(waitMs);
+    return getEmbedding(text, attempt + 1);
+  }
   if (!res.ok) throw new Error(await res.text());
   const data = await res.json();
   if (!data.embedding || !data.embedding.values) throw new Error('No embedding returned from Gemini');
@@ -87,6 +97,8 @@ async function main() {
     } catch (e) {
       console.error('Embedding failed:', e);
     }
+    // Stay under the 100 req/min free-tier limit (700ms = ~85/min).
+    await sleep(700);
   }
   await fs.mkdir(path.dirname(OUTPUT_FILE), { recursive: true });
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2));

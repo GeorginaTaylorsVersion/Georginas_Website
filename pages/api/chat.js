@@ -16,7 +16,7 @@ function cosineSimilarity(a, b) {
 
 async function getEmbedding(text) {
   // Gemini embedding endpoint (v1beta)
-  const model = 'embedding-001';
+  const model = 'gemini-embedding-001';
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:embedContent?key=${GEMINI_API_KEY}`;
   const res = await fetch(url, {
     method: 'POST',
@@ -83,7 +83,7 @@ export default async function handler(req, res) {
     const contextText = topChunks.map(c => c.text).join('\n\n---\n\n');
 
     // 4. Build the prompt for Gemini
-    const model = 'gemini-1.5-flash-latest';
+    const model = 'gemini-2.5-flash';
     const systemPrompt = `You are a helpful chatbot for a university student's notes website. Your name is Georgina's Assistant.\nYou must answer questions based ONLY on the provided notes context.\nIf the answer is not found in the notes, you MUST say \"I'm sorry, I don't have information on that topic based on the provided notes.\"\nBe concise and helpful. Format your answers clearly. You can use markdown for formatting if it helps.\nWhen writing mathematical expressions or formulas, ALWAYS use LaTeX math syntax (enclose inline math in $...$ and display math in $$...$$). Do NOT use HTML tags for math.\n\nHere are the most relevant notes:\n\n${contextText}`;
 
     // Build conversation history for Gemini

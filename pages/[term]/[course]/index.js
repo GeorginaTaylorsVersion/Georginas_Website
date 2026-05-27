@@ -66,17 +66,13 @@ export async function getStaticProps({ params }) {
     return { unit, firstNote: notes[0] || null };
   });
 
-  console.log('DEBUG: unitsWithFirstNotes:', unitsWithFirstNotes);
-
   let mustKnowContent = null;
 
   if (params.course === 'MATH 138') {
     const mustKnowFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'must-know-section.md');
     if (fs.existsSync(mustKnowFilePath)) {
       const fileContents = fs.readFileSync(mustKnowFilePath, 'utf8');
-      console.log('DEBUG: Raw must-know-section.md content length:', fileContents.length);
-      console.log('DEBUG: First 200 chars of raw must-know-section.md:', fileContents.substring(0, 200));
-      
+
       const processor = unified()
         .use(remarkParse)
         .use(remarkMath)
@@ -87,20 +83,11 @@ export async function getStaticProps({ params }) {
 
       const file = await processor.process(fileContents);
       mustKnowContent = String(file);
-      console.log('DEBUG: Processed mustKnowContent length:', mustKnowContent.length);
-      console.log('DEBUG: First 200 chars of processed mustKnowContent:', mustKnowContent.substring(0, 200));
     }
   } else if (unitsWithFirstNotes.length === 0 && params.term !== '1B') {
     const noContentFilePath = path.join(process.cwd(), 'notes', params.term, params.course, 'no-content.md');
-    console.log('DEBUG: Checking for no-content.md at:', noContentFilePath);
     if (fs.existsSync(noContentFilePath)) {
-      console.log('DEBUG: no-content.md exists.');
-      const fileContents = fs.readFileSync(noContentFilePath, 'utf8');
-      console.log('DEBUG: Raw no-content.md content length:', fileContents.length);
-      console.log('DEBUG: First 100 chars of raw no-content.md:', fileContents.substring(0, 100));
-      mustKnowContent = fileContents;
-      console.log('DEBUG: Assigned raw no-content.md directly to mustKnowContent. Length:', mustKnowContent.length);
-      console.log('DEBUG: First 100 chars of assigned mustKnowContent:', mustKnowContent.substring(0, 100));
+      mustKnowContent = fs.readFileSync(noContentFilePath, 'utf8');
     }
   }
 
